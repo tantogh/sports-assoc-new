@@ -8,8 +8,8 @@ import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 export default function Header() {
   // メニューの開閉状態を管理するState（初期値はfalse＝閉じている）
   const [isOpen, setIsOpen] = useState(false);
-  // サブメニューの開閉状態を管理するState
-  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  // サブメニューの開閉状態を管理するState（null=閉じる、"association"=協会概要、"club"=クラブ情報）
+  const [openSubMenu, setOpenSubMenu] = useState<"association" | "club" | null>(null);
 
   // メニューの開閉を切り替える関数
   const toggleMenu = () => {
@@ -17,9 +17,8 @@ export default function Header() {
   };
 
   // サブメニューの開閉を切り替える関数
-  const toggleSubMenu = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsSubMenuOpen(!isSubMenuOpen);
+  const toggleSubMenu = (menu: "association" | "club") => {
+    setOpenSubMenu((prev) => (prev === menu ? null : menu));
   };
 
   return (
@@ -36,21 +35,18 @@ export default function Header() {
       >
         {/* 1本目の線 */}
         <span
-          className={`w-full h-[3px] bg-white rounded-sm transition-all duration-300 ease-in-out ${
-            isOpen ? "translate-y-[8.5px] rotate-45" : ""
-          }`}
+          className={`w-full h-[3px] bg-white rounded-sm transition-all duration-300 ease-in-out ${isOpen ? "translate-y-[8.5px] rotate-45" : ""
+            }`}
         />
         {/* 2本目の線 */}
         <span
-          className={`w-full h-[3px] bg-white rounded-sm transition-all duration-300 ease-in-out ${
-            isOpen ? "opacity-0" : ""
-          }`}
+          className={`w-full h-[3px] bg-white rounded-sm transition-all duration-300 ease-in-out ${isOpen ? "opacity-0" : ""
+            }`}
         />
         {/* 3本目の線 */}
         <span
-          className={`w-full h-[3px] bg-white rounded-sm transition-all duration-300 ease-in-out ${
-            isOpen ? "-translate-y-[8.5px] -rotate-45" : ""
-          }`}
+          className={`w-full h-[3px] bg-white rounded-sm transition-all duration-300 ease-in-out ${isOpen ? "-translate-y-[8.5px] -rotate-45" : ""
+            }`}
         />
       </button>
 
@@ -69,28 +65,28 @@ export default function Header() {
               className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu} // リンクを押したらメニューを閉じる
             >
-              トップ
+              ホーム
             </Link>
           </li>
           <li className="relative">
             <button
-              onClick={toggleSubMenu}
+              onClick={() => toggleSubMenu("association")}
               className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
             >
               協会概要
-              <span className={`transition-transform duration-300 ${isSubMenuOpen ? "rotate-180" : ""}`}>
+              <span className={`transition-transform duration-300 ${openSubMenu === "association" ? "rotate-180" : ""}`}>
                 ▼
               </span>
             </button>
             {/* サブメニューが展開時に表示 */}
-            {isSubMenuOpen && (
+            {openSubMenu === "association" && (
               <ul className="bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg">
                 <li>
                   <Link
                     href="#"
                     className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
                     onClick={() => {
-                      setIsSubMenuOpen(false);
+                      setOpenSubMenu(null);
                     }}
                   >
                     協会について
@@ -101,7 +97,7 @@ export default function Header() {
                     href="#"
                     className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
                     onClick={() => {
-                      setIsSubMenuOpen(false);
+                      setOpenSubMenu(null);
                     }}
                   >
                     パラスポーツとは
@@ -112,7 +108,7 @@ export default function Header() {
                     href="#"
                     className="block py-3 px-4 hover:text-gray-300 transition-colors text-sm"
                     onClick={() => {
-                      setIsSubMenuOpen(false);
+                      setOpenSubMenu(null);
                     }}
                   >
                     協会だより
@@ -121,16 +117,56 @@ export default function Header() {
               </ul>
             )}
           </li>
-          <li>
-            <Link
-              href="#"
-              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
-              onClick={toggleMenu}
+          <li className="relative">
+            <button
+              onClick={() => toggleSubMenu("club")}
+              className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
             >
               クラブ情報
-            </Link>
+              <span className={`transition-transform duration-300 ${openSubMenu === "club" ? "rotate-180" : ""}`}>
+                ▼
+              </span>
+            </button>
+            {/* サブメニューが展開時に表示 */}
+            {openSubMenu === "club" && (
+              <ul className="bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg">
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setOpenSubMenu(null);
+                    }}
+                  >
+                    クラブ紹介
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setOpenSubMenu(null);
+                    }}
+                  >
+                    クラブ報告
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setOpenSubMenu(null);
+                    }}
+                  >
+                    パラスポーツ紹介
+                  </Link>
+                </li>
+              </ul>
+            )}
           </li>
-           <li>
+          <li>
             <Link
               href="#"
               className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
