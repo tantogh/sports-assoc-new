@@ -61,7 +61,16 @@ export default function Header() {
               className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu} // リンクを押したらメニューを閉じる
             >
-              Home
+              トップ
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              onClick={toggleMenu} // リンクを押したらメニューを閉じる
+            >
+              協会概要
             </Link>
           </li>
           <li>
@@ -70,7 +79,16 @@ export default function Header() {
               className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
-              About
+              クラブ情報
+            </Link>
+          </li>
+           <li>
+            <Link
+              href="#"
+              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              onClick={toggleMenu}
+            >
+              スポーツ大会
             </Link>
           </li>
           <li>
@@ -79,7 +97,7 @@ export default function Header() {
               className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
-              Services
+              イベント
             </Link>
           </li>
           <li>
@@ -88,7 +106,52 @@ export default function Header() {
               className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
-              Contact
+              指導員
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              onClick={toggleMenu}
+            >
+              用具
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              onClick={toggleMenu}
+            >
+              Q＆A
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              onClick={toggleMenu}
+            >
+              ダウンロード
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              onClick={toggleMenu}
+            >
+              リンク集
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#"
+              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              onClick={toggleMenu}
+            >
+              お問い合わせ
             </Link>
           </li>
         </ul>
