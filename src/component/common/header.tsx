@@ -66,7 +66,7 @@ export default function Header() {
           <li>
             <Link
               href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu} // リンクを押したらメニューを閉じる
             >
               トップ
@@ -75,7 +75,7 @@ export default function Header() {
           <li className="relative">
             <button
               onClick={toggleSubMenu}
-              className="w-full text-left block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
+              className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
             >
               協会概要
               <span className={`transition-transform duration-300 ${isSubMenuOpen ? "rotate-180" : ""}`}>
@@ -124,7 +124,7 @@ export default function Header() {
           <li>
             <Link
               href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
               クラブ情報
@@ -133,7 +133,7 @@ export default function Header() {
            <li>
             <Link
               href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
               スポーツ大会
@@ -142,7 +142,7 @@ export default function Header() {
           <li>
             <Link
               href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
               イベント
@@ -151,7 +151,7 @@ export default function Header() {
           <li>
             <Link
               href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
               指導員
@@ -160,7 +160,7 @@ export default function Header() {
           <li>
             <Link
               href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
               用具
@@ -169,7 +169,7 @@ export default function Header() {
           <li>
             <Link
               href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
               Q＆A
@@ -178,7 +178,7 @@ export default function Header() {
           <li>
             <Link
               href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
               ダウンロード
@@ -187,7 +187,7 @@ export default function Header() {
           <li>
             <Link
               href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
               リンク集
@@ -196,7 +196,7 @@ export default function Header() {
           <li>
             <Link
               href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
               onClick={toggleMenu}
             >
               お問い合わせ
