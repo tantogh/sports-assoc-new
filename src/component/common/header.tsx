@@ -82,8 +82,8 @@ export default function Header() {
             <ul
               className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
                 openSubMenu === "association"
-                  ? "max-h-64 opacity-100 pointer-events-auto"
-                  : "max-h-0 opacity-0 pointer-events-none"
+                  ? "max-h-64 translate-y-0 pointer-events-auto"
+                  : "max-h-0 -translate-y-2 pointer-events-none"
               }`}
             >
                 <li>
@@ -135,8 +135,8 @@ export default function Header() {
             <ul
               className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
                 openSubMenu === "club"
-                  ? "max-h-64 opacity-100 pointer-events-auto"
-                  : "max-h-0 opacity-0 pointer-events-none"
+                  ? "max-h-64 translate-y-0 pointer-events-auto"
+                  : "max-h-0 -translate-y-2 pointer-events-none"
               }`}
             >
                 <li>
@@ -187,8 +187,8 @@ export default function Header() {
             <ul
               className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
                 openSubMenu === "sports"
-                  ? "max-h-64 opacity-100 pointer-events-auto"
-                  : "max-h-0 opacity-0 pointer-events-none"
+                  ? "max-h-64 translate-y-0 pointer-events-auto"
+                  : "max-h-0 -translate-y-2 pointer-events-none"
               }`}
             >
                 <li>
@@ -228,8 +228,8 @@ export default function Header() {
             <ul
               className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
                 openSubMenu === "events"
-                  ? "max-h-64 opacity-100 pointer-events-auto"
-                  : "max-h-0 opacity-0 pointer-events-none"
+                  ? "max-h-64 translate-y-0 pointer-events-auto"
+                  : "max-h-0 -translate-y-2 pointer-events-none"
               }`}
             >
                 <li>
@@ -280,8 +280,8 @@ export default function Header() {
             <ul
               className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
                 openSubMenu === "instructors"
-                  ? "max-h-64 opacity-100 pointer-events-auto"
-                  : "max-h-0 opacity-0 pointer-events-none"
+                  ? "max-h-64 translate-y-0 pointer-events-auto"
+                  : "max-h-0 -translate-y-2 pointer-events-none"
               }`}
             >
                 <li>
