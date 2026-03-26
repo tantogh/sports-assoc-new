@@ -23,7 +23,7 @@ export default function Header() {
   };
 
   return (
-    <header className="flex justify-between items-center p-4 bg-gray-800 text-white relative z-50">
+    <header className="flex justify-between items-center p-4 bg-sky-700 text-white relative z-50">
       <div className="text-xl font-bold">石川県障害者スポーツ協会</div>
 
       {/* ==================================
@@ -58,7 +58,7 @@ export default function Header() {
           ナビゲーションメニュー（スライドイン）
           ================================== */}
       <nav
-        className={`fixed top-0 right-0 w-[250px] h-screen bg-gray-700 pt-20 transition-transform duration-300 ease-in-out z-40 
+        className={`fixed top-0 right-0 w-[250px] h-screen bg-sky-700 pt-20 transition-transform duration-300 ease-in-out z-40 
           md:static md:w-auto md:h-auto md:bg-transparent md:pt-0 md:translate-x-0
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
@@ -84,7 +84,7 @@ export default function Header() {
             </button>
             {/* サブメニューが展開時に表示 */}
             {isSubMenuOpen && (
-              <ul className="bg-gray-600 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg">
+              <ul className="bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg">
                 <li>
                   <Link
                     href="#"
