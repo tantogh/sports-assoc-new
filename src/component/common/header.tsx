@@ -8,10 +8,18 @@ import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 export default function Header() {
   // メニューの開閉状態を管理するState（初期値はfalse＝閉じている）
   const [isOpen, setIsOpen] = useState(false);
+  // サブメニューの開閉状態を管理するState
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   // メニューの開閉を切り替える関数
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  // サブメニューの開閉を切り替える関数
+  const toggleSubMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsSubMenuOpen(!isSubMenuOpen);
   };
 
   return (
@@ -64,14 +72,54 @@ export default function Header() {
               トップ
             </Link>
           </li>
-          <li>
-            <Link
-              href="#"
-              className="block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
-              onClick={toggleMenu} // リンクを押したらメニューを閉じる
+          <li className="relative">
+            <button
+              onClick={toggleSubMenu}
+              className="w-full text-left block py-4 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
             >
               協会概要
-            </Link>
+              <span className={`transition-transform duration-300 ${isSubMenuOpen ? "rotate-180" : ""}`}>
+                ▼
+              </span>
+            </button>
+            {/* サブメニューが展開時に表示 */}
+            {isSubMenuOpen && (
+              <ul className="bg-gray-600 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg">
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setIsSubMenuOpen(false);
+                    }}
+                  >
+                    協会について
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setIsSubMenuOpen(false);
+                    }}
+                  >
+                    パラスポーツとは
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setIsSubMenuOpen(false);
+                    }}
+                  >
+                    協会だより
+                  </Link>
+                </li>
+              </ul>
+            )}
           </li>
           <li>
             <Link
