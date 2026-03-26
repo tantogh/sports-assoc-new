@@ -5,11 +5,71 @@
 import { useState } from "react";
 import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 
+type SubMenuKey = "association" | "club" | "sports" | "events" | "instructors";
+
 export default function Header() {
   // メニューの開閉状態を管理するState（初期値はfalse＝閉じている）
   const [isOpen, setIsOpen] = useState(false);
-  // サブメニューの開閉状態を管理するState（null=閉じる、"association"=協会概要、"club"=クラブ情報、"sports"=スポーツ大会、"events"=イベント、"instructors"=指導員）
-  const [openSubMenu, setOpenSubMenu] = useState<"association" | "club" | "sports" | "events" | "instructors" | null>(null);
+  // サブメニューの開閉状態を管理するState
+  const [openSubMenu, setOpenSubMenu] = useState<SubMenuKey | null>(null);
+
+  const menuConfig = [
+    { type: "link", label: "ホーム", href: "#" },
+    {
+      type: "submenu",
+      key: "association" as SubMenuKey,
+      label: "協会概要",
+      items: [
+        { label: "協会について", href: "#" },
+        { label: "パラスポーツとは", href: "#" },
+        { label: "協会だより", href: "#" },
+      ],
+    },
+    {
+      type: "submenu",
+      key: "club" as SubMenuKey,
+      label: "クラブ情報",
+      items: [
+        { label: "クラブ紹介", href: "#" },
+        { label: "クラブ報告", href: "#" },
+        { label: "パラスポーツ紹介", href: "#" },
+      ],
+    },
+    {
+      type: "submenu",
+      key: "sports" as SubMenuKey,
+      label: "スポーツ大会",
+      items: [
+        { label: "県内大会", href: "#" },
+        { label: "全国大会", href: "#" },
+      ],
+    },
+    {
+      type: "submenu",
+      key: "events" as SubMenuKey,
+      label: "イベント",
+      items: [
+        { label: "大会結果", href: "#" },
+        { label: "募集情報", href: "#" },
+        { label: "事業報告", href: "#" },
+      ],
+    },
+    {
+      type: "submenu",
+      key: "instructors" as SubMenuKey,
+      label: "指導員",
+      items: [
+        { label: "講習会", href: "#" },
+        { label: "募集情報", href: "#" },
+        { label: "活動報告", href: "#" },
+      ],
+    },
+    { type: "link", label: "用具", href: "#" },
+    { type: "link", label: "Q＆A", href: "#" },
+    { type: "link", label: "ダウンロード", href: "#" },
+    { type: "link", label: "リンク集", href: "#" },
+    { type: "link", label: "お問い合わせ", href: "#" },
+  ] as const;
 
   // メニューの開閉を切り替える関数
   const toggleMenu = () => {
@@ -17,7 +77,7 @@ export default function Header() {
   };
 
   // サブメニューの開閉を切り替える関数
-  const toggleSubMenu = (menu: "association" | "club" | "sports" | "events" | "instructors") => {
+  const toggleSubMenu = (menu: SubMenuKey) => {
     setOpenSubMenu((prev) => (prev === menu ? null : menu));
   };
 
@@ -59,311 +119,51 @@ export default function Header() {
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <ul className="flex flex-col md:flex-row md:gap-6 px-6 md:px-0">
-          <li>
-            <Link
-              href="#"
-              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
-              onClick={toggleMenu} // リンクを押したらメニューを閉じる
-            >
-              ホーム
-            </Link>
-          </li>
-          <li className="relative">
-            <button
-              onClick={() => toggleSubMenu("association")}
-              className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
-            >
-              協会概要
-              <span className={`transition-transform duration-300 ${openSubMenu === "association" ? "rotate-180" : ""}`}>
-                ▼
-              </span>
-            </button>
-            {/* サブメニューのアニメーション */}
-            <ul
-              className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
-                openSubMenu === "association"
-                  ? "max-h-64 translate-y-0 pointer-events-auto"
-                  : "max-h-0 -translate-y-2 pointer-events-none"
-              }`}
-            >
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
+          {menuConfig.map((item) =>
+            item.type === "link" ? (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
+                  onClick={toggleMenu}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ) : (
+              <li key={item.key} className="relative">
+                <button
+                  onClick={() => toggleSubMenu(item.key)}
+                  className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
+                >
+                  {item.label}
+                  <span
+                    className={`transition-transform duration-300 ${openSubMenu === item.key ? "rotate-180" : ""}`}
                   >
-                    協会について
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    パラスポーツとは
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    協会だより
-                  </Link>
-                </li>
-              </ul>
-          </li>
-          <li className="relative">
-            <button
-              onClick={() => toggleSubMenu("club")}
-              className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
-            >
-              クラブ情報
-              <span className={`transition-transform duration-300 ${openSubMenu === "club" ? "rotate-180" : ""}`}>
-                ▼
-              </span>
-            </button>
-            {/* サブメニューが展開時に表示 */}
-            <ul
-              className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
-                openSubMenu === "club"
-                  ? "max-h-64 translate-y-0 pointer-events-auto"
-                  : "max-h-0 -translate-y-2 pointer-events-none"
-              }`}
-            >
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    クラブ紹介
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    クラブ報告
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    パラスポーツ紹介
-                  </Link>
-                </li>
-              </ul>
-          </li>
-          <li className="relative">
-            <button
-              onClick={() => toggleSubMenu("sports")}
-              className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
-            >
-              スポーツ大会
-              <span className={`transition-transform duration-300 ${openSubMenu === "sports" ? "rotate-180" : ""}`}>
-                ▼
-              </span>
-            </button>
-            <ul
-              className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
-                openSubMenu === "sports"
-                  ? "max-h-64 translate-y-0 pointer-events-auto"
-                  : "max-h-0 -translate-y-2 pointer-events-none"
-              }`}
-            >
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    県内大会
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    全国大会
-                  </Link>
-                </li>
-              </ul>
-          </li>
-          <li className="relative">
-            <button
-              onClick={() => toggleSubMenu("events")}
-              className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
-            >
-              イベント
-              <span className={`transition-transform duration-300 ${openSubMenu === "events" ? "rotate-180" : ""}`}>
-                ▼
-              </span>
-            </button>
-            <ul
-              className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
-                openSubMenu === "events"
-                  ? "max-h-64 translate-y-0 pointer-events-auto"
-                  : "max-h-0 -translate-y-2 pointer-events-none"
-              }`}
-            >
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    大会結果
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    募集情報
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    事業報告
-                  </Link>
-                </li>
-              </ul>
-          </li>
-          <li className="relative">
-            <button
-              onClick={() => toggleSubMenu("instructors")}
-              className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
-            >
-              指導員
-              <span className={`transition-transform duration-300 ${openSubMenu === "instructors" ? "rotate-180" : ""}`}>
-                ▼
-              </span>
-            </button>
-            <ul
-              className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
-                openSubMenu === "instructors"
-                  ? "max-h-64 translate-y-0 pointer-events-auto"
-                  : "max-h-0 -translate-y-2 pointer-events-none"
-              }`}
-            >
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    講習会
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    募集情報
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block py-3 px-4 hover:text-gray-300 transition-colors text-sm"
-                    onClick={() => {
-                      setOpenSubMenu(null);
-                    }}
-                  >
-                    活動報告
-                  </Link>
-                </li>
-              </ul>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
-              onClick={toggleMenu}
-            >
-              用具
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
-              onClick={toggleMenu}
-            >
-              Q＆A
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
-              onClick={toggleMenu}
-            >
-              ダウンロード
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
-              onClick={toggleMenu}
-            >
-              リンク集
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
-              onClick={toggleMenu}
-            >
-              お問い合わせ
-            </Link>
-          </li>
+                    ▼
+                  </span>
+                </button>
+                <ul
+                  className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${openSubMenu === item.key
+                      ? "max-h-64 translate-y-0 pointer-events-auto"
+                      : "max-h-0 -translate-y-2 pointer-events-none"
+                    }`}
+                >
+                  {item.items.map((sub) => (
+                    <li key={sub.label}>
+                      <Link
+                        href={sub.href}
+                        className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
+                        onClick={() => setOpenSubMenu(null)}
+                      >
+                        {sub.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ),
+          )}
         </ul>
       </nav>
     </header>
