@@ -9,7 +9,7 @@ export default function Header() {
   // メニューの開閉状態を管理するState（初期値はfalse＝閉じている）
   const [isOpen, setIsOpen] = useState(false);
   // サブメニューの開閉状態を管理するState（null=閉じる、"association"=協会概要、"clubs"=クラブ情報、"sports"=スポーツ大会）
-  const [openSubMenu, setOpenSubMenu] = useState<"association" | "clubs" | "sports" | null>(null);
+  const [openSubMenu, setOpenSubMenu] = useState<"association" | "clubs" | "sports" | "events" | null>(null);
 
   // メニューの開閉を切り替える関数
   const toggleMenu = () => {
@@ -17,7 +17,7 @@ export default function Header() {
   };
 
   // サブメニューの開閉を切り替える関数
-  const toggleSubMenu = (menu: "association" | "clubs" | "sports") => {
+  const toggleSubMenu = (menu: "association" | "clubs" | "sports" | "events") => {
     setOpenSubMenu((prev) => (prev === menu ? null : menu));
   };
 
@@ -204,14 +204,54 @@ export default function Header() {
               </ul>
             )}
           </li>
-          <li>
-            <Link
-              href="#"
-              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
-              onClick={toggleMenu}
+          <li className="relative">
+            <button
+              onClick={() => toggleSubMenu("events")}
+              className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
             >
               イベント
-            </Link>
+              <span className={`transition-transform duration-300 ${openSubMenu === "events" ? "rotate-180" : ""}`}>
+                ▼
+              </span>
+            </button>
+            {/* サブメニューが展開時に表示 */}
+            {openSubMenu === "events" && (
+              <ul className="bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg">
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setOpenSubMenu(null);
+                    }}
+                  >
+                    大会結果
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setOpenSubMenu(null);
+                    }}
+                  >
+                    募集情報
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setOpenSubMenu(null);
+                    }}
+                  >
+                    事業報告
+                  </Link>
+                </li>
+              </ul>
+            )}
           </li>
           <li>
             <Link
