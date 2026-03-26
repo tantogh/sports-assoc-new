@@ -1,3 +1,5 @@
+// src/component/common/header.tsx
+
 "use client"; // 状態（useState）を使うため、App Routerの場合は必須です
 
 import { useState } from "react";
@@ -14,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="flex justify-between items-center p-4 bg-gray-800 text-white relative z-50">
-      {/* <div className="text-xl font-bold">MySite</div> */}
+      <div className="text-xl font-bold">石川県障害者スポーツ協会</div>
 
       {/* ==================================
           ハンバーガーボタン
