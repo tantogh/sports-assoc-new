@@ -8,8 +8,8 @@ import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 export default function Header() {
   // メニューの開閉状態を管理するState（初期値はfalse＝閉じている）
   const [isOpen, setIsOpen] = useState(false);
-  // サブメニューの開閉状態を管理するState（null=閉じる、"association"=協会概要、"club"=クラブ情報）
-  const [openSubMenu, setOpenSubMenu] = useState<"association" | "club" | null>(null);
+  // サブメニューの開閉状態を管理するState（null=閉じる、"association"=協会概要、"clubs"=クラブ情報、"sports"=スポーツ大会）
+  const [openSubMenu, setOpenSubMenu] = useState<"association" | "clubs" | "sports" | null>(null);
 
   // メニューの開閉を切り替える関数
   const toggleMenu = () => {
@@ -17,7 +17,7 @@ export default function Header() {
   };
 
   // サブメニューの開閉を切り替える関数
-  const toggleSubMenu = (menu: "association" | "club") => {
+  const toggleSubMenu = (menu: "association" | "clubs" | "sports") => {
     setOpenSubMenu((prev) => (prev === menu ? null : menu));
   };
 
@@ -119,16 +119,16 @@ export default function Header() {
           </li>
           <li className="relative">
             <button
-              onClick={() => toggleSubMenu("club")}
+              onClick={() => toggleSubMenu("clubs")}
               className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
             >
               クラブ情報
-              <span className={`transition-transform duration-300 ${openSubMenu === "club" ? "rotate-180" : ""}`}>
+              <span className={`transition-transform duration-300 ${openSubMenu === "clubs" ? "rotate-180" : ""}`}>
                 ▼
               </span>
             </button>
             {/* サブメニューが展開時に表示 */}
-            {openSubMenu === "club" && (
+            {openSubMenu === "clubs" && (
               <ul className="bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg">
                 <li>
                   <Link
@@ -166,14 +166,43 @@ export default function Header() {
               </ul>
             )}
           </li>
-          <li>
-            <Link
-              href="#"
-              className="block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors"
-              onClick={toggleMenu}
+          <li className="relative">
+            <button
+              onClick={() => toggleSubMenu("sports")}
+              className="w-full text-left block py-2 border-b border-gray-600 md:border-none md:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
             >
               スポーツ大会
-            </Link>
+              <span className={`transition-transform duration-300 ${openSubMenu === "sports" ? "rotate-180" : ""}`}>
+                ▼
+              </span>
+            </button>
+            {/* サブメニューが展開時に表示 */}
+            {openSubMenu === "sports" && (
+              <ul className="bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg">
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setOpenSubMenu(null);
+                    }}
+                  >
+                    県内大会
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-3 px-4 border-b border-gray-500 md:border-none hover:text-gray-300 transition-colors text-sm"
+                    onClick={() => {
+                      setOpenSubMenu(null);
+                    }}
+                  >
+                    全国大会
+                  </Link>
+                </li>
+              </ul>
+            )}
           </li>
           <li>
             <Link
