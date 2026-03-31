@@ -138,13 +138,13 @@ export default function Header() {
                 >
                   {item.label}
                   <span
-                    className={`transition-transform duration-300 ${openSubMenu === item.key ? "rotate-180" : ""}`}
+                    className={`transition-transform duration-600 ${openSubMenu === item.key ? "rotate-180" : ""}`}
                   >
                     ▼
                   </span>
                 </button>
                 <ul
-                  className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${openSubMenu === item.key
+                  className={`bg-sky-700 md:absolute md:top-full md:left-0 md:w-48 md:shadow-lg overflow-hidden transition-all duration-600 ease-in-out ${openSubMenu === item.key
                       ? "max-h-64 translate-y-0 pointer-events-auto"
                       : "max-h-0 -translate-y-2 pointer-events-none"
                     }`}
