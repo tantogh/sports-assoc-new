@@ -56,7 +56,7 @@ export const Carousel = ({ images, autoPlayInterval = 5000 }: CarouselProps) => 
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               priority={index === 0} // 最初の画像だけLCP最適化のために優先ロード
             />
           </div>
