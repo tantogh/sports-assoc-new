@@ -84,7 +84,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`${notoSerifJP.variable} flex justify-between items-center p-4 bg-sky-700 text-white relative z-50}`}>
+    <header className={`${notoSerifJP.variable} flex justify-between items-center p-4 bg-sky-700 text-white relative z-50 antialiased}`}>
       <div className="text-xl font-bold">石川県障害者スポーツ協会</div>
 
       {/* ==================================
