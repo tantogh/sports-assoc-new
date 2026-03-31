@@ -5,6 +5,8 @@
 import { useState } from "react";
 import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 
+import { notoSerifJP } from "@/component/utils/fonts/fonts";
+
 type SubMenuKey = "association" | "club" | "sports" | "events" | "instructors";
 
 export default function Header() {
@@ -82,7 +84,7 @@ export default function Header() {
   };
 
   return (
-    <header className="flex justify-between items-center p-4 bg-sky-700 text-white relative z-50">
+    <header className={`${notoSerifJP.variable} flex justify-between items-center p-4 bg-sky-700 text-white relative z-50}`}>
       <div className="text-xl font-bold">石川県障害者スポーツ協会</div>
 
       {/* ==================================
