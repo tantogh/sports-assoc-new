@@ -88,8 +88,8 @@ const Header = () => {
     <header className={`${notoSerifJP.variable} flex justify-between items-center p-4 bg-sky-700 text-white relative z-50 antialiased}`}>
       <div className="flex items-center gap-2">
         <Logo />
-        <div className="text-sm lg:text-base font-bold">
-          <span className="text-xs lg:text-sm">石川県</span><br />
+        <div className="text-sm xl:text-base font-bold">
+          <span className="text-xs xl:text-sm">石川県</span><br />
           障害者スポーツ協会
         </div>
       </div>
@@ -99,7 +99,7 @@ const Header = () => {
           ================================== */}
       <button
         type="button"
-        className="z-50 flex flex-col justify-between w-[30px] h-[20px] bg-transparent border-none cursor-pointer lg:hidden"
+        className="z-50 flex flex-col justify-between w-[30px] h-[20px] bg-transparent border-none cursor-pointer xl:hidden"
         onClick={toggleMenu}
       >
         {/* 1本目の線 */}
@@ -124,16 +124,16 @@ const Header = () => {
           ================================== */}
       <nav
         className={`fixed top-0 right-0 w-[250px] h-screen bg-sky-700 pt-20 transition-transform duration-300 ease-in-out z-40 
-          lg:static lg:w-auto lg:h-auto lg:bg-transparent lg:pt-0 lg:translate-x-0 text-xs md:text-sm
+          xl:static xl:w-auto xl:h-auto xl:bg-transparent xl:pt-0 xl:translate-x-0 text-xs md:text-sm
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-        <ul className="flex flex-col lg:flex-row lg:gap-6 px-6 lg:px-0">
+        <ul className="flex flex-col xl:flex-row xl:gap-6 px-6 xl:px-0">
           {menuConfig.map((item) =>
             item.type === "link" ? (
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="block py-2 border-b border-gray-600 lg:border-none lg:py-2 hover:text-gray-300 transition-colors"
+                  className="block py-2 border-b border-gray-600 xl:border-none xl:py-2 hover:text-gray-300 transition-colors"
                   onClick={toggleMenu}
                 >
                   {item.label}
@@ -143,7 +143,7 @@ const Header = () => {
               <li key={item.key} className="relative">
                 <button
                   onClick={() => toggleSubMenu(item.key)}
-                  className="w-full text-left block py-2 border-b border-gray-600 lg:border-none lg:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
+                  className="w-full text-left block py-2 border-b border-gray-600 xl:border-none xl:py-2 hover:text-gray-300 transition-colors flex justify-between items-center"
                 >
                   {item.label}
                   <span
@@ -153,7 +153,7 @@ const Header = () => {
                   </span>
                 </button>
                 <ul
-                  className={`bg-sky-700 lg:absolute lg:top-full lg:left-0 lg:w-48 lg:shadow-lg overflow-hidden transition-all duration-600 ease-in-out ${openSubMenu === item.key
+                  className={`bg-sky-700 xl:absolute xl:top-full xl:left-0 xl:w-48 xl:shadow-xl overflow-hidden transition-all duration-600 ease-in-out ${openSubMenu === item.key
                       ? "max-h-64 translate-y-0 pointer-events-auto"
                       : "max-h-0 -translate-y-2 pointer-events-none"
                     }`}
@@ -162,7 +162,7 @@ const Header = () => {
                     <li key={sub.label}>
                       <Link
                         href={sub.href}
-                        className="block py-3 px-4 border-b border-gray-500 lg:border-none hover:text-gray-300 transition-colors text-sm"
+                        className="block py-3 px-4 border-b border-gray-500 xl:border-none hover:text-gray-300 transition-colors text-sm"
                         onClick={() => setOpenSubMenu(null)}
                       >
                         {sub.label}
