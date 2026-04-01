@@ -8,8 +8,7 @@ const slideImages: CarouselImage[] = [
   { src: "/images/slides/slide2.jpg", alt: "選手たちの集合写真" },
   { src: "/images/slides/slide3.jpg", alt: "加賀スポーツ教室" },
 ];
-
-export default function Home() {
+const Home = () => {
   return (
     <>
       {/* ヘッダーコンポーネント */}
@@ -19,3 +18,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;
