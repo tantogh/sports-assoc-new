@@ -85,7 +85,7 @@ export default function Header() {
 
   return (
     <header className={`${notoSerifJP.variable} flex justify-between items-center p-4 bg-sky-700 text-white relative z-50 antialiased}`}>
-      <div className="text-xl font-bold">石川県障害者スポーツ協会</div>
+      <div className="text-sm lg:text-lg font-bold"><span className="text-xs lg:text-sm">石川県</span><br />障害者スポーツ協会</div>
 
       {/* ==================================
           ハンバーガーボタン
@@ -117,7 +117,7 @@ export default function Header() {
           ================================== */}
       <nav
         className={`fixed top-0 right-0 w-[250px] h-screen bg-sky-700 pt-20 transition-transform duration-300 ease-in-out z-40 
-          md:static md:w-auto md:h-auto md:bg-transparent md:pt-0 md:translate-x-0
+          md:static md:w-auto md:h-auto md:bg-transparent md:pt-0 md:translate-x-0 text-xs lg:text-base
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <ul className="flex flex-col md:flex-row md:gap-6 px-6 md:px-0">
