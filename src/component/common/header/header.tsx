@@ -86,13 +86,15 @@ const Header = () => {
 
   return (
     <header className={`${notoSerifJP.variable} flex justify-between items-center p-4 bg-sky-700 text-white relative z-50 antialiased}`}>
-      <div className="flex items-center gap-2">
+      <Link
+        href="/"
+        className="flex items-center gap-2">
         <Logo />
         <div className="text-sm xl:text-lg font-bold">
           <span className="text-xs xl:text-sm">石川県</span><br />
           障害者スポーツ協会
         </div>
-      </div>
+      </Link>
 
       {/* ==================================
           ハンバーガーボタン
