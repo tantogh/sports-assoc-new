@@ -6,10 +6,11 @@ import { useState } from "react";
 import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
+import Logo from "@/component/common/header/logo";
 
 type SubMenuKey = "association" | "club" | "sports" | "events" | "instructors";
 
-export default function Header() {
+const Header = () => {
   // メニューの開閉状態を管理するState（初期値はfalse＝閉じている）
   const [isOpen, setIsOpen] = useState(false);
   // サブメニューの開閉状態を管理するState
@@ -67,7 +68,7 @@ export default function Header() {
       ],
     },
     { type: "link", label: "用具", href: "#" },
-    { type: "link", label: "Q＆A", href: "#" },
+    { type: "link", label: "Q&A", href: "#" },
     { type: "link", label: "ダウンロード", href: "#" },
     { type: "link", label: "リンク集", href: "#" },
     { type: "link", label: "お問い合わせ", href: "#" },
@@ -85,7 +86,13 @@ export default function Header() {
 
   return (
     <header className={`${notoSerifJP.variable} flex justify-between items-center p-4 bg-sky-700 text-white relative z-50 antialiased}`}>
-      <div className="text-sm lg:text-base font-bold"><span className="text-xs lg:text-sm">石川県</span><br />障害者スポーツ協会</div>
+      <div className="flex items-center gap-2">
+        <Logo />
+        <div className="text-sm lg:text-base font-bold">
+          <span className="text-xs lg:text-sm">石川県</span><br />
+          障害者スポーツ協会
+        </div>
+      </div>
 
       {/* ==================================
           ハンバーガーボタン
@@ -170,4 +177,6 @@ export default function Header() {
       </nav>
     </header>
   );
-}
+};
+
+export default Header;

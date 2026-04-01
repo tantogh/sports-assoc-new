@@ -99,3 +99,5 @@ export const Carousel = ({ images, autoPlayInterval = 5000 }: CarouselProps) => 
     </div>
   );
 };
+
+export default Carousel;

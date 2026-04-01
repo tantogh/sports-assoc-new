@@ -1,7 +1,7 @@
 // src/app/page.tsx
 
 import Header from "@/component/common/header/header";
-import { Carousel, CarouselImage } from "@/component/top/carousel/carousel";
+import Carousel, { CarouselImage } from "@/component/top/carousel/carousel";
 
 const slideImages: CarouselImage[] = [
   { src: "/images/slides/slide1.jpg", alt: "スポーツ大会の様子" },
