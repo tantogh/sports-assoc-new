@@ -138,7 +138,7 @@ const ArticleHeader = ({ baseDir, filePath, href }: ArticleHeaderProps) => {
   return (
     <Link href={href}>
       <div
-        className={`text-xl font-bold p-1 bg-white border ${notoSerifJP.className}`}
+        className={`text-xs xl:text-xl font-bold p-1 bg-white text-black hover:bg-sky-300/30 hover:text-gray border ${notoSerifJP.className}`}
       >
         {processTitle(title)}
       </div>
