@@ -143,7 +143,7 @@ const Article = ({ filename, isNew = false }: ArticleProps) => {
     const { content } = matter(rawText);
 
     return (
-      <div className="p-4 m-4 bg-white border rounded-md mx-auto">
+      <div className="p-4 m-4 bg-white mx-auto w-full max-w-7xl">
         {isNew && (
           <span className="bg-red-500 text-white px-2 py-1 rounded-md text-sm font-bold mr-2">
             New

@@ -6,10 +6,10 @@ type TitleProps = {
   title: string;
 };
 
-const Title = ({title}:TitleProps) => {
+const Title = ({title}: TitleProps) => {
   return (
     <>
-      <div className={`text-2xl font-bold p-2 ml-2 mb-4 border-l-8 border-sky-600 ${notoSerifJP.className}`}>{title}</div>
+      <div className={`text-2xl font-bold p-2 ml-2 mt-2 mb-4 border-l-8 border-sky-600 ${notoSerifJP.className}`}>{title}</div>
     </>
   );
 };
