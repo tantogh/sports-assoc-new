@@ -3,13 +3,14 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { notoSerifJP } from "@/component/utils/fonts/fonts";
 import Link from "next/link";
 import React from "react";
 
+import { notoSerifJP } from "@/component/utils/fonts/fonts";
+
 type ArticleHeaderProps = {
   baseDir: string;     // e.g. "articles/"
-  filePath: string;    // e.g. "2018/01/2018-01-01.md"
+  filePath: string;    // e.g. "2018/01/example.md"
   href: string;
 };
 

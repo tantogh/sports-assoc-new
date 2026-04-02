@@ -1,5 +1,7 @@
 // /src/component/common/title/title.tsx
 
+import { notoSerifJP } from "@/component/utils/fonts/fonts";
+
 type TitleProps = {
   title: string;
 };
@@ -7,7 +9,7 @@ type TitleProps = {
 const Title = ({title}:TitleProps) => {
   return (
     <>
-      <div className="">{title}</div>
+      <div className={`text-2xl font-bold p-2 mb-4 border-l-8 border-sky-600 ${notoSerifJP.className}`}>{title}</div>
     </>
   );
 };

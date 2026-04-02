@@ -10,6 +10,8 @@ import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import Link from "next/link";
 import type { AnchorHTMLAttributes } from "react";
 
+import { notoSerifJP } from "@/component/utils/fonts/fonts";
+
 type ArticleProps = {
   filename: string;
   isNew?: boolean;
@@ -147,7 +149,7 @@ const Article = ({ filename, isNew = false }: ArticleProps) => {
             New
           </span>
         )}
-        <article className="prose prose-ul:list-disc prose-ol:list-decimal prose-li:my-0 prose-li:pl-0 max-w-none">
+        <article className={`prose prose-ul:list-disc prose-ol:list-decimal prose-li:my-0 prose-li:pl-0 max-w-none ${notoSerifJP.className}`}>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
