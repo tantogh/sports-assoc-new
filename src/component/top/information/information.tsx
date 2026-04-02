@@ -9,10 +9,10 @@ const Information = () => {
       <Title title="新着情報" />
       <div className="rounded-xl border border-sky-100 bg-white/70 p-4 md:p-6">
         {/* 記事一覧 */}
-        <ArticleHeader baseDir="articles" filePath="/2026/02/website-renewal.md" href="#" />
-        <ArticleHeader baseDir="articles" filePath="/2026/03/iyasaka.md" href="#" />
-        <ArticleHeader baseDir="articles" filePath="/2026/03/wheelchair-soccer.md" href="#" />
-        <ArticleHeader baseDir="articles" filePath="/2026/02/para-sports-forum.md" href="#" />
+        <ArticleHeader baseDir="articles" filePath="/2026/02/website-renewal.md" href="/article/" />
+        <ArticleHeader baseDir="articles" filePath="/2026/03/iyasaka.md" href="/article/" />
+        <ArticleHeader baseDir="articles" filePath="/2026/03/wheelchair-soccer.md" href="/article/" />
+        <ArticleHeader baseDir="articles" filePath="/2026/02/para-sports-forum.md" href="/article/" />
       </div>
     </section>
   );
