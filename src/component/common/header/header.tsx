@@ -17,7 +17,7 @@ const Header = () => {
   const [openSubMenu, setOpenSubMenu] = useState<SubMenuKey | null>(null);
 
   const menuConfig = [
-    { type: "link", label: "ホーム", href: "#" },
+    { type: "link", label: "ホーム", href: "/" },
     {
       type: "submenu",
       key: "association" as SubMenuKey,

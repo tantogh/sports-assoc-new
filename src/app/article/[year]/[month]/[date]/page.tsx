@@ -1,4 +1,4 @@
-// /src/app/article/page.tsx
+// /src/app/article/[year]/[month]/[date]/page.tsx
 
 import fs from "fs";
 import path from "path";
