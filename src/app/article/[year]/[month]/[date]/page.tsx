@@ -1,7 +1,6 @@
 // /src/app/article/[year]/[month]/[date]/page.tsx
 
-import fs from "fs";
-import path from "path";
+import glob from "fast-glob";
 
 import Header from "@/component/common/header/header";
 import Article from "@/component/common/article/article";
@@ -15,51 +14,33 @@ type ArticleProps = {
   }>;
 };
 
+// fast-glob を使ってネストを排除
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "content", "articles");
+  // content/articles 以下の .md ファイルをすべて取得
+  const files = await glob("content/articles/*/*/*.md");
 
-  const posts = fs
-    .readdirSync(postsDirectory, { withFileTypes: true })
-    .flatMap((yearDir) => {
-      if (!yearDir.isDirectory()) return [];
+  return files.map((file) => {
+    // 例: "content/articles/2024/03/15.md" -> ["2024", "03", "15"]
+    const [year, month, date] = file
+      .replace("content/articles/", "")
+      .replace(".md", "")
+      .split("/");
 
-      const yearPath = path.join(postsDirectory, yearDir.name);
-
-      return fs
-        .readdirSync(yearPath, { withFileTypes: true })
-        .flatMap((monthDir) => {
-          if (!monthDir.isDirectory()) return [];
-
-          const monthPath = path.join(yearPath, monthDir.name);
-
-          return fs
-            .readdirSync(monthPath, { withFileTypes: true })
-            .filter((file) => file.isFile() && file.name.endsWith(".md"))
-            .map((file) => ({
-              year: yearDir.name,
-              month: monthDir.name,
-              date: file.name.replace(/\.md$/, ""),
-            }));
-        });
-    });
-
-  return posts.map((post) => ({
-    year: post.year,
-    month: post.month,
-    date: post.date,
-  }));
+    return { year, month, date };
+  });
 }
 
-const  ArticlePage = async({ params }: ArticleProps) => {
+const ArticlePage = async ({ params }: ArticleProps) => {
   const { year, month, date } = await params;
   const filename = `articles/${year}/${month}/${date}.md`;
+
   return (
     <>
       <Header />
       <Title title="新着情報" />
       <Article filename={filename} />
     </>
-    );
+  );
 };
 
 export default ArticlePage;
