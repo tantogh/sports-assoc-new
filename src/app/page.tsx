@@ -4,6 +4,7 @@ import Header from "@/component/common/header/header";
 import Carousel, { CarouselImage } from "@/component/top/carousel/carousel";
 import Title from "@/component/common/title/title";
 import Information from "@/component/top/information/information";
+import SpecialInfo from "@/component/top/special/information";
 import Sponsorship from "@/component/top/sponsorship/sponsorship";
 
 const slideImages: CarouselImage[] = [
@@ -23,7 +24,7 @@ const Home = () => {
       <Information />
       {/* 特別情報コンポーネント */}
       <Title title={"特別記事"} />
-      <Information />
+      <SpecialInfo />
       {/* 協賛企業コンポーネント */}
       <Title title={"協賛企業"} />
       <Sponsorship />
