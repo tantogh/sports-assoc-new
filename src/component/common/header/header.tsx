@@ -85,7 +85,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`${notoSerifJP.className} flex justify-between items-center p-4 bg-sky-700 text-white relative z-50 antialiased}`}>
+    <header className={`sticky top-0 flex justify-between items-center p-4 bg-sky-700 text-white relative z-50 antialiased ${notoSerifJP.className}}`}>
       <Link
         href="/"
         className="flex items-center gap-2">
