@@ -1,0 +1,53 @@
+// /src/component/common/footer/footer.tsx
+
+import Image from "next/image";
+import { notoSerifJP } from "@/component/utils/fonts/fonts";
+
+const Footer = () => {
+  return (
+    <>
+      <div className={`bg-sky-100/80 text-xs xl:text-lg text-center ${notoSerifJP.className}`}>
+        <div className="">
+          <div className="w-16 h-16">
+            <Image
+              src="images/icon/social/Instagram_Glyph_Gradient.png"
+              alt="Instagramのロゴ"
+              width={5000}
+              height={5000}
+              className="w-fill h-fill"
+            />
+          </div>
+          <div className="w-16 h-16">
+            <Image
+              src="images/icon/social/Facebook_Logo_Primary.png"
+              alt="Facebookのロゴ"
+              width={2084}
+              height={2084}
+              className="w-fill h-fill"
+            />
+          </div>
+          <div className="w-32 h-16">
+            <Image
+              src="images/icon/social/yt_icon_red_digital.png"
+              alt="YouTubeのロゴ"
+              width={1255}
+              height={1075}
+              className="w-fill h-fill"
+            />
+          </div>
+          <h2 className="text-sm xl:text-lg font-bold">
+            石川県パラスポーツ協会
+          </h2>
+          <p className="">
+            〒920-0355<br />
+            石川県金沢市稚日野町北222番 &nbsp; 石川県総合スポーツセンター内<br />
+            TEL: 076-213-6288 &nbsp; FAX: 076-213-6287<br />
+            E-MAIL: <a href="mailto:i-sho-spo@po4.nsk.ne.jp" className="text-blue-600 hover:text-blue-800 hover:underline">i-sho-spo@po4.nsk.ne.jp</a>
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Footer;

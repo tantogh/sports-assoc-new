@@ -6,6 +6,7 @@ import Title from "@/component/common/title/title";
 import Information from "@/component/top/information/information";
 import SpecialInfo from "@/component/top/special/information";
 import Sponsorship from "@/component/top/sponsorship/sponsorship";
+import Footer from "@/component/common/footer/footer";
 
 const slideImages: CarouselImage[] = [
   { src: "/images/slides/slide1.jpg", alt: "スポーツ大会の様子" },
@@ -28,6 +29,8 @@ const Home = () => {
       {/* 協賛企業コンポーネント */}
       <Title title={"協賛企業"} />
       <Sponsorship />
+      {/* フッターコンポーネント */}
+      <Footer />
     </>
   );
 }
