@@ -92,7 +92,7 @@ const Header = () => {
         <Logo />
         <div className="text-sm xl:text-lg font-bold">
           <span className="text-xs xl:text-sm">石川県</span><br />
-          障害者スポーツ協会
+          パラスポーツ協会
         </div>
       </Link>
 
@@ -125,7 +125,7 @@ const Header = () => {
           ナビゲーションメニュー（スライドイン）
           ================================== */}
       <nav
-        className={`fixed top-0 right-0 w-[250px] h-screen bg-sky-700 pt-20 transition-transform duration-300 ease-in-out z-40 
+        className={`fixed top-0 right-0 w-[250px] h-screen bg-sky-700 pt-20 transition-transform duration-300 ease-in-out z-40
           xl:static xl:w-auto xl:h-auto xl:bg-transparent xl:pt-0 xl:translate-x-0 text-xs md:text-sm
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
