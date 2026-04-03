@@ -3,6 +3,7 @@
 import Header from "@/component/common/header/header";
 import Carousel, { CarouselImage } from "@/component/top/carousel/carousel";
 import Information from "@/component/top/information/information";
+import SpecialInfo from "@/component/top/spacial/specialInfo";
 
 const slideImages: CarouselImage[] = [
   { src: "/images/slides/slide1.jpg", alt: "スポーツ大会の様子" },
@@ -18,6 +19,8 @@ const Home = () => {
       <Carousel images={slideImages} autoPlayInterval={5000} />
       {/* 新着情報コンポーネント */}
       <Information />
+      {/* 特別情報コンポーネント */}
+      <SpecialInfo />
     </>
   );
 }
