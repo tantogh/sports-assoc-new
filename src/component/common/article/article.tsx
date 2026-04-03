@@ -156,7 +156,7 @@ const Article = ({ filename, isNew = false }: ArticleProps) => {
             components={{
               a: MarkdownLink,
               h1: ({ children }) => (
-                <h1 className="text-lg sm:text-xl font-bold mt-4 mb-4">{children}</h1>
+                <h1 className="text-lg sm:text-xl font-bold mt-4 mb-4 bg-sky-100/80">{children}</h1>
               ),
               h2: ({ children }) => (
                 <h2 className="text-lg font-bold mt-4 mb-4">{children}</h2>
