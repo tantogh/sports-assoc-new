@@ -164,7 +164,7 @@ const Header = () => {
                     <li key={sub.label}>
                       <Link
                         href={sub.href}
-                        className="block py-3 px-4 border-b border-gray-500 xl:border-none hover:text-gray-300 transition-colors text-sm"
+                        className="block py-3 px-4 border-b border-gray-500 xl:border-none hover:text-gray-300 transition-colors text-xs"
                         onClick={() => setOpenSubMenu(null)}
                       >
                         {sub.label}

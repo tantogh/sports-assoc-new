@@ -40,7 +40,6 @@ const ArticlePage = async ({ params }: ArticleProps) => {
 
   return (
     <>
-      <Header />
       <Title title="新着情報" />
       <Article filename={filename} />
     </>

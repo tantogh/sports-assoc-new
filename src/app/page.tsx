@@ -16,9 +16,6 @@ const slideImages: CarouselImage[] = [
 const Home = () => {
   return (
     <>
-      {/* ヘッダーコンポーネント */}
-      <Header />
-      {/* カルーセルコンポーネント */}
       <Carousel images={slideImages} autoPlayInterval={5000} />
       {/* 新着情報コンポーネント */}
       <Title title={"新着情報"} />
@@ -31,8 +28,6 @@ const Home = () => {
       {/* 協賛企業コンポーネント */}
       <Title title={"協賛企業"} />
       <Sponsorship />
-      {/* フッターコンポーネント */}
-      <Footer />
     </>
   );
 }
