@@ -1,6 +1,8 @@
 // /src/component/common/footer/footer.tsx
 
 import Image from "next/image";
+import Link from "next/link";
+
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
 const Footer = () => {
@@ -11,33 +13,42 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           {/* ロゴを横並びにするFlexコンテナを追加 */}
           <div className="flex justify-center items-center gap-6 mb-6">
-            <div className="w-16 h-16">
-              <Image
-                src="images/icon/social/Instagram_Glyph_Gradient.png"
-                alt="Instagramのロゴ"
-                width={5000}
-                height={5000}
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="w-16 h-16">
-              <Image
-                src="images/icon/social/Facebook_Logo_Primary.png"
-                alt="Facebookのロゴ"
-                width={2084}
-                height={2084}
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="w-26 h-26">
-              <Image
-                src="images/icon/social/yt_icon_red_digital.png"
-                alt="YouTubeのロゴ"
-                width={1255}
-                height={1075}
-                className="w-full h-full object-contain"
-              />
-            </div>
+            <Link
+              href="#">
+              <div className="w-16 h-16">
+                <Image
+                  src="images/icon/social/Instagram_Glyph_Gradient.png"
+                  alt="Instagramのロゴ"
+                  width={5000}
+                  height={5000}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </Link>
+            <Link
+              href="#">
+              <div className="w-16 h-16">
+                <Image
+                  src="images/icon/social/Facebook_Logo_Primary.png"
+                  alt="Facebookのロゴ"
+                  width={2084}
+                  height={2084}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </Link>
+            <Link
+              href="#">
+              <div className="w-26 h-26">
+                <Image
+                  src="images/icon/social/yt_icon_red_digital.png"
+                  alt="YouTubeのロゴ"
+                  width={1255}
+                  height={1075}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </Link>
           </div>
 
           <h2 className="text-sm xl:text-lg font-bold mb-2">
