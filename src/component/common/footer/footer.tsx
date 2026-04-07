@@ -12,10 +12,10 @@ const Footer = () => {
       <div className={`bg-sky-100/80 text-xs xl:text-lg text-center py-8 ${notoSerifJP.className}`}>
         <div className="flex flex-col items-center">
           {/* ロゴを横並びにするFlexコンテナを追加 */}
-          <div className="flex justify-center items-center gap-6 mb-6">
+          <div className="flex justify-center items-center gap-4 mb-6">
             <Link
               href="#">
-              <div className="w-16 h-16">
+              <div className="w-8 h-8">
                 <Image
                   src="images/icon/social/Instagram_Glyph_Gradient.png"
                   alt="Instagramのロゴ"
@@ -27,7 +27,7 @@ const Footer = () => {
             </Link>
             <Link
               href="#">
-              <div className="w-16 h-16">
+              <div className="w-8 h-8">
                 <Image
                   src="images/icon/social/Facebook_Logo_Primary.png"
                   alt="Facebookのロゴ"
@@ -39,7 +39,7 @@ const Footer = () => {
             </Link>
             <Link
               href="#">
-              <div className="w-26 h-26">
+              <div className="w-8 h-8">
                 <Image
                   src="images/icon/social/yt_icon_red_digital.png"
                   alt="YouTubeのロゴ"
