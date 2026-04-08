@@ -16,7 +16,7 @@ const Footer = () => {
             href="#">
             <div className="w-8 h-8">
               <Image
-                src="images/icon/social/instagram_logo.png"
+                src="/images/icon/social/instagram_logo.png"
                 alt="Instagramのロゴ"
                 width={5000}
                 height={5000}
@@ -28,7 +28,7 @@ const Footer = () => {
             href="#">
             <div className="w-8 h-8">
               <Image
-                src="images/icon/social/facebook_logo.png"
+                src="/images/icon/social/facebook_logo.png"
                 alt="Facebookのロゴ"
                 width={2084}
                 height={2084}
@@ -40,7 +40,7 @@ const Footer = () => {
             href="#">
             <div className="w-8 h-8">
               <Image
-                src="images/icon/social/youtube_icon.png"
+                src="/images/icon/social/youtube_icon.png"
                 alt="YouTubeのロゴ"
                 width={838}
                 height={592}

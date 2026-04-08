@@ -10,8 +10,7 @@ import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
 type ArticleHeaderProps = {
   baseDir: string;     // e.g. "articles/"
-  filePath: string;    // e.g. "2018/01/example.md"
-  href: string;
+  filePath: string;    // e.g. "2018/01/2018-01-01.md"
 };
 
 const toCamelCase = (property: string) => property.trim().replace(/-([a-z])/g, (_, char) => char.toUpperCase());
@@ -115,8 +114,9 @@ const processLine = (line: string) => {
   return <>{elements}</>;
 };
 
-const ArticleHeader = ({ baseDir, filePath, href }: ArticleHeaderProps) => {
+const ArticleHeader = ({ baseDir, filePath }: ArticleHeaderProps) => {
   const fullPath = path.join(process.cwd(), "content", baseDir, filePath);
+  const href = path.join(baseDir, filePath.replace(/\.md$/, ""));
   const raw = fs.readFileSync(fullPath, "utf8");
 
   const { content } = matter(raw);
