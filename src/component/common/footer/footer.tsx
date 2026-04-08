@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
+import Copyright from "@/component/common/footer/copyright";
 
 const Footer = () => {
   return (
@@ -60,6 +61,8 @@ const Footer = () => {
           E-MAIL: <a href="mailto:i-sho-spo@po4.nsk.ne.jp" className="text-blue-600 hover:text-blue-800 hover:underline">i-sho-spo@po4.nsk.ne.jp</a>
         </p>
       </div>
+
+      <Copyright />
     </>
   );
 };
