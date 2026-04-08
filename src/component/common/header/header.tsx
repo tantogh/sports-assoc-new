@@ -23,7 +23,7 @@ const Header = () => {
       key: "association" as SubMenuKey,
       label: "協会概要",
       items: [
-        { label: "協会について", href: "#" },
+        { label: "協会について", href: "/about/assoc/" },
         { label: "パラスポーツとは", href: "#" },
         { label: "協会だより", href: "#" },
       ],
