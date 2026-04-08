@@ -53,7 +53,7 @@ const Footer = () => {
         <h2 className="text-sm xl:text-lg font-bold mb-2">
           石川県パラスポーツ協会
         </h2>
-        <p className="leading-relaxed">
+        <p className="text-xs leading-relaxed">
           〒920-0355<br />
           石川県金沢市稚日野町北222番 &nbsp; 石川県総合スポーツセンター内<br />
           TEL: 076-213-6288 &nbsp; FAX: 076-213-6287<br />

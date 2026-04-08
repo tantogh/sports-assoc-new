@@ -2,7 +2,6 @@
 
 import glob from "fast-glob";
 
-import Header from "@/component/common/header/header";
 import Article from "@/component/common/article/article";
 import Title from "@/component/common/title/title";
 

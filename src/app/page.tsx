@@ -1,18 +1,17 @@
 // src/app/page.tsx
 
-import Header from "@/component/common/header/header";
 import Carousel, { CarouselImage } from "@/component/top/carousel/carousel";
 import Title from "@/component/common/title/title";
 import Information from "@/component/top/information/information";
 import SpecialInfo from "@/component/top/special/information";
 import Sponsorship from "@/component/top/sponsorship/sponsorship";
-import Footer from "@/component/common/footer/footer";
 
 const slideImages: CarouselImage[] = [
   { src: "/images/slides/slide1.jpg", alt: "スポーツ大会の様子" },
   { src: "/images/slides/slide2.jpg", alt: "選手たちの集合写真" },
   { src: "/images/slides/slide3.jpg", alt: "加賀スポーツ教室" },
 ];
+
 const Home = () => {
   return (
     <>
