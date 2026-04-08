@@ -2,7 +2,7 @@
 
 import Title from "@/component/common/title/title";
 
-const Assoc = () => {
+const Newsletter = () => {
   return (
     <>
       <Title title="協会だより" />
@@ -10,4 +10,4 @@ const Assoc = () => {
   );
 };
 
-export default Assoc;
+export default Newsletter;
