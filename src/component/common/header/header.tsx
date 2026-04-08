@@ -24,8 +24,8 @@ const Header = () => {
       label: "協会概要",
       items: [
         { label: "協会について", href: "/about/assoc/" },
-        { label: "パラスポーツとは", href: "#" },
-        { label: "協会だより", href: "#" },
+        { label: "パラスポーツとは", href: "/about/parasports/" },
+        { label: "協会だより", href: "/about/newsletter/" },
       ],
     },
     {
