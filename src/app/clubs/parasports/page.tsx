@@ -2,12 +2,12 @@
 
 import Title from "@/component/common/title/title";
 
-const Parasports = () => {
+const ParaSports = () => {
   return (
     <>
-      <Title title="クラブ紹介" />
+      <Title title="パラスポーツの紹介" />
     </>
   );
 };
 
-export default Parasports;
+export default ParaSports;

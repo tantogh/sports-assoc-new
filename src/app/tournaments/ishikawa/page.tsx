@@ -5,7 +5,7 @@ import Title from "@/component/common/title/title";
 const IshikawaPage = () => {
   return (
     <>
-      <Title title="石川県スポーツ大会" />
+      <Title title="石川県障害者スポーツ大会" />
     </>
   );
 };

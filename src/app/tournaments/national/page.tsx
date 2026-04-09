@@ -5,7 +5,7 @@ import Title from "@/component/common/title/title";
 const NationalPage = () => {
   return (
     <>
-      <Title title="クラブ報告" />
+      <Title title="全国障害者スポーツ大会" />
     </>
   );
 };

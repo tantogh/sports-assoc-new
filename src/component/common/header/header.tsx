@@ -33,9 +33,9 @@ const Header = () => {
       key: "club" as SubMenuKey,
       label: "クラブ情報",
       items: [
-        { label: "クラブ紹介", href: "#" },
-        { label: "クラブ報告", href: "#" },
-        { label: "パラスポーツ紹介", href: "#" },
+        { label: "クラブ紹介", href: "/clubs/introduction/" },
+        { label: "クラブ報告", href: "/clubs/reports/" },
+        { label: "パラスポーツ紹介", href: "/clubs/parasports/" },
       ],
     },
     {
@@ -43,8 +43,8 @@ const Header = () => {
       key: "sports" as SubMenuKey,
       label: "スポーツ大会",
       items: [
-        { label: "県内大会", href: "#" },
-        { label: "全国大会", href: "#" },
+        { label: "県内大会", href: "/tournaments/ishikawa/" },
+        { label: "全国大会", href: "/tournaments/national/" },
       ],
     },
     {
@@ -52,9 +52,9 @@ const Header = () => {
       key: "events" as SubMenuKey,
       label: "イベント",
       items: [
-        { label: "大会結果", href: "#" },
-        { label: "募集情報", href: "#" },
-        { label: "事業報告", href: "#" },
+        { label: "大会結果", href: "/events/results/" },
+        { label: "募集情報", href: "/events/staff/" },
+        { label: "事業報告", href: "/events/reports/" },
       ],
     },
     {
@@ -62,16 +62,16 @@ const Header = () => {
       key: "instructors" as SubMenuKey,
       label: "指導員",
       items: [
-        { label: "講習会", href: "#" },
-        { label: "募集情報", href: "#" },
-        { label: "活動報告", href: "#" },
+        { label: "講習会", href: "/instructor/seminars/" },
+        { label: "募集情報", href: "/instructor/recruitment/" },
+        { label: "活動報告", href: "/instructor/reports/" },
       ],
     },
-    { type: "link", label: "用具", href: "#" },
-    { type: "link", label: "Q&A", href: "#" },
-    { type: "link", label: "ダウンロード", href: "#" },
-    { type: "link", label: "リンク集", href: "#" },
-    { type: "link", label: "お問い合わせ", href: "#" },
+    { type: "link", label: "用具", href: "/rental/" },
+    { type: "link", label: "Q&A", href: "/qa/" },
+    { type: "link", label: "ダウンロード", href: "/downloads/" },
+    { type: "link", label: "リンク集", href: "/links/" },
+    { type: "link", label: "お問い合わせ", href: "/contact/" },
   ] as const;
 
   // メニューの開閉を切り替える関数
