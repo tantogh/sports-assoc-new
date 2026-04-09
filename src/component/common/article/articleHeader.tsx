@@ -1,4 +1,4 @@
-// src/_components/archives/articleHeader.tsx
+// src/component/common/article/articleHeader.tsx
 
 import fs from "fs";
 import path from "path";

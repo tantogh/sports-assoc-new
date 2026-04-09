@@ -1,3 +1,5 @@
+// src/utils/fonts/fonts.ts
+
 import { Noto_Serif_JP } from 'next/font/google'
 //import localFont from 'next/font/local'
 

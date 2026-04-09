@@ -1,4 +1,4 @@
-// /src/component/top/carousel/carousel.tsx
+// src/component/top/carousel/carousel.tsx
 
 "use client";
 

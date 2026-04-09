@@ -1,4 +1,4 @@
-// /src/component/top/information/information.tsx
+// src/component/top/information/information.tsx
 
 import ArticleHeader from "@/component/common/article/articleHeader";
 

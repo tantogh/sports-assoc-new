@@ -1,4 +1,4 @@
-// /src/component/common/footer/footer.tsx
+// src/component/common/footer/footer.tsx
 
 import Image from "next/image";
 import Link from "next/link";

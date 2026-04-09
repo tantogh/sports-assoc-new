@@ -1,4 +1,4 @@
-// /src/component/common/title/title.tsx
+// src/component/common/title/title.tsx
 
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
 

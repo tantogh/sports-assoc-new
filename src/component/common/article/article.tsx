@@ -1,4 +1,4 @@
-// /src/component/common/article/article.tsx
+// src/component/common/article/article.tsx
 
 import fs from "fs";
 import path from "path";
@@ -109,7 +109,7 @@ const MarkdownLink = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
         </a>
       );
     }
-    
+
     // その他の内部リンクはNext.jsのLinkを使用
     return (
       <Link

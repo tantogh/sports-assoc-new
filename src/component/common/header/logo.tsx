@@ -1,4 +1,4 @@
-// /src/component/common/header/logo.tsx
+// src/component/common/header/logo.tsx
 
 import Image from 'next/image';
 
