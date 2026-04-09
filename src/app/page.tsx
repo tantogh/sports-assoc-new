@@ -1,6 +1,7 @@
 // src/app/page.tsx
 import fs from "fs";
 import path from "path";
+import { Metadata } from "next"
 
 import Carousel, { CarouselImage } from "@/component/top/carousel/carousel";
 import UpdateDate from "@/component/top/date/updateDate";
@@ -8,6 +9,11 @@ import Title from "@/component/common/title/title";
 import Information from "@/component/top/information/information";
 import SpecialInfo from "@/component/top/special/information";
 import Sponsorship from "@/component/top/sponsorship/sponsorship";
+
+export const metadata: Metadata = {
+  title: "ホーム|石川県パラスポーツ協会",
+  description: "石川県パラスポーツ協会のホームページです。石川県内外のパラスポーツの情報を発信しております。",
+}
 
 // public/images/carousel 以下の画像を取得する関数
 const getCarouselImages = (): CarouselImage[] => {
