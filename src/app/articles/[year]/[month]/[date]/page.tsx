@@ -1,9 +1,14 @@
-// /src/app/article/[year]/[month]/[date]/page.tsx
-
+// src/app/article/[year]/[month]/[date]/page.tsx
+import { Metadata } from "next"
 import glob from "fast-glob";
 
 import Article from "@/component/common/article/article";
 import Title from "@/component/common/title/title";
+
+export const metadata: Metadata = {
+  title: "新着記事|石川県パラスポーツ協会",
+  description: "石川県パラスポーツ協会の新着記事ページです。",
+}
 
 type ArticleProps = {
   params: Promise<{
