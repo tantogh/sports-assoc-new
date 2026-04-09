@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 
 import Carousel, { CarouselImage } from "@/component/top/carousel/carousel";
+import UpdateDate from "@/component/top/date/updateDate";
 import Title from "@/component/common/title/title";
 import Information from "@/component/top/information/information";
 import SpecialInfo from "@/component/top/special/information";
@@ -24,7 +25,10 @@ const Home = () => {
 
   return (
     <>
+      {/* カルーセルコンポーネント */}
       <Carousel images={slideImages} autoPlayInterval={5000} />
+      {/* 更新日時コンポーネント */}
+      <UpdateDate />
       {/* 新着情報コンポーネント */}
       <Title title={"新着情報"} />
       <Information />
