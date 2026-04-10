@@ -1,9 +1,8 @@
 // src/app/page.tsx
-import fs from "fs";
-import path from "path";
 import { Metadata } from "next"
 
 import Carousel, { CarouselImage } from "@/component/top/carousel/carousel";
+import { getCarouselImages } from "@/component/top/carousel/getCarouselImages";
 import UpdateDate from "@/component/top/date/updateDate";
 import Title from "@/component/common/title/title";
 import Information from "@/component/top/information/information";
@@ -15,18 +14,8 @@ export const metadata: Metadata = {
   description: "石川県パラスポーツ協会のホームページです。石川県内外のパラスポーツの情報を発信しております。",
 }
 
-// public/images/carousel 以下の画像を取得する関数
-const getCarouselImages = (): CarouselImage[] => {
-  const dir = path.join(process.cwd(), "public", "images", "carousel");
-  const files = fs.readdirSync(dir).filter((file) => /\.(png|jpe?g|svg)$/.test(file));
-  return files.map((file) => ({
-    src: `/images/carousel/${file}`,
-    alt: file,
-  }));
-};
 
 const Home = () => {
-  // public/images/carousel 以下の画像ファイルを動的に取得
   const slideImages: CarouselImage[] = getCarouselImages();
 
   return (

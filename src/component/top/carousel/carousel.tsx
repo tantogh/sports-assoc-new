@@ -4,7 +4,6 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-
 // 表示する画像の型定義
 export type CarouselImage = {
   src: string;
