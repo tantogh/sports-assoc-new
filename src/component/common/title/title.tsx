@@ -3,13 +3,21 @@
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
 type TitleProps = {
+  subTitle: string;
   title: string;
 };
 
-const Title = ({title}: TitleProps) => {
+const Title = ({ subTitle, title }: TitleProps) => {
   return (
     <>
-      <div className={`text-2xl font-bold p-2 ml-2 mt-4 border-l-8 border-sky-600 ${notoSerifJP.className}`}>{title}</div>
+      <div className={`mt-4 text-center ${notoSerifJP.className}`}>
+        <p className="mb-1 text-xs font-semibold uppercase tracking-[0.2em] text-sky-600">
+          {subTitle}
+        </p>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900 md:text-5xl">
+          {title}
+        </h1>
+      </div>
     </>
   );
 };

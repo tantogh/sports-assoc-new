@@ -24,16 +24,17 @@ const Home = () => {
       <Carousel images={slideImages} autoPlayInterval={5000} />
       {/* 更新日時コンポーネント */}
       <UpdateDate />
+      <hr className="border-t-1 border-gray-600 w-3/4 mx-auto" />
       {/* 新着情報コンポーネント */}
-      <Title title={"新着情報"} />
+      <Title subTitle={"INFORMATION"} title={"新着情報"} />
       <Information />
       <hr className="border-t-1 border-gray-600 w-3/4 mx-auto" />
       {/* 特別情報コンポーネント */}
-      <Title title={"特別記事"} />
+      <Title subTitle={"SPECIAL"}title={"特別記事"} />
       <SpecialInfo />
       <hr className="border-t-1 border-gray-600 w-3/4 mx-auto" />
       {/* 協賛企業コンポーネント */}
-      <Title title={"協賛企業"} />
+      <Title subTitle={"SPONSORSHIP"} title={"協賛企業"} />
       <Sponsorship />
     </>
   );
