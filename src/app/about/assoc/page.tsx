@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const Assoc = () => {
   return (
     <>
-      <Title title="協会について" />
+      <Title subTitle="ABOUT" title="協会について" />
     </>
   );
 };

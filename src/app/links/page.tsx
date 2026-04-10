@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const LinksPage = () => {
   return (
     <>
-      <Title title="リンク集" />
+      <Title subTitle="LINKS" title="リンク集" />
     </>
   );
 };

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const StaffPage = () => {
   return (
     <>
-      <Title title="ボランティア・スタッフ募集について" />
+      <Title subTitle="STAFF" title="ボランティア・スタッフ募集について" />
     </>
   );
 };

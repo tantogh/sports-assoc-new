@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const DownloadsPage = () => {
   return (
     <>
-      <Title title="様式のダウンロード" />
+      <Title subTitle="DOWNLOADS" title="様式のダウンロード" />
     </>
   );
 };

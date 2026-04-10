@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const ParaSports = () => {
   return (
     <>
-      <Title title="パラスポーツの紹介" />
+      <Title subTitle="PARASPORTS" title="パラスポーツの紹介" />
     </>
   );
 };

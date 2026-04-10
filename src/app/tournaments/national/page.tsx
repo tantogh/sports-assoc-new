@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const NationalPage = () => {
   return (
     <>
-      <Title title="全国障害者スポーツ大会" />
+      <Title subTitle="TOURNAMENTS" title="全国障害者スポーツ大会" />
     </>
   );
 };

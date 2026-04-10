@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const QandAPage = () => {
   return (
     <>
-      <Title title="パラスポーツQ&A" />
+      <Title subTitle="Q&A" title="パラスポーツQ&A" />
     </>
   );
 };

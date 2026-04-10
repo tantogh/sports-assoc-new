@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const IshikawaPage = () => {
   return (
     <>
-      <Title title="石川県障害者スポーツ大会" />
+      <Title subTitle="TOURNAMENTS" title="石川県障害者スポーツ大会" />
     </>
   );
 };

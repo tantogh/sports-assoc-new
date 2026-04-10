@@ -14,7 +14,7 @@ const ContactPage = () => {
     <main className="bg-slate-50 text-slate-800">
       <section className="mx-auto max-w-5xl px-6 py-16 md:px-8 md:py-24">
         <div className="mb-10 text-center md:mb-14">
-          <Title subTitle={"CONTACT"} title={"お問い合わせフォーム"} />
+          <Title subTitle="CONTACT" title="お問い合わせフォーム" />
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
             ご質問やご相談、ご意見などがございましたら、以下のフォームよりお問い合わせください。
             内容を確認のうえ、担当者よりご連絡いたします。

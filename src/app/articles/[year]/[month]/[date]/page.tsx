@@ -44,7 +44,7 @@ const ArticlePage = async ({ params }: ArticleProps) => {
 
   return (
     <>
-      <Title title="新着情報" />
+      <Title subTitle="INFORMATION" title="新着情報" />
       <Article filename={filename} />
     </>
   );
