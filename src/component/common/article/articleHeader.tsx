@@ -136,11 +136,33 @@ const ArticleHeader = ({ baseDir, filePath }: ArticleHeaderProps) => {
   };
 
   return (
-    <Link href={href}>
-      <div
-        className={`text-xs xl:text-xl font-bold p-1 text-black hover:bg-sky-600 hover:text-white border border-gray-300 transition-colors ${notoSerifJP.className}`}
-      >
-        {processTitle(title)}
+    <Link
+      href={href}
+      className="group block w-full"
+    >
+      <div className="flex items-center justify-between gap-4 rounded-md bg-sky-50/80 px-3 py-2 transition-colors duration-200 hover:bg-sky-100">
+        <div
+          className={`text-xs xl:text-xl font-bold p-1 text-black transition-colors duration-200 group-hover:text-sky-700`}
+        >
+          {processTitle(title)}
+        </div>
+
+        <div className="inline-flex items-center gap-1 rounded-full border border-sky-200 bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-sky-700 transition-all duration-200 group-hover:border-sky-300 group-hover:bg-sky-200/60 group-hover:text-sky-800">
+          <span>more</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+            aria-hidden="true"
+          >
+            <path
+              fillRule="evenodd"
+              d="M3.25 10a.75.75 0 0 1 .75-.75h10.19l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H4a.75.75 0 0 1-.75-.75Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </div>
       </div>
     </Link>
   );
