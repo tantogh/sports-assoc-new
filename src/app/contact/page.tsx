@@ -4,6 +4,7 @@
 
 import { useState } from 'react';
 
+import { notoSerifJP } from '@/component/utils/fonts/fonts';
 import Title from "@/component/common/title/title";
 
 // ==========================================
@@ -73,7 +74,7 @@ const ContactForm = () => {
   // ① 送信完了画面
   if (isSent) {
     return (
-      <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md text-center border border-gray-100">
+      <div className={`max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md text-center border border-gray-100 ${notoSerifJP.className}`}>
         <h2 className="text-2xl font-bold text-green-600 mb-4">送信完了</h2>
         <p className="text-gray-700">お問い合わせありがとうございます。</p>
       </div>
@@ -83,7 +84,7 @@ const ContactForm = () => {
   // ② 確認画面
   if (isConfirming) {
     return (
-      <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border border-gray-100">
+      <div className={`max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
         <h2 className="text-2xl font-bold mb-6 border-b pb-2">入力内容の確認</h2>
         <div className="space-y-4 mb-6">
           <div>
@@ -124,7 +125,8 @@ const ContactForm = () => {
   // ③ 入力画面（初期表示）
   return (
     <>
-      <Title subTitle="CONTACT" title="お問い合わせ" /><div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border border-gray-100">
+      <Title subTitle="CONTACT" title="お問い合わせ" />
+      <div className={`max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
         <h2 className="text-2xl font-bold mb-6 border-b pb-2">お問い合わせフォーム</h2>
         <form onSubmit={handleConfirm} className="space-y-4">
           <div>
