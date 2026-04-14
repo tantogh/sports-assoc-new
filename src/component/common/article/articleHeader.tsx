@@ -142,7 +142,7 @@ const ArticleHeader = ({ baseDir, filePath }: ArticleHeaderProps) => {
     >
       <div className="flex items-center justify-between gap-4 rounded-md bg-sky-50/80 px-3 py-2 transition-colors duration-200 hover:bg-sky-100">
         <div
-          className={`text-xs xl:text-xl font-bold p-1 text-black transition-colors duration-200 group-hover:text-sky-700`}
+          className={`text-xs xl:text-xl p-1 text-black transition-colors duration-200 group-hover:text-sky-700`}
         >
           {processTitle(title)}
         </div>
