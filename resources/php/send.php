@@ -30,12 +30,12 @@ function sanitize($str) {
 // 2. データの受け取りとチェック
 // ==========================================
 $name = sanitize(isset($_POST['name']) ? $_POST['name'] : '');
-$name = sanitize(isset($_POST['furigana']) ? $_POST['furigana'] : '');
+$frigana = sanitize(isset($_POST['furigana']) ? $_POST['furigana'] : '');
 $email = sanitize(isset($_POST['email']) ? $_POST['email'] : '');
 $message = sanitize(isset($_POST['message']) ? $_POST['message'] : '');
 
 // 必須項目のチェック
-if ($name === '' || $email === '' || $message === '') {
+if ($name === '' || $frigana === '' || $email === '' || $message === '') {
     http_response_code(400); // Bad Request (入力エラー)
     echo json_encode(['error' => '必須項目が入力されていません。']);
     exit;
