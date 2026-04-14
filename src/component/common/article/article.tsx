@@ -14,7 +14,7 @@ import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
 type ArticleProps = {
   filename: string;
-  isNew?: boolean;
+  //isNew?: boolean;
 };
 
 // rehype-sanitize の許可スキーマ（必要最小限 + 一部拡張）
@@ -136,7 +136,7 @@ const MarkdownLink = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
   );
 };
 
-const Article = ({ filename, isNew = false }: ArticleProps) => {
+const Article = ({ filename }: ArticleProps) => {
   try {
     const filePath = path.join(process.cwd(), "content", filename);
     const rawText = fs.readFileSync(filePath, "utf8");
@@ -144,11 +144,6 @@ const Article = ({ filename, isNew = false }: ArticleProps) => {
 
     return (
       <div className="p-4 m-4 bg-white mx-auto w-full max-w-7xl">
-        {isNew && (
-          <span className="bg-red-500 text-white px-2 py-1 rounded-md text-sm font-bold mr-2">
-            New
-          </span>
-        )}
         <article className={`prose prose-ul:list-disc prose-ol:list-decimal prose-li:my-0 prose-li:pl-0 max-w-none ${notoSerifJP.className}
           rounded-xl border border-blue-100 bg-blue-50 p-4 md:p-6 text-slate-800 shadow-md`}>
           <ReactMarkdown
