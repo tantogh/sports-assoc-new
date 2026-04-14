@@ -83,7 +83,7 @@ const MarkdownLink = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
 
   if (isInternal) {
     // PDFやダウンロードファイルはaタグを使用
-    if (isPDF || isJPEG || isPNG ||isDownloadFile) {
+    if (isPDF || isJPEG || isPNG || isDownloadFile) {
       if (isPDF || isJPEG || isPNG) {
         return (
           <a
@@ -149,14 +149,15 @@ const Article = ({ filename, isNew = false }: ArticleProps) => {
             New
           </span>
         )}
-        <article className={`prose prose-ul:list-disc prose-ol:list-decimal prose-li:my-0 prose-li:pl-0 max-w-none ${notoSerifJP.className}`}>
+        <article className={`prose prose-ul:list-disc prose-ol:list-decimal prose-li:my-0 prose-li:pl-0 max-w-none ${notoSerifJP.className}
+          rounded-xl border border-blue-100 bg-blue-50 p-4 md:p-6 text-slate-800 shadow-md`}>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
             components={{
               a: MarkdownLink,
               h1: ({ children }) => (
-                <h1 className="text-lg sm:text-xl font-bold mt-4 mb-4 bg-sky-100/80">{children}</h1>
+                <h1 className="text-lg sm:text-xl font-bold mt-4 mb-4 bg-sky-100">{children}</h1>
               ),
               h2: ({ children }) => (
                 <h2 className="text-lg font-bold mt-4 mb-4">{children}</h2>
