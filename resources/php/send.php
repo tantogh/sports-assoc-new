@@ -30,6 +30,7 @@ function sanitize($str) {
 // 2. データの受け取りとチェック
 // ==========================================
 $name = sanitize(isset($_POST['name']) ? $_POST['name'] : '');
+$name = sanitize(isset($_POST['furigana']) ? $_POST['furigana'] : '');
 $email = sanitize(isset($_POST['email']) ? $_POST['email'] : '');
 $message = sanitize(isset($_POST['message']) ? $_POST['message'] : '');
 
@@ -41,7 +42,7 @@ if ($name === '' || $email === '' || $message === '') {
 }
 
 // ヘッダインジェクション対策（改行コードのブロック）
-if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $email)) {
+if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $furigana) || preg_match("/[\r\n]/", $email)) {
     http_response_code(400); // Bad Request
     echo json_encode(['error' => '不正な入力が検出されました。']);
     exit;
@@ -52,10 +53,11 @@ if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $email)) {
 // 3. メールの送信処理
 // ==========================================
 // ★ご自身が受け取りたいメールアドレスに変更してください
-$to = "your-email@example.com";
-$subject = "【お問い合わせ】ウェブサイトより";
+$to = "msredcomet06@gmail.com";
+$subject = "石川県パラスポーツ協会【お問い合わせ】より";
 
 $body = "お名前: " . $name . "\n";
+$body .= "ふりがな: " . $furigana . "\n";
 $body .= "メールアドレス: " . $email . "\n\n";
 $body .= "お問い合わせ内容:\n" . $message;
 
