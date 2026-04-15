@@ -1,6 +1,7 @@
 // src/app/downloads/page.tsx
 import { Metadata } from "next"
 
+import { notoSerifJP } from "@/component/utils/fonts/fonts";
 import Title from "@/component/common/title/title";
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 export default function DownloadsPage() {
   return (
     <main className="min-h-screen bg-blue-50">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className={`max-w-7xl mx-auto px-4 py-12 ${notoSerifJP.className}`}>
         <section className="bg-white p-6 rounded-lg shadow-sm border border-blue-100">
           <Title subTitle="DOWNLOADS" title="ダウンロード" />
           <table className="w-full border border-gray-400 bg-white text-xs md:text-base">
