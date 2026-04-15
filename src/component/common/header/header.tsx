@@ -74,9 +74,10 @@ export default function Header() {
     { type: "link", label: "お問い合わせ", href: "/contact/" },
   ] as const;
 
-  // メニューの開閉を切り替える関数
+  // メニューの開閉を切り替える関数（同時に開いているサブメニューを閉じる）
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setOpenSubMenu(null);
+    setIsOpen(prev => !prev);
   };
 
   // サブメニューの開閉を切り替える関数
@@ -136,7 +137,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className="block py-2 border-b border-gray-600 xl:border-none xl:py-2 hover:text-gray-300 transition-colors"
-                  onClick={toggleMenu}
+                  onClick={() => { toggleMenu(); setOpenSubMenu(null); }}
                 >
                   {item.label}
                 </Link>
