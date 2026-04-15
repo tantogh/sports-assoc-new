@@ -10,7 +10,7 @@ type TitleProps = {
 export default function Title({ subTitle, title }: TitleProps) {
   return (
     <>
-      <div className={`mt-2 p-4 text-center ${notoSerifJP.className}`}>
+      <div className={`p-4 text-center ${notoSerifJP.className}`}>
         <p className="text-xxs lg:text-xxs font-semibold uppercase tracking-[0.2em] text-sky-600">
           {subTitle}
         </p>

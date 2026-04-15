@@ -13,7 +13,7 @@ export default function DownloadsPage() {
   return (
     <>
       <Title subTitle="DOWNLOADS" title="ダウンロード" />
-      <section className={`max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
+      <section className={`max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
         <table className="w-full border border-gray-400 bg-white text-xs md:text-base">
           <tbody>
             <tr>

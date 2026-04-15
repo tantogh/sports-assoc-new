@@ -127,7 +127,7 @@ export default function ContactForm() {
     <>
       <main className="min-h-screen bg-blue-50">
         <Title subTitle="CONTACT" title="お問い合わせ" />
-        <div className={`max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
+        <div className={`max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
           <h2 className="text-2xl font-bold mb-6 border-b pb-2">お問い合わせフォーム</h2>
           <form onSubmit={handleConfirm} className="space-y-4">
             <div>
