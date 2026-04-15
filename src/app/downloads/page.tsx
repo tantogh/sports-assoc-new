@@ -22,6 +22,7 @@ export default function DownloadsPage() {
                 <a
                   href="/downloads/downloads/kouensinseihoukoku2020.doc"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="font-bold text-blue-600 underline"
                 >
                   ダウンロード
@@ -34,6 +35,7 @@ export default function DownloadsPage() {
                 <a
                   href="/downloads/downloads/suisensyo.xls"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="font-bold text-blue-600 underline"
                 >
                   ダウンロード
