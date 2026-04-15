@@ -5,8 +5,8 @@ import { notoSerifJP } from "@/component/utils/fonts/fonts";
 import Title from "@/component/common/title/title";
 
 export const metadata: Metadata = {
-  title: "様式のダウンロード|石川県パラスポーツ協会",
-  description: "石川県パラスポーツ協会の様式のダウンロードのページです。",
+  title: "ダウンロード|石川県パラスポーツ協会",
+  description: "石川県パラスポーツ協会の後援申請や推薦状などのダウンロードのページです。",
 }
 
 export default function DownloadsPage() {
