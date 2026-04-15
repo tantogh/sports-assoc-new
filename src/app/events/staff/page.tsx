@@ -8,12 +8,10 @@ export const metadata: Metadata = {
   description: "石川県パラスポーツ協会のボランティア・スタッフ募集についてのページです。",
 }
 
-const StaffPage = () => {
+export default function StaffPage() {
   return (
     <>
       <Title subTitle="STAFF" title="ボランティア・スタッフ募集について" />
     </>
   );
 };
-
-export default StaffPage;

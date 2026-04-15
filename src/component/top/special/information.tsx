@@ -2,7 +2,7 @@
 
 import ArticleHeader from "@/component/common/article/articleHeader";
 
-const Information = () => {
+export default function Information() {
   return (
     <section className="w-full py-2">
       <div className="rounded-xl bg-white p-4 md:p-6">
@@ -12,5 +12,3 @@ const Information = () => {
     </section>
   );
 };
-
-export default Information;

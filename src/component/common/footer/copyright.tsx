@@ -4,7 +4,7 @@ import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
 const years = "2026";
 
-const Copyright = () => {
+export default function Copyright() {
   return (
     <>
       <small className={`text-center text-xs text-gray-600 bg-sky-100/80 ${notoSerifJP.className}`}>
@@ -13,5 +13,3 @@ const Copyright = () => {
     </>
   );
 };
-
-export default Copyright;

@@ -7,7 +7,7 @@ type TitleProps = {
   title: string;
 };
 
-const Title = ({ subTitle, title }: TitleProps) => {
+export default function Title({ subTitle, title }: TitleProps) {
   return (
     <>
       <div className={`mt-2 p-4 text-center ${notoSerifJP.className}`}>
@@ -21,5 +21,3 @@ const Title = ({ subTitle, title }: TitleProps) => {
     </>
   );
 };
-
-export default Title;

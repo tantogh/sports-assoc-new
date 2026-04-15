@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-const Logo = () => {
+export default function Logo() {
   return (
     <div className="pr-2 w-14 h-auto sm:w-16 sm:h-auto md:w-18 md:h-auto lg:w-18 lg:h-auto">
       <Image
@@ -15,5 +15,3 @@ const Logo = () => {
     </div>
   );
 };
-
-export default Logo;

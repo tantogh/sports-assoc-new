@@ -49,5 +49,3 @@ const ArticlePage = async ({ params }: ArticleProps) => {
     </>
   );
 };
-
-export default ArticlePage;

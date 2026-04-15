@@ -71,7 +71,7 @@ const sanitizeSchema = {
 } as const;
 
 // カスタムリンク: 内部リンクはLinkでルーティング、PDFやダウンロードファイルはaタグ
-const MarkdownLink = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
+export default function MarkdownLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
   const href = props.href || "";
   const { children, ...rest } = props;
   const isInternal =
@@ -136,7 +136,7 @@ const MarkdownLink = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
   );
 };
 
-const Article = ({ filename }: ArticleProps) => {
+export default function Article({ filename }: ArticleProps) {
   try {
     const filePath = path.join(process.cwd(), "content", filename);
     const rawText = fs.readFileSync(filePath, "utf8");
@@ -205,5 +205,3 @@ const Article = ({ filename }: ArticleProps) => {
     );
   }
 };
-
-export default Article;

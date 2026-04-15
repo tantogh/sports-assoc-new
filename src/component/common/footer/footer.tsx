@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
 import Copyright from "@/component/common/footer/copyright";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <>
       {/* 全体の上下に余白(py-8)を追加して見やすくしています */}
@@ -66,5 +66,3 @@ const Footer = () => {
     </>
   );
 };
-
-export default Footer;

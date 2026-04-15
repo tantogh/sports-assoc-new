@@ -8,12 +8,10 @@ export const metadata: Metadata = {
   description: "石川県パラスポーツ協会のクラブ紹介のページです。",
 }
 
-const Introduction = () => {
+export default function Introduction() {
   return (
     <>
       <Title subTitle="CLUBS" title="クラブ紹介" />
     </>
   );
 };
-
-export default Introduction;

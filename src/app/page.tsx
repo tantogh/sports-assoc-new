@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "石川県パラスポーツ協会のホームページです。石川県内外のパラスポーツの情報を発信しております。",
 }
 
-const Home = () => {
+export default function Home() {
   const slideImages: CarouselImage[] = getCarouselImages();
   return (
     // bg-blue-50 で全体を薄い青色に、min-h-screen で画面全体をカバー
@@ -43,5 +43,3 @@ const Home = () => {
     </main>
   );
 };
-
-export default Home;

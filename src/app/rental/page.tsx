@@ -8,12 +8,10 @@ export const metadata: Metadata = {
   description: "石川県パラスポーツ協会の用具貸し出しのページです。",
 }
 
-const RentalPage = () => {
+export default function RentalPage() {
   return (
     <>
       <Title subTitle="RENTAL" title="スポーツ用具貸し出し" />
     </>
   );
 };
-
-export default RentalPage;

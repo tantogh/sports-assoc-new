@@ -17,7 +17,7 @@ interface FormDataState {
   message: string;
 };
 
-const ContactForm = () => {
+export default function ContactForm() {
   // ==========================================
   // 2. Stateの初期化
   // ==========================================
@@ -184,5 +184,3 @@ const ContactForm = () => {
     </>
   );
 }
-
-export default ContactForm;

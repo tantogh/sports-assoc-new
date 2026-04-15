@@ -8,12 +8,10 @@ export const metadata: Metadata = {
   description: "石川県パラスポーツ協会の全国障害者スポーツ大会のページです。",
 }
 
-const NationalPage = () => {
+export default function NationalPage() {
   return (
     <>
       <Title subTitle="TOURNAMENTS" title="全国障害者スポーツ大会" />
     </>
   );
 };
-
-export default NationalPage;

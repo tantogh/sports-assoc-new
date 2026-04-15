@@ -15,7 +15,7 @@ interface CarouselProps {
   autoPlayInterval?: number; // 自動スライドの間隔（ミリ秒）。0にすると自動再生オフ
 }
 
-export const Carousel = ({ images, autoPlayInterval = 5000 }: CarouselProps) => {
+export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // 次のスライドへ
@@ -98,5 +98,3 @@ export const Carousel = ({ images, autoPlayInterval = 5000 }: CarouselProps) => 
     </div>
   );
 };
-
-export default Carousel;

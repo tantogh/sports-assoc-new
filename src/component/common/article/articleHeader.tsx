@@ -114,7 +114,7 @@ const processLine = (line: string) => {
   return <>{elements}</>;
 };
 
-const ArticleHeader = ({ baseDir, filePath }: ArticleHeaderProps) => {
+export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps) {
   const fullPath = path.join(process.cwd(), "content", baseDir, filePath);
   const href = path.join(baseDir, filePath.replace(/\.md$/, ""));
   const raw = fs.readFileSync(fullPath, "utf8");
@@ -167,5 +167,3 @@ const ArticleHeader = ({ baseDir, filePath }: ArticleHeaderProps) => {
     </Link>
   );
 };
-
-export default ArticleHeader;

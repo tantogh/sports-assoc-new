@@ -8,12 +8,10 @@ export const metadata: Metadata = {
   description: "石川県パラスポーツ協会の石川県障害者スポーツ大会のページです。",
 }
 
-const IshikawaPage = () => {
+export default function IshikawaPage() {
   return (
     <>
       <Title subTitle="TOURNAMENTS" title="石川県障害者スポーツ大会" />
     </>
   );
 };
-
-export default IshikawaPage;

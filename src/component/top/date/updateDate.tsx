@@ -2,7 +2,7 @@
 
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
-const DateComponent = () => {
+export default function DateComponent() {
   const today = new Date();
   const year = today.getFullYear();
   const month = String(today.getMonth() + 1).padStart(2, '0');
@@ -14,5 +14,3 @@ const DateComponent = () => {
     </div>
   );
 };
-
-export default DateComponent;

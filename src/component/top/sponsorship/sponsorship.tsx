@@ -2,7 +2,7 @@
 
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
-const Sponsorship = () => {
+export default function Sponsorship() {
   return (
     <>
       <section className="w-full py-2">
@@ -16,5 +16,3 @@ const Sponsorship = () => {
     </>
   );
 };
-
-export default Sponsorship;

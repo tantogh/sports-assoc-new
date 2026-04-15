@@ -10,7 +10,7 @@ import Logo from "@/component/common/header/logo";
 
 type SubMenuKey = "association" | "club" | "sports" | "events" | "instructors";
 
-const Header = () => {
+export default function Header() {
   // メニューの開閉状態を管理するState（初期値はfalse＝閉じている）
   const [isOpen, setIsOpen] = useState(false);
   // サブメニューの開閉状態を管理するState
@@ -180,5 +180,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

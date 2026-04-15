@@ -8,12 +8,10 @@ export const metadata: Metadata = {
   description: "石川県パラスポーツ協会のQ&Aのページです。",
 }
 
-const QandAPage = () => {
+export default function QandAPage() {
   return (
     <>
       <Title subTitle="Q&A" title="パラスポーツQ&A" />
     </>
   );
 };
-
-export default QandAPage;
