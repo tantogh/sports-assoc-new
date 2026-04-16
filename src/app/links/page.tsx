@@ -86,7 +86,7 @@ export default async function LinksPage() {
   return (
     <>
       <Title subTitle="LINKS" title="リンク集" />
-      <section className={`max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
+      <section className={`max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
         {categories.length === 0 ? (
           <p className="text-sm text-gray-600">
             リンク集を読み込めませんでした。しばらくしてから再度お試しください。

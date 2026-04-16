@@ -13,7 +13,7 @@ export default function DownloadsPage() {
   return (
     <>
       <Title subTitle="DOWNLOADS" title="ダウンロード" />
-      <section className={`max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
+      <section className={`max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
         <ul className="space-y-3">
           <li className="flex justify-between rounded-lg border border-gray-200 p-4 transition hover:bg-gray-50">
             <span>後援申請・報告書</span>
