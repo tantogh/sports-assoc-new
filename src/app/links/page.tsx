@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import fs from "node:fs/promises";
 import path from "path";
 
+import { notoSerifJP } from "@/component/utils/fonts/fonts";
 import Title from "@/component/common/title/title";
 
 export const metadata: Metadata = {
@@ -83,7 +84,7 @@ export default async function LinksPage() {
   const categories = Object.entries(linksData);
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-10">
+    <main className={`mx-auto max-w-4xl px-4 py-10 ${notoSerifJP.className}`}>
       <Title subTitle="LINKS" title="リンク集" />
 
       {categories.length === 0 ? (
@@ -98,7 +99,7 @@ export default async function LinksPage() {
                 {formatCategoryName(categoryKey)}
               </h2>
 
-              <ul className="space-y-3">
+              <ul className="space-y-3 list-disc list-inside">
                 {links.map((link) => (
                   <li key={`${categoryKey}-${link.url}`}>
                     <a
