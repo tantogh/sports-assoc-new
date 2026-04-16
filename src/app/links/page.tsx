@@ -7,7 +7,7 @@ import { notoSerifJP } from "@/component/utils/fonts/fonts";
 import Title from "@/component/common/title/title";
 
 export const metadata: Metadata = {
-  title: "リンク集",
+  title: "リンク集|石川県パラスポーツ協会",
   description: "関係団体・関連サイトへのリンク集です。",
 };
 
@@ -22,7 +22,7 @@ const categoryLabels: Record<string, string> = {
   ishikawa_prefecture: "石川県",
   member_organizations: "加盟団体",
   related_organizations: "関連団体",
-  national_organizations: "全国",
+  national_organizations: "全国の団体",
 };
 
 const formatCategoryName = (key: string) => {
@@ -84,39 +84,39 @@ export default async function LinksPage() {
   const categories = Object.entries(linksData);
 
   return (
-    <main className={`mx-auto max-w-4xl px-4 py-10 ${notoSerifJP.className}`}>
+    <>
       <Title subTitle="LINKS" title="リンク集" />
-
-      {categories.length === 0 ? (
-        <p className="text-sm text-gray-600">
-          リンク集を読み込めませんでした。しばらくしてから再度お試しください。
-        </p>
-      ) : (
-        <div className="space-y-10">
-          {categories.map(([categoryKey, links]) => (
-            <section key={categoryKey}>
-              <h2 className="mb-4 border-b pb-2 text-2xl font-semibold">
-                {formatCategoryName(categoryKey)}
-              </h2>
-
-              <ul className="space-y-3 list-disc list-inside">
-                {links.map((link) => (
-                  <li key={`${categoryKey}-${link.url}`}>
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 underline hover:text-blue-800"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </div>
-      )}
-    </main>
+      <section className={`max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
+        {categories.length === 0 ? (
+          <p className="text-sm text-gray-600">
+            リンク集を読み込めませんでした。しばらくしてから再度お試しください。
+          </p>
+        ) : (
+          <div className="space-y-10">
+            {categories.map(([categoryKey, links]) => (
+              <section key={categoryKey}>
+                <h2 className="mb-4 border-b pb-2 text-2xl font-semibold">
+                  {formatCategoryName(categoryKey)}
+                </h2>
+                <ul className="space-y-3 list-disc list-inside">
+                  {links.map((link) => (
+                    <li key={`${categoryKey}-${link.url}`}>
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 underline hover:text-blue-800"
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        )}
+      </section>
+    </>
   );
 }
