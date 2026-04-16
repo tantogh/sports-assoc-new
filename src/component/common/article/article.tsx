@@ -71,7 +71,7 @@ const sanitizeSchema = {
 } as const;
 
 // カスタムリンク: 内部リンクはLinkでルーティング、PDFやダウンロードファイルはaタグ
-export default function MarkdownLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
+export function MarkdownLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
   const href = props.href || "";
   const { children, ...rest } = props;
   const isInternal =
