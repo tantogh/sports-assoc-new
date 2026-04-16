@@ -73,10 +73,10 @@ const loadLinksData = async (): Promise<LinksData> => {
     }
 
     return validated;
-  } catch (error) {
-    console.error("リンク集データの読み込みに失敗しました:", error);
-    return {};
-  }
+    } catch (error) {
+      alert("リンク集データの読み込みに失敗しました。\n" + (error instanceof Error ? error.message : String(error)));
+      return {};
+    }
 };
 
 export default async function LinksPage() {
@@ -95,7 +95,7 @@ export default async function LinksPage() {
           <div className="space-y-10">
             {categories.map(([categoryKey, links]) => (
               <section key={categoryKey}>
-                <h2 className="mb-4 border-b pb-2 text-2xl font-semibold">
+                <h2 className="mb-4 border-b pb-2 pl-2 text-2xl font-semibold border-l-8 border-sky-600">
                   {formatCategoryName(categoryKey)}
                 </h2>
                 <ul className="space-y-3 list-disc list-inside">
@@ -105,7 +105,7 @@ export default async function LinksPage() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 underline hover:text-blue-800"
+                        className="text-blue-600 hover:text-blue-800 hover:underline"
                       >
                         {link.name}
                       </a>
