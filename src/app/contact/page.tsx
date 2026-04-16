@@ -74,7 +74,7 @@ export default function ContactForm() {
   // ① 送信完了画面
   if (isSent) {
     return (
-      <div className={`max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md text-center border border-gray-100 ${notoSerifJP.className}`}>
+      <div className={`max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md text-center border border-gray-100 ${notoSerifJP.className}`}>
         <h2 className="text-2xl font-bold text-green-600 mb-4">送信完了</h2>
         <p className="text-gray-700">お問い合わせありがとうございます。</p>
       </div>
@@ -84,7 +84,7 @@ export default function ContactForm() {
   // ② 確認画面
   if (isConfirming) {
     return (
-      <div className={`max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
+      <div className={`max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
         <h2 className="text-2xl font-bold mb-6 border-b pb-2">入力内容の確認</h2>
         <div className="space-y-4 mb-6">
           <div>
@@ -125,7 +125,7 @@ export default function ContactForm() {
   // ③ 入力画面（初期表示）
   return (
     <>
-      <main className="min-h-screen bg-blue-50">
+      <main className="min-h-screen">
         <Title subTitle="CONTACT" title="お問い合わせ" />
         <div className={`max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
           <h2 className="text-2xl font-bold mb-6 border-b pb-2">お問い合わせフォーム</h2>
