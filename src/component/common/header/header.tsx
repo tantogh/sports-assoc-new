@@ -5,7 +5,7 @@
 import { useState } from "react";
 import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 
-import { notoSerifJP } from "@/component/utils/fonts/fonts";
+import { notoSerifJP, geistMono } from "@/component/utils/fonts/fonts";
 import Logo from "@/component/common/header/logo";
 
 type SubMenuKey = "association" | "club" | "sports" | "events" | "instructors";
@@ -150,7 +150,7 @@ export default function Header() {
                 >
                   {item.label}
                   <span
-                    className={`lg:text-xs transition-transform duration-600 ${openSubMenu === item.key ? "rotate-180" : ""}`}
+                    className={`transition-transform duration-600 ${openSubMenu === item.key ? "rotate-180" : ""} ${geistMono.className} `}
                   >
                     ▼
                   </span>

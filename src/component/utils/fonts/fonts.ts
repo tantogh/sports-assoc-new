@@ -1,6 +1,6 @@
 // src/utils/fonts/fonts.ts
 
-import { Noto_Serif_JP } from 'next/font/google'
+import { Noto_Serif_JP, Geist_Mono } from 'next/font/google'
 //import localFont from 'next/font/local'
 
 const notoSerifJP = Noto_Serif_JP({
@@ -10,7 +10,7 @@ const notoSerifJP = Noto_Serif_JP({
   variable: '--font-noto-serif-jp',
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: false
-})
+});
 
 /*
 const notoSerifJP = localFont({
@@ -19,7 +19,12 @@ const notoSerifJP = localFont({
   variable: '--font-noto-serif-jp',
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: false
-})
+});
 */
 
-export { notoSerifJP }
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export { notoSerifJP, geistMono };
