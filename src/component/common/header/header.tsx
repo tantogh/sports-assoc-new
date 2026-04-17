@@ -7,6 +7,13 @@ import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 
 import { notoSerifJP, geistMono } from "@/component/utils/fonts/fonts";
 import Logo from "@/component/common/header/logo";
+import menuConfig from "@/component/common/header/menu.json";
+
+type LinkItem = { type: "link"; label: string; href: string; };
+type SubmenuItem = { type: "submenu"; key: SubMenuKey; label: string; items: { label: string; href: string; }[]; };
+type MenuItem = LinkItem | SubmenuItem;
+
+const menuConfigTyped = menuConfig as MenuItem[];
 
 type SubMenuKey = "association" | "club" | "sports" | "events" | "instructors";
 
@@ -15,64 +22,6 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   // サブメニューの開閉状態を管理するState
   const [openSubMenu, setOpenSubMenu] = useState<SubMenuKey | null>(null);
-
-  const menuConfig = [
-    { type: "link", label: "ホーム", href: "/" },
-    {
-      type: "submenu",
-      key: "association" as SubMenuKey,
-      label: "協会概要",
-      items: [
-        { label: "協会について", href: "/about/assoc/" },
-        { label: "パラスポーツとは", href: "/about/parasports/" },
-        { label: "協会だより", href: "/about/newsletter/" },
-      ],
-    },
-    {
-      type: "submenu",
-      key: "club" as SubMenuKey,
-      label: "クラブ情報",
-      items: [
-        { label: "クラブ紹介", href: "/clubs/introduction/" },
-        { label: "クラブ報告", href: "/clubs/reports/" },
-        { label: "パラスポーツ紹介", href: "/clubs/parasports/" },
-      ],
-    },
-    {
-      type: "submenu",
-      key: "sports" as SubMenuKey,
-      label: "スポーツ大会",
-      items: [
-        { label: "県内大会", href: "/tournaments/ishikawa/" },
-        { label: "全国大会", href: "/tournaments/national/" },
-      ],
-    },
-    {
-      type: "submenu",
-      key: "events" as SubMenuKey,
-      label: "イベント",
-      items: [
-        { label: "大会結果", href: "/events/results/" },
-        { label: "募集情報", href: "/events/staff/" },
-        { label: "事業報告", href: "/events/reports/" },
-      ],
-    },
-    {
-      type: "submenu",
-      key: "instructors" as SubMenuKey,
-      label: "指導員",
-      items: [
-        { label: "講習会", href: "/instructor/seminars/" },
-        { label: "募集情報", href: "/instructor/recruitment/" },
-        { label: "活動報告", href: "/instructor/reports/" },
-      ],
-    },
-    { type: "link", label: "用具", href: "/rental/" },
-    { type: "link", label: "Q&A", href: "/qa/" },
-    { type: "link", label: "ダウンロード", href: "/downloads/" },
-    { type: "link", label: "リンク集", href: "/links/" },
-    { type: "link", label: "お問い合わせ", href: "/contact/" },
-  ] as const;
 
   // メニューの開閉を切り替える関数（同時に開いているサブメニューを閉じる）
   const toggleMenu = () => {
@@ -131,7 +80,7 @@ export default function Header() {
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <ul className="flex flex-col xl:flex-row xl:gap-6 px-6 xl:px-0">
-          {menuConfig.map((item) =>
+          {menuConfigTyped.map((item) =>
             item.type === "link" ? (
               <li key={item.label}>
                 <Link

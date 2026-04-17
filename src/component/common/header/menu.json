@@ -1,0 +1,57 @@
+[
+  { "type": "link", "label": "ホーム", "href": "/" },
+  {
+    "type": "submenu",
+    "key": "association",
+    "label": "協会概要",
+    "items": [
+      { "label": "協会について", "href": "/about/assoc/" },
+      { "label": "パラスポーツとは", "href": "/about/parasports/" },
+      { "label": "協会だより", "href": "/about/newsletter/" }
+    ]
+  },
+  {
+    "type": "submenu",
+    "key": "club",
+    "label": "クラブ情報",
+    "items": [
+      { "label": "クラブ紹介", "href": "/clubs/introduction/" },
+      { "label": "クラブ報告", "href": "/clubs/reports/" },
+      { "label": "パラスポーツ紹介", "href": "/clubs/parasports/" }
+    ]
+  },
+  {
+    "type": "submenu",
+    "key": "sports",
+    "label": "スポーツ大会",
+    "items": [
+      { "label": "県内大会", "href": "/tournaments/ishikawa/" },
+      { "label": "全国大会", "href": "/tournaments/national/" }
+    ]
+  },
+  {
+    "type": "submenu",
+    "key": "events",
+    "label": "イベント",
+    "items": [
+      { "label": "大会結果", "href": "/events/results/" },
+      { "label": "募集情報", "href": "/events/staff/" },
+      { "label": "事業報告", "href": "/events/reports/" }
+    ]
+  },
+  {
+    "type": "submenu",
+    "key": "instructors",
+    "label": "指導員",
+    "items": [
+      { "label": "講習会", "href": "/instructor/seminars/" },
+      { "label": "募集情報", "href": "/instructor/recruitment/" },
+      { "label": "活動報告", "href": "/instructor/reports/" }
+    ]
+  },
+  { "type": "link", "label": "用具", "href": "/rental/" },
+  { "type": "link", "label": "Q&A", "href": "/qa/" },
+  { "type": "link", "label": "ダウンロード", "href": "/downloads/" },
+  { "type": "link", "label": "リンク集", "href": "/links/" },
+  { "type": "link", "label": "お問い合わせ", "href": "/contact/" }
+]
