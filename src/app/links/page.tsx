@@ -105,7 +105,7 @@ export default async function LinksPage() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 hover:underline"
+                        className="text-xs lg:text-base text-blue-600 hover:text-blue-800 hover:underline"
                       >
                         {link.name}
                       </a>
