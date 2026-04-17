@@ -86,7 +86,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`sticky top-0 flex justify-between items-center p-4 bg-sky-700 text-white relative z-50 antialiased ${notoSerifJP.className}}`}>
+    <header className={`sticky top-0 flex justify-between items-center p-3 bg-sky-700 text-white relative z-50 antialiased ${notoSerifJP.className}`}>
       <Link
         href="/"
         className="flex items-center gap-2">
@@ -150,7 +150,7 @@ export default function Header() {
                 >
                   {item.label}
                   <span
-                    className={`transition-transform duration-600 ${openSubMenu === item.key ? "rotate-180" : ""}`}
+                    className={`lg:text-xs transition-transform duration-600 ${openSubMenu === item.key ? "rotate-180" : ""}`}
                   >
                     ▼
                   </span>

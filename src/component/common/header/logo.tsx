@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 export default function Logo() {
   return (
-    <div className="pr-2 w-14 h-auto sm:w-16 sm:h-auto md:w-18 md:h-auto lg:w-18 lg:h-auto">
+    <div className="pr-2 w-10 h-auto sm:w-12 sm:h-auto md:w-14 md:h-auto lg:w-16 lg:h-auto">
       <Image
         src="/images/icon/logo.png"
         alt="石川県障害者スポーツ協会のロゴ"
-        width={20}
-        height={20}
+        width={32}
+        height={32}
         className="w-full h-full"
     />
     </div>
