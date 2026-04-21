@@ -52,7 +52,8 @@ export default function ContactForm() {
     sendData.append('message', formData.message);
 
     try {
-      const response = await fetch('/send.php', {
+      const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/php/mail.php`;
+      const response = await fetch(apiUrl, {
         method: 'POST',
         body: sendData,
       });
