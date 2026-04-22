@@ -56,7 +56,7 @@ export default function Footer() {
         </h2>
         <p className="text-xs leading-relaxed">
           〒920-0355<br />
-          石川県金沢市稚日野町北222番 &nbsp; 石川県総合スポーツセンター内<br />
+          石川県金沢市稚日野町北222番地 &nbsp; いしかわ総合スポーツセンター内<br />
           TEL: 076-213-6288 &nbsp; FAX: 076-213-6287<br />
           E-MAIL: <a href="mailto:i-sho-spo@po4.nsk.ne.jp" className="text-blue-600 hover:text-blue-800 hover:underline">i-sho-spo@po4.nsk.ne.jp</a>
         </p>
