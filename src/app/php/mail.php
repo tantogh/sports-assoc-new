@@ -48,7 +48,7 @@ $email = sanitize(isset($_POST['email']) ? $_POST['email'] : '');
 $message = sanitize(isset($_POST['message']) ? $_POST['message'] : '');
 
 // 必須項目のチェック
-if ($name === '' || $frigana === '' || $email === '' || $message === '') {
+if ($name === '' || $ufrigana === '' || $email === '' || $message === '') {
     http_response_code(400); // Bad Request (入力エラー)
     echo json_encode(['error' => '必須項目が入力されていません。']);
     exit;
