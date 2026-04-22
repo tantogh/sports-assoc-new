@@ -1,16 +1,11 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-// 許可するHTTPメソッド
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-// ★最重要：Next.jsから送られてくる特殊ヘッダーとContent-Typeを許可する
-header("Access-Control-Allow-Headers: Content-Type, ngrok-skip-browser-warning");
-
-// プリフライトリクエスト（OPTIONSリクエスト）への対応
-// ブラウザからの「送ってもいい？」という事前確認には、ここで200 OKを返して処理を終了する
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit;
-}
+// =========================================
+// CORS設定
+// =========================================
+$allowed_origin = "https://pseudisodomic-dacolleta-francis.ngrok-free.dev"; // <--要書き換え
+header("Access-Control-Allow-Origin: {$allowed_origin}");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 
 // ==========================================
 // 初期設定
@@ -48,7 +43,7 @@ $email = sanitize(isset($_POST['email']) ? $_POST['email'] : '');
 $message = sanitize(isset($_POST['message']) ? $_POST['message'] : '');
 
 // 必須項目のチェック
-if ($name === '' || $ufrigana === '' || $email === '' || $message === '') {
+if ($name === '' || $furigana === '' || $email === '' || $message === '') {
     http_response_code(400); // Bad Request (入力エラー)
     echo json_encode(['error' => '必須項目が入力されていません。']);
     exit;
