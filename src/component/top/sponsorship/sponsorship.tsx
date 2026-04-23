@@ -5,7 +5,7 @@ import { notoSerifJP } from "@/component/utils/fonts/fonts";
 export default function Sponsorship() {
   return (
     <>
-      <section className="w-full py-2">
+      <section className="w-full">
         <div className="rounded-xl bg-white p-4 md:p-6">
           <p className={`text-xs xl:text-xl font-bold p-4 text-center ${notoSerifJP.className}`}>
             サントリービバレッジサービス株式会社　様<br />

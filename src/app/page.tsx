@@ -23,7 +23,7 @@ export default function Home() {
         <Carousel images={slideImages} autoPlayInterval={5000} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 space-y-16">
         {/* 各コンポーネントをセクションとして配置 */}
         <section className="bg-white p-6 rounded-lg shadow-sm border border-blue-100">
           <Title subTitle="INFORMATION" title="新着情報" />
