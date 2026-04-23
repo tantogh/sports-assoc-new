@@ -119,11 +119,12 @@ export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps)
   const href = path.join(baseDir, filePath.replace(/\.md$/, ""));
   const raw = fs.readFileSync(fullPath, "utf8");
 
-  const { content } = matter(raw);
-
-  // 最初の # 見出しをタイトルにする
+  // frontmatter から title を取得し、存在しない場合は最初の # 見出しをタイトルにする
+  const { data, content } = matter(raw);
   const match = content.match(/^# (.+)$/m);
-  const title = match ? match[1] : "タイトルなし";
+  const title = (typeof data.title === 'string' && data.title.length > 0)
+    ? data.title
+    : (match ? match[1] : "タイトルなし");
 
   // <br /> を改行として処理
   const processTitle = (text: string) => {
