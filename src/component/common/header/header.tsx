@@ -99,7 +99,7 @@ export default function Header() {
                 >
                   {item.label}
                   <span
-                    className={`transition-transform duration-600 ${openSubMenu === item.key ? "rotate-180" : ""} ${geistMono.className} `}
+                    className={`text-xxs transition-transform duration-600 pl-[2px] ${openSubMenu === item.key ? "rotate-180" : ""}`}
                   >
                     ▼
                   </span>
