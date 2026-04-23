@@ -50,12 +50,12 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image, index) => (
-          <div key={index} className="w-full flex-shrink-0 relative aspect-[16/9] md:aspect-[21/9]">
+          <div key={index} className="w-full flex-shrink-0 relative aspect-[16/9] md:aspect-[21/9] object-cover">
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover object-top"
+              className="object-cover"
               priority={index === 0} // 最初の画像だけLCP最適化のために優先ロード
             />
           </div>
