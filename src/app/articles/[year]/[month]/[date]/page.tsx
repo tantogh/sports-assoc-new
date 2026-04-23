@@ -6,7 +6,7 @@ import Article from "@/component/common/article/article";
 import Title from "@/component/common/title/title";
 
 export const metadata: Metadata = {
-  title: "新着記事|石川県パラスポーツ協会",
+  title: "新着記事 | 石川県パラスポーツ協会",
   description: "石川県パラスポーツ協会の新着記事ページです。",
 }
 

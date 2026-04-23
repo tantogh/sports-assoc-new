@@ -9,7 +9,7 @@ import Special from "@/component/top/special/information";
 import Sponsorship from "@/component/top/sponsorship/sponsorship";
 
 export const metadata: Metadata = {
-  title: "ホーム|石川県パラスポーツ協会",
+  title: "ホーム | 石川県パラスポーツ協会",
   description: "石川県パラスポーツ協会のホームページです。石川県内外のパラスポーツの情報を発信しております。",
 }
 

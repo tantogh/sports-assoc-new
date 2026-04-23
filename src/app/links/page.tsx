@@ -7,7 +7,7 @@ import { notoSerifJP } from "@/component/utils/fonts/fonts";
 import Title from "@/component/common/title/title";
 
 export const metadata: Metadata = {
-  title: "リンク集|石川県パラスポーツ協会",
+  title: "リンク集 | 石川県パラスポーツ協会",
   description: "関係団体・関連サイトへのリンク集です。",
 };
 
