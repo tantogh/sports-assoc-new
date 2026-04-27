@@ -1,6 +1,6 @@
 // src/utils/fonts/fonts.ts
 
-import { Noto_Serif_JP, Geist_Mono } from 'next/font/google'
+import { Noto_Serif_JP, Geist, Geist_Mono } from 'next/font/google'
 //import localFont from 'next/font/local'
 
 const notoSerifJP = Noto_Serif_JP({
@@ -24,7 +24,14 @@ const notoSerifJP = localFont({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  weight: 'variable',
   subsets: ["latin"],
 });
 
-export { notoSerifJP, geistMono };
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  weight: 'variable',
+  subsets: ["latin"],
+});
+
+export { notoSerifJP, geistMono, geistSans };

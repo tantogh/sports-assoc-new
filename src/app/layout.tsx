@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
 import Header from "@/component/common/header/header";
 import Footer from "@/component/common/footer/footer";
 
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "石川県障害者スポーツ協会",
@@ -30,7 +19,7 @@ export default function RootLayout({
   return (
     <html
       lang="jp"
-      className={`${notoSerifJP.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${notoSerifJP.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Header />
