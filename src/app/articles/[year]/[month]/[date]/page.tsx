@@ -48,22 +48,23 @@ const ArticlePage = async ({ params }: ArticleProps) => {
     <>
       <Title subTitle="INFORMATION" title="新着情報" />
       <Article filename={filename} />
-      <div className="flex justify-center p-4">
+      <div className="flex justify-center pb-4">
         <Link
           href="/"
-          className="
+          className={`
             inline-block
             px-6
             py-2
-            bg-blue-600
-            text-white
+            bg-blue-400
+            text-slate-100
             rounded
             shadow
-            hover:bg-blue-700
+            hover:bg-blue-500
             transition
             font-semibold
             text-base
-          "
+            ${notoSerifJP.className}
+          `}
         >
           トップに戻る
         </Link>
