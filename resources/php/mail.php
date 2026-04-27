@@ -1,4 +1,12 @@
 <?php
+// =========================================
+// CORS設定
+// =========================================
+$allowed_origin = "https://pseudisodomic-dacolleta-francis.ngrok-free.dev"; // <--要書き換え
+header("Access-Control-Allow-Origin: {$allowed_origin}");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
 // ==========================================
 // 初期設定
 // ==========================================
@@ -30,12 +38,12 @@ function sanitize($str) {
 // 2. データの受け取りとチェック
 // ==========================================
 $name = sanitize(isset($_POST['name']) ? $_POST['name'] : '');
-$frigana = sanitize(isset($_POST['furigana']) ? $_POST['furigana'] : '');
+$furigana = sanitize(isset($_POST['furigana']) ? $_POST['furigana'] : '');
 $email = sanitize(isset($_POST['email']) ? $_POST['email'] : '');
 $message = sanitize(isset($_POST['message']) ? $_POST['message'] : '');
 
 // 必須項目のチェック
-if ($name === '' || $frigana === '' || $email === '' || $message === '') {
+if ($name === '' || $furigana === '' || $email === '' || $message === '') {
     http_response_code(400); // Bad Request (入力エラー)
     echo json_encode(['error' => '必須項目が入力されていません。']);
     exit;
