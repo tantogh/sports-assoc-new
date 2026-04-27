@@ -3,6 +3,7 @@ import { Metadata } from "next"
 
 import Carousel, { CarouselImage } from "@/component/top/carousel/carousel";
 import { getCarouselImages } from "@/component/top/carousel/getCarouselImages";
+import Date from "@/component/top/date/updateDate";
 import Title from "@/component/common/title/title";
 import Information from "@/component/top/information/information";
 import Special from "@/component/top/special/information";
@@ -17,14 +18,17 @@ export default function Home() {
   const slideImages: CarouselImage[] = getCarouselImages();
   return (
     // bg-blue-50 で全体を薄い青色に、min-h-screen で画面全体をカバー
-    <main className="min-h-screen bg-blue-50">
+    <div className="min-h-screen bg-blue-50">
       {/* ヒーローセクションやカルーセル */}
       <div className="bg-white"> {/* カルーセル部分は白背景で際立たせる */}
         <Carousel images={slideImages} autoPlayInterval={5000} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 space-y-16">
+      <div className="max-w-7xl mx-auto px-4">
         {/* 各コンポーネントをセクションとして配置 */}
+        <section>
+          <Date />
+        </section>
         <section className="bg-white p-6 rounded-lg shadow-sm border border-blue-100">
           <Title subTitle="INFORMATION" title="新着情報" />
           <Information />
@@ -40,6 +44,6 @@ export default function Home() {
           <Sponsorship />
         </section>
       </div>
-    </main>
+    </div>
   );
 };
