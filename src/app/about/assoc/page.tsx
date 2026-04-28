@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Assoc() {
   return (
     <>
-      <Title subTitle="ABOUT" title="協会について" />
+      <Title subTitle="ABOUT" title="石川県パラスポーツ協会について" />
     </>
   );
 };
