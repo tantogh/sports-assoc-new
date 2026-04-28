@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Newsletter() {
   return (
     <>
-      <Title subTitle="NEWSLETTER" title="協会だより" />
+      <Title subTitle="NEWSLETTERS" title="協会だより" />
     </>
   );
 };
