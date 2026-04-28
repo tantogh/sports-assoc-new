@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <html
       lang="jp"
-      className={`${notoSerifJP.className} h-full antialiased`}
+      className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col">
+      <body className={`${notoSerifJP.className} min-h-full flex flex-col`}>
         <Header />
         <main className="flex-grow bg-white">
           {children}
