@@ -24,7 +24,7 @@ export default function RentalPage() {
                   href="/downloads/rental/yougu-shiyou-shinsei-2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
+                  className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
                 >
                   ダウンロード
                 </a>
@@ -37,7 +37,7 @@ export default function RentalPage() {
                   href="/downloads/rental/yougu-shiyou-ryoukin-2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
+                  className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
                 >
                   ダウンロード
                 </a>
@@ -50,7 +50,7 @@ export default function RentalPage() {
                   href="/downloads/rental/shidouin-haken-irai-2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
+                  className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
                 >
                   ダウンロード
                 </a>
