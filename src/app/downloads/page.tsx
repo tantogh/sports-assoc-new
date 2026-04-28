@@ -14,6 +14,9 @@ export default function DownloadsPage() {
     <>
       <Title subTitle="DOWNLOADS" title="ダウンロード" />
       <section className={`max-w-2xl mx-auto p-6 bg-white ${notoSerifJP.className}`}>
+        <p className="p-4">
+          後援申請書、表彰者推薦書などのダウンロードはこちらからお願いいたします。
+        </p>
         <ul className="space-y-3">
           <li className="flex justify-between rounded-lg border border-gray-200 p-4 transition hover:bg-gray-50">
             <span>後援申請・報告書</span>
@@ -27,7 +30,7 @@ export default function DownloadsPage() {
             </a>
           </li>
           <li className="flex justify-between rounded-lg border border-gray-200 p-4 transition hover:bg-gray-50">
-            <span>推薦書</span>
+            <span>表彰者推薦書</span>
             <a
               href="/downloads/downloads/suisensyo.xls"
               target="_blank"
