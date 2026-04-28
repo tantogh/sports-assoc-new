@@ -23,7 +23,11 @@ export default function RentalPage() {
                 石川県障害者スポーツ協会用具使用申請書
               </td>
               <td>
-                <a href="#">
+                <a
+                  href="/downloads/rental/yougu-shiyou-shinsei-2026.pdf"
+                  target="_blank" rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
                   ダウンロード
                 </a>
               </td>
@@ -33,7 +37,11 @@ export default function RentalPage() {
                 石川県障害者スポーツ協会用具使用料金表
               </td>
               <td>
-                <a href="#">
+                <a
+                  href="/downloads/rental/yougu-shiyou-ryoukin-2026.pdf"
+                  target="_blank" rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
                   ダウンロード
                 </a>
               </td>
@@ -43,7 +51,11 @@ export default function RentalPage() {
                 指導員派遣依頼書
               </td>
               <td>
-                <a href="#">
+                <a
+                  href="/downloads/rental/shidouin-haken-irai-2026.pdf"
+                  target="_blank" rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                  >
                   ダウンロード
                 </a>
               </td>
