@@ -2,7 +2,7 @@
 
 "use client"; // 状態（useState）を使うため、App Routerの場合は必須です
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 
 import { notoSerifJP, geistMono } from "@/component/utils/fonts/fonts";
@@ -22,6 +22,20 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   // サブメニューの開閉状態を管理するState
   const [openSubMenu, setOpenSubMenu] = useState<SubMenuKey | null>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      // PC画面のみ反応（xl=1280px～、Tailwind基準）
+      if (window.innerWidth >= 1280 && openSubMenu) {
+        if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+          setOpenSubMenu(null);
+        }
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [openSubMenu]);
 
   // メニューの開閉を切り替える関数（同時に開いているサブメニューを閉じる）
   const toggleMenu = () => {
@@ -35,7 +49,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`sticky top-0 flex justify-between items-center p-3 bg-sky-700 text-white relative z-50 antialiased ${notoSerifJP.className}`}>
+    <header ref={headerRef} className={`sticky top-0 flex justify-between items-center p-3 bg-sky-700 text-white relative z-50 antialiased ${notoSerifJP.className}`}>
       <Link
         href="/"
         className="flex items-center gap-2">
