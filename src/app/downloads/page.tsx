@@ -21,12 +21,12 @@ export default function DownloadsPage() {
           <tbody>
             <tr className="border-b">
               <td className="py-4 px-3 text-gray-800">後援申請・報告書</td>
-              <td className="py-4 px-3 text-right">
+              <td className="py-4 px-3 text-right whitespace-nowrap">
                 <a
                   href="/downloads/downloads/kouensinseihoukoku2020.doc"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
+                  className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
                 >
                   ダウンロード
                 </a>
@@ -34,12 +34,12 @@ export default function DownloadsPage() {
             </tr>
             <tr className="border-b">
               <td className="py-4 px-3 text-gray-800">石川県障害者スポーツ協会用具使用料金表</td>
-              <td className="py-4 px-3 text-right">
+              <td className="py-4 px-3 text-right whitespace-nowrap">
                 <a
                   href="/downloads/downloads/suisensyo.xls"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
+                  className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
                 >
                   ダウンロード
                 </a>
