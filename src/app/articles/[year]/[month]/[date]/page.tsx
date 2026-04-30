@@ -5,7 +5,6 @@ import glob from "fast-glob";
 
 import Article from "@/component/common/article/article";
 import Title from "@/component/common/title/title";
-import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
 export const metadata: Metadata = {
   title: "新着記事 | 石川県パラスポーツ協会",
@@ -51,20 +50,7 @@ const ArticlePage = async ({ params }: ArticleProps) => {
       <div className="flex justify-center pb-4">
         <Link
           href="/"
-          className={`
-            inline-block
-            px-6
-            py-2
-            bg-blue-400
-            text-slate-100
-            rounded
-            shadow
-            hover:bg-blue-500
-            transition
-            font-semibold
-            text-base
-            ${notoSerifJP.className}
-          `}
+          className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
         >
           トップに戻る
         </Link>
