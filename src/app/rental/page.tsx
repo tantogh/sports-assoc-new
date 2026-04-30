@@ -17,40 +17,40 @@ export default function RentalPage() {
         </p>
         <table className="w-full border-collapse">
           <tbody>
-            <tr className="border-b even:bg-gray-50">
+            <tr className="border-b">
               <td className="py-4 px-3 text-gray-800">石川県障害者スポーツ協会用具使用申請書</td>
-              <td className="py-4 px-3 text-right">
+              <td className="py-4 px-3 text-right whitespace-nowrap">
                 <a
                   href="/downloads/rental/yougu-shiyou-shinsei-2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
+                  className="text-xs lg:text-base inline-block px-2 lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
                 >
                   ダウンロード
                 </a>
               </td>
             </tr>
-            <tr className="border-b even:bg-gray-50">
+            <tr className="border-b">
               <td className="py-4 px-3 text-gray-800">石川県障害者スポーツ協会用具使用料金表</td>
-              <td className="py-4 px-3 text-right">
+              <td className="py-4 px-3 text-right whitespace-nowrap">
                 <a
                   href="/downloads/rental/yougu-shiyou-ryoukin-2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
+                  className="text-xs lg:text-base inline-block px-2 lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
                 >
                   ダウンロード
                 </a>
               </td>
             </tr>
-            <tr className="border-b even:bg-gray-50">
+            <tr className="border-b">
               <td className="py-4 px-3 text-gray-800">指導員派遣依頼書</td>
-              <td className="py-4 px-3 text-right">
+              <td className="py-4 px-3 text-right whitespace-nowrap">
                 <a
                   href="/downloads/rental/shidouin-haken-irai-2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition"
+                  className="text-xs lg:text-base inline-block px-2 lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
                 >
                   ダウンロード
                 </a>
