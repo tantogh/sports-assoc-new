@@ -14,17 +14,26 @@ export default function Assoc() {
     <>
       <Title subTitle="ABOUT" title="石川県パラスポーツ協会について" />
       <section className={`max-w-2xl mx-auto p-6 bg-white ${notoSerifJP.className}`}>
-        <h2 className="mb-4 border-b pb-2 pl-2 text-2xl font-semibold border-l-8 border-sky-600">
+        <h2 className="mb-4 border-b pb-2 pl-2 text-xl font-semibold border-l-8 border-sky-600">
+          協会について
+        </h2>
+        <p>
+
+        </p>
+        <h2 className="mb-4 border-b pb-2 pl-2 text-xl font-semibold border-l-8 border-sky-600">
           アクセス
         </h2>
         <div className="flex flex-col lg:flex-row">
           <div className="p-4 lg:w-1/2 w-full">
-            <h3 className="text-base font-bold">石川県パラスポーツ協会</h3>
-            <p>
+            <h3 className="text-lg font-bold pb-4">石川県パラスポーツ協会</h3>
+            <p className="pb-2">
               〒920-0355<br />
               石川県金沢市稚日野町北222番地<br />
               いしかわ総合スポーツセンター内<br />
-              TEL: 076-213-6288 &nbsp; FAX: 076-213-6287<br />
+            </p>
+            <p className="pb-2">
+              TEL: 076-213-6288<br />
+              FAX: 076-213-6287<br />
               E-MAIL: <a href="mailto:i-sho-spo@po4.nsk.ne.jp" className="text-blue-600 hover:text-blue-800 hover:underline">i-sho-spo@po4.nsk.ne.jp</a>
             </p>
           </div>
