@@ -89,7 +89,7 @@ export default function ContactForm() {
     return (
       <>
         <div className={`max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
-          <h2 className="text-2xl font-bold mb-6 border-b pb-2">入力内容の確認</h2>
+          <h2 className="mb-4 border-b pb-2 pl-2 text-2xl font-semibold border-l-8 border-sky-600">入力内容の確認</h2>
           <div className="space-y-4 mb-6">
             <div>
               <p className="text-sm text-gray-500">お名前</p>
@@ -133,7 +133,7 @@ export default function ContactForm() {
       <div className="min-h-screen">
         <Title subTitle="CONTACTS" title="お問い合わせ" />
         <div className={`max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
-          <h2 className="text-2xl font-bold mb-6 border-b pb-2">お問い合わせフォーム</h2>
+          <h2 className="mb-4 border-b pb-2 pl-2 text-2xl font-semibold border-l-8 border-sky-600">お問い合わせフォーム</h2>
           <form onSubmit={handleConfirm} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">お名前</label>
