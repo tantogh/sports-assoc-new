@@ -13,6 +13,11 @@ const categoryMetadata: Record<string, { title: string; subTitle: string; descri
     subTitle: "NEWSLETTERS",
     description: "石川県パラスポーツ協会の会報ページです。",
   },
+  clubs: {
+    title: "クラブ報告",
+    subTitle: "REPORTS",
+    description: "石川県パラスポーツ協会のクラブ報告ページです。",
+  },
 };
 
 export async function generateMetadata({
