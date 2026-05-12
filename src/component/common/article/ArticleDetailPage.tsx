@@ -15,7 +15,7 @@ export type ArticleDetailPageProps = {
   category: string;
   subTitle: string;
   title: string;
-  params: Promise<ArticlePageParams>;
+  params: ArticlePageParams;
 };
 
 // SSG: 各カテゴリの静的パス生成用高階関数
@@ -32,8 +32,8 @@ export function generateArticleStaticParams(category: string) {
   };
 }
 
-export default async function ArticleDetailPage({ category, subTitle, title, params }: ArticleDetailPageProps) {
-  const { year, month, date } = await params;
+export default function ArticleDetailPage({ category, subTitle, title, params }: ArticleDetailPageProps) {
+  const { year, month, date } = params;
   const filename = `articles/${category}/${year}/${month}/${date}.md`;
   return (
     <>
