@@ -39,7 +39,7 @@ export default function Assoc() {
           </div>
           <div className="p-4 lg:w-1/2 w-full">
               <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.9501671510434!2d136.59569907544181!3d36.57941868011458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff9cb4e3cc05227%3A0x1a5a93cff33aa491!2sIshikawa%20General%20Sports%20Center!5e0!3m2!1sja!2sja!4v1777524138714"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8978.548559739984!2d136.59347593569413!3d36.579670413385934!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff9cb4e3cc05227%3A0x1a5a93cff33aa491!2z44GE44GX44GL44KP57eP5ZCI44K544Od44O844OE44K744Oz44K_44O8!5e0!3m2!1sja!2sus!4v1778652636627!5m2!1sja!2sus"
               width="100%" height="300"
               style={{ border: 0 }}
               allowFullScreen
