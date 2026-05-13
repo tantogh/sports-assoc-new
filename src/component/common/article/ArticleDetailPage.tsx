@@ -1,5 +1,4 @@
 // src/component/common/article/ArticleDetailPage.tsx
-import { Metadata } from "next";
 import Link from "next/link";
 import Article from "@/component/common/article/article";
 import Title from "@/component/common/title/title";
