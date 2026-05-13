@@ -46,7 +46,7 @@
     "items": [
       { "label": "講習会", "href": "/instructor/seminars/" },
       { "label": "募集情報", "href": "/instructor/recruitment/" },
-      { "label": "活動報告", "href": "/instructor/reports/" }
+      { "label": "活動報告", "href": "/instructor/activity/" }
     ]
   },
   { "type": "link", "label": "用具", "href": "/rental/" },

@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   description: "石川県パラスポーツ協会のパラスポーツ指導員活動報告のページです。",
 }
 
-export default function ReportsPage() {
+export default function ActivityPage() {
   return (
     <>
-      <Title subTitle="REPORTS" title="パラスポーツ指導員活動報告" />
+      <Title subTitle="ACTIVITY" title="パラスポーツ指導員活動報告" />
     </>
   );
 };
