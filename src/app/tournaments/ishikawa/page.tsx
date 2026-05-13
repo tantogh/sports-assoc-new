@@ -2,6 +2,7 @@
 import { Metadata } from "next"
 
 import Title from "@/component/common/title/title";
+import ArticleHeader from "@/component/common/article/articleHeader";
 
 export const metadata: Metadata = {
   title: "石川県障害者スポーツ大会 | スポーツ大会|石川県パラスポーツ協会",
@@ -12,6 +13,9 @@ export default function IshikawaPage() {
   return (
     <>
       <Title subTitle="TOURNAMENTS" title="石川県障害者スポーツ大会" />
+      <div className="max-w-7xl mx-auto px-4">
+        <ArticleHeader baseDir="/articles/ishikawa/" filePath="/2026/05/2026-05-01.md" />
+      </div>
     </>
   );
 };
