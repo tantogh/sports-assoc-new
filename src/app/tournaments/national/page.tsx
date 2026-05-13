@@ -13,9 +13,7 @@ export default function NationalPage() {
   return (
     <>
       <Title subTitle="TOURNAMENTS" title="全国障害者スポーツ大会" />
-      <div className="max-w-7xl mx-auto px-4">
-        <ArticleHeader baseDir="/articles/national" filePath="/2026/05/2026-05-01.md" />
-      </div>
+      <ArticleHeader baseDir="/articles/national" filePath="/2026/05/2026-05-01.md" />
     </>
   );
 };

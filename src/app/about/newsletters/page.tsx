@@ -13,9 +13,7 @@ export default function Newsletters() {
   return (
     <>
       <Title subTitle="NEWSLETTERS" title="協会だより" />
-      <div className="max-w-7xl mx-auto px-4">
-        <ArticleHeader baseDir="/articles/newsletters/" filePath="/2026/05/2026-05-01.md" />
-      </div>
+      <ArticleHeader baseDir="/articles/newsletters/" filePath="/2026/05/2026-05-01.md" />
     </>
   );
 };

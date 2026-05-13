@@ -13,9 +13,7 @@ export default function Reports() {
   return (
     <>
       <Title subTitle="REPORTS" title="クラブ報告" />
-      <div className="max-w-7xl mx-auto px-4">
-        <ArticleHeader baseDir="/articles/clubs/" filePath="/2026/05/2026-05-01.md"/>
-      </div>
+      <ArticleHeader baseDir="/articles/clubs/" filePath="/2026/05/2026-05-01.md" />
     </>
   );
 };

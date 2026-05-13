@@ -13,9 +13,7 @@ export default function ResultsPage() {
   return (
     <>
       <Title subTitle="RESULTS" title="大会結果" />
-      <div className="max-w-7xl mx-auto px-4">
-        <ArticleHeader baseDir="/articles/results" filePath="/2026/05/2026-05-01.md" />
-      </div>
+      <ArticleHeader baseDir="/articles/results" filePath="/2026/05/2026-05-01.md" />
     </>
   );
 };

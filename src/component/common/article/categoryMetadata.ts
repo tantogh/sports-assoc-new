@@ -35,15 +35,15 @@ export const categoryMetadata: Record<string, CategoryMetadata> = {
     subTitle: "RESULTS",
     description: "石川県パラスポーツ協会の大会結果ページです。",
   },
-  staff: {
-    title: "パラスポーツ指導員募集",
-    subTitle: "STAFF",
-    description: "石川県パラスポーツ協会の指導員募集ページです。",
-  },
   reports: {
     title: "事業報告",
     subTitle: "REPORTS",
     description: "石川県パラスポーツ協会の事業報告ページです。",
+  },
+  staff: {
+    title: "パラスポーツ指導員募集",
+    subTitle: "STAFF",
+    description: "石川県パラスポーツ協会の指導員募集ページです。",
   },
   instructors: {
     title: "活動報告",
