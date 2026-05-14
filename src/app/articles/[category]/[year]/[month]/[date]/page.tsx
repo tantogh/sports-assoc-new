@@ -18,7 +18,7 @@ export async function generateMetadata({
 }
 
 export const generateStaticParams = async () => {
-  const categories = ["information", "special", "newsletters", "clubs", "ishikawa", "national", "results", "reports", "activity"];
+  const categories = ["information", "special", "newsletters", "clubs", "ishikawa", "national", "results", "reports", "seminars", "activity"];
   const allParams = [];
 
   for (const category of categories) {

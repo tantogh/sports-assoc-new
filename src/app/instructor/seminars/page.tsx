@@ -2,6 +2,8 @@
 import { Metadata } from "next"
 
 import Title from "@/component/common/title/title";
+import Article from "@/component/common/article/article";
+import ArticleHeader from "@/component/common/article/articleHeader";
 
 export const metadata: Metadata = {
   title: "指導員養成講習会 | 指導員情報 | 石川県パラスポーツ協会",
@@ -12,6 +14,7 @@ export default function SeminarsPage() {
   return (
     <>
       <Title subTitle="SEMINARS" title="パラスポーツ指導員養成講習会" />
+      <ArticleHeader baseDir="/articles/seminars" filePath="/2026/05/2026-05-01.md" />
     </>
   );
 };
