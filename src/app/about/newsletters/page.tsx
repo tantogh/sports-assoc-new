@@ -12,8 +12,10 @@ export const metadata: Metadata = {
 export default function Newsletters() {
   return (
     <>
-      <Title subTitle="NEWSLETTERS" title="協会だより" />
-      <ArticleHeader baseDir="/articles/newsletters/" filePath="/2026/05/2026-05-01.md" />
+      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+        <Title subTitle="NEWSLETTERS" title="協会だより" />
+        <ArticleHeader baseDir="/articles/newsletters/" filePath="/2026/05/2026-05-01.md" />
+      </div>
     </>
   );
 };

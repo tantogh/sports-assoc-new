@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 export default function Parasports() {
   return (
     <>
-      <Title subTitle="PARASPORTS" title="パラスポーツとは" />
+      <div className="max-w-7xl mx-auto px-1 lg:px-4">
+        <Title subTitle="PARASPORTS" title="パラスポーツとは" />
+      </div>
     </>
   );
 };
