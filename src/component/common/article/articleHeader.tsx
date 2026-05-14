@@ -1,5 +1,4 @@
 // src/component/common/article/articleHeader.tsx
-
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -9,8 +8,8 @@ import React from "react";
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
 type ArticleHeaderProps = {
-  baseDir: string;     // e.g. "articles/"
-  filePath: string;    // e.g. "2018/01/2018-01-01.md"
+  baseDir: string;     // e.g. "/articles/information"
+  filePath: string;    // e.g. "/2018/01/2018-01-01.md"
 };
 
 const toCamelCase = (property: string) => property.trim().replace(/-([a-z])/g, (_, char) => char.toUpperCase());
@@ -126,6 +125,8 @@ export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps)
     ? data.title
     : (match ? match[1] : "タイトルなし");
 
+  const date = new Date(data.date || "1970-01-01");
+
   // <br /> を改行として処理
   const processTitle = (text: string) => {
     return text.split('<br />').map((line, index, array) => (
@@ -146,6 +147,9 @@ export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps)
           <div
             className={`text-xs xl:text-xl p-1 text-black transition-colors duration-200 group-hover:text-sky-700 ${notoSerifJP.className}`}
           >
+            <div className="text-xxs lg:text-sm text-sky-500 mb-1">
+              {date.getFullYear()}.{String(date.getMonth() + 1).padStart(2, "0")}.{String(date.getDate()).padStart(2, "0")}
+            </div>
             {processTitle(title)}
           </div>
 
