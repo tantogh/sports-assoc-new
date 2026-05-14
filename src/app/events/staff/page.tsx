@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 export default function StaffPage() {
   return (
     <>
-      <Title subTitle="STAFF" title="ボランティア・スタッフ募集について" />
+      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+        <Title subTitle="STAFF" title="ボランティア・スタッフ募集について" />
+      </div>
     </>
   );
 };

@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 export default function RecruitmentPage() {
   return (
     <>
-      <Title subTitle="RECRUITMENT" title="パラスポーツ指導員募集" />
+      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+        <Title subTitle="RECRUITMENT" title="パラスポーツ指導員募集" />
+      </div>
     </>
   );
 };

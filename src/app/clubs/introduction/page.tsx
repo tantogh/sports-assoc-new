@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 export default function Introduction() {
   return (
     <>
-      <Title subTitle="CLUBS" title="クラブ紹介" />
+      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+        <Title subTitle="CLUBS" title="クラブ紹介" />
+      </div>
     </>
   );
 };

@@ -12,8 +12,10 @@ export const metadata: Metadata = {
 export default function IshikawaPage() {
   return (
     <>
-      <Title subTitle="TOURNAMENTS" title="石川県障害者スポーツ大会" />
-      <ArticleHeader baseDir="/articles/ishikawa/" filePath="/2026/05/2026-05-01.md" />
+      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+        <Title subTitle="TOURNAMENTS" title="石川県障害者スポーツ大会" />
+        <ArticleHeader baseDir="/articles/ishikawa/" filePath="/2026/05/2026-05-01.md" />
+      </div>
     </>
   );
 };

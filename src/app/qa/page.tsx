@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 export default function QandAPage() {
   return (
     <>
-      <Title subTitle="Q&A" title="パラスポーツQ&A" />
+      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+        <Title subTitle="Q&A" title="パラスポーツQ&A" />
+      </div>
     </>
   );
 };

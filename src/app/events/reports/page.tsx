@@ -12,8 +12,10 @@ export const metadata: Metadata = {
 export default function ResultsPage() {
   return (
     <>
-      <Title subTitle="REPORTS" title="事業報告" />
-      <ArticleHeader baseDir="/articles/reports" filePath="/2026/05/2026-05-01.md" />
+      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+        <Title subTitle="REPORTS" title="事業報告" />
+        <ArticleHeader baseDir="/articles/reports" filePath="/2026/05/2026-05-01.md" />
+      </div>
     </>
   );
 };

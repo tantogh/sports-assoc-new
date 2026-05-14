@@ -73,10 +73,10 @@ const loadLinksData = async (): Promise<LinksData> => {
     }
 
     return validated;
-    } catch (error) {
-      alert("リンク集データの読み込みに失敗しました。\n" + (error instanceof Error ? error.message : String(error)));
-      return {};
-    }
+  } catch (error) {
+    alert("リンク集データの読み込みに失敗しました。\n" + (error instanceof Error ? error.message : String(error)));
+    return {};
+  }
 };
 
 export default async function LinksPage() {
@@ -85,38 +85,40 @@ export default async function LinksPage() {
 
   return (
     <>
-      <Title subTitle="LINKS" title="リンク集" />
-      <section className={`max-w-2xl mx-auto p-6 bg-white ${notoSerifJP.className}`}>
-        {categories.length === 0 ? (
-          <p className="text-sm text-gray-600">
-            リンク集を読み込めませんでした。しばらくしてから再度お試しください。
-          </p>
-        ) : (
-          <div className="space-y-10">
-            {categories.map(([categoryKey, links]) => (
-              <section key={categoryKey}>
-                <h2 className="mb-4 border-b pb-2 pl-2 text-2xl font-semibold border-l-8 border-sky-600">
-                  {formatCategoryName(categoryKey)}
-                </h2>
-                <ul className="space-y-3 list-disc list-inside">
-                  {links.map((link) => (
-                    <li key={`${categoryKey}-${link.url}`}>
-                      <a
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs lg:text-base text-blue-600 hover:text-blue-800 hover:underline"
-                      >
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
-          </div>
-        )}
-      </section>
+      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+        <Title subTitle="LINKS" title="リンク集" />
+        <section className={`max-w-2xl mx-auto p-6 bg-white ${notoSerifJP.className}`}>
+          {categories.length === 0 ? (
+            <p className="text-sm text-gray-600">
+              リンク集を読み込めませんでした。しばらくしてから再度お試しください。
+            </p>
+          ) : (
+            <div className="space-y-10">
+              {categories.map(([categoryKey, links]) => (
+                <section key={categoryKey}>
+                  <h2 className="mb-4 border-b pb-2 pl-2 text-2xl font-semibold border-l-8 border-sky-600">
+                    {formatCategoryName(categoryKey)}
+                  </h2>
+                  <ul className="space-y-3 list-disc list-inside">
+                    {links.map((link) => (
+                      <li key={`${categoryKey}-${link.url}`}>
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs lg:text-base text-blue-600 hover:text-blue-800 hover:underline"
+                        >
+                          {link.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          )}
+        </section>
+      </div>
     </>
   );
 }

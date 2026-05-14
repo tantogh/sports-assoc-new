@@ -12,8 +12,10 @@ export const metadata: Metadata = {
 export default function ActivityPage() {
   return (
     <>
-      <Title subTitle="ACTIVITY" title="パラスポーツ指導員活動報告" />
-      <ArticleHeader baseDir="/articles/activity/" filePath="/2026/05/2026-05-01.md" />
+      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+        <Title subTitle="ACTIVITY" title="パラスポーツ指導員活動報告" />
+        <ArticleHeader baseDir="/articles/activity/" filePath="/2026/05/2026-05-01.md" />
+      </div>
     </>
   );
 };
