@@ -10,6 +10,11 @@ export const categoryMetadata: Record<string, CategoryMetadata> = {
     subTitle: "INFORMATION",
     description: "石川県パラスポーツ協会の新着情報ページです。",
   },
+  special: {
+    title: "特別記事",
+    subTitle: "SPECIAL",
+    description: "石川県パラスポーツ協会の特別記事ページです。",
+  },
   newsletters: {
     title: "協会だより",
     subTitle: "NEWSLETTERS",

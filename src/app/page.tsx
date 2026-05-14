@@ -6,7 +6,7 @@ import { getCarouselImages } from "@/component/top/carousel/getCarouselImages";
 import Date from "@/component/top/date/updateDate";
 import Title from "@/component/common/title/title";
 import Information from "@/component/top/information/information";
-import Special from "@/component/top/special/information";
+import Special from "@/component/top/special/special";
 import Sponsorship from "@/component/top/sponsorship/sponsorship";
 
 export const metadata: Metadata = {
