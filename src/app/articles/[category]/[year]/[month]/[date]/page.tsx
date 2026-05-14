@@ -18,7 +18,7 @@ export async function generateMetadata({
 }
 
 export const generateStaticParams = async () => {
-  const categories = ["information", "special", "newsletters", "clubs", "ishikawa", "national", "results", "staff", "reports", "activity"];
+  const categories = ["information", "special", "newsletters", "clubs", "ishikawa", "national", "results", "reports", "activity"];
   const allParams = [];
 
   for (const category of categories) {
@@ -47,7 +47,7 @@ export default async function Page({ params }: any) {
         params={{ year, month, date }}
       />
       <div className="flex justify-center mb-8">
-        <Link href={`/${category}`}>
+        <Link href={`${meta.url}`} passHref>
           <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
             一覧へ戻る
           </button>
