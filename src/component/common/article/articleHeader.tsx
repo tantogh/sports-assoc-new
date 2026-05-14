@@ -137,14 +137,14 @@ export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps)
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-1">
+    <div className="max-w-2xl mx-auto mb-2 p-2 bg-white rounded-xl shadow-lg">
       <Link
         href={href}
         className="group block w-full"
       >
-        <div className="flex items-center justify-between gap-4 rounded-md bg-sky-50/80 px-3 py-2 transition-colors duration-200 hover:bg-sky-100">
+        <div className="flex items-center justify-between gap-4 rounded-md px-3 transition-colors duration-200">
           <div
-            className={`text-xxs xl:text-xl p-1 text-black transition-colors duration-200 group-hover:text-sky-700 ${notoSerifJP.className}`}
+            className={`text-xs xl:text-xl p-1 text-black transition-colors duration-200 group-hover:text-sky-700 ${notoSerifJP.className}`}
           >
             {processTitle(title)}
           </div>
