@@ -27,7 +27,7 @@ export default function DownloadsPage() {
                     href="/downloads/downloads/kouensinseihoukoku2020.doc"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
+                    className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition whitespace-nowrap"
                   >
                     ダウンロード
                   </a>
@@ -40,7 +40,7 @@ export default function DownloadsPage() {
                     href="/downloads/downloads/suisensyo.xls"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
+                    className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition whitespace-nowrap"
                   >
                     ダウンロード
                   </a>

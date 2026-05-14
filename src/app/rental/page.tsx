@@ -25,7 +25,7 @@ export default function RentalPage() {
                     href="/downloads/rental/yougu-shiyou-shinsei-2026.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs lg:text-base inline-block px-2 lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
+                    className="text-xs lg:text-base inline-block px-2 lg:px-4 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition whitespace-nowrap"
                   >
                     ダウンロード
                   </a>
@@ -38,7 +38,7 @@ export default function RentalPage() {
                     href="/downloads/rental/yougu-shiyou-ryoukin-2026.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs lg:text-base inline-block px-2 lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
+                    className="text-xs lg:text-base inline-block px-2 lg:px-4 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition whitespace-nowrap"
                   >
                     ダウンロード
                   </a>
@@ -51,7 +51,7 @@ export default function RentalPage() {
                     href="/downloads/rental/shidouin-haken-irai-2026.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs lg:text-base inline-block px-2 lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
+                    className="text-xs lg:text-base inline-block px-2 lg:px-4 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition whitespace-nowrap"
                   >
                     ダウンロード
                   </a>
