@@ -153,7 +153,7 @@ export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps)
             {processTitle(title)}
           </div>
 
-          <div className="inline-flex items-center gap-1 rounded-full border border-sky-200 bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-sky-700 transition-all duration-200 group-hover:border-sky-300 group-hover:bg-sky-200/60 group-hover:text-sky-800">
+          <div className="inline-flex items-center gap-1 rounded-full border border-sky-200 bg-white/90 px-1 lg:px-3 py-[2px] lg:py-1 text-[8px] lg:text-[10px] font-semibold uppercase tracking-wide text-sky-700 transition-all duration-200 group-hover:border-sky-300 group-hover:bg-sky-200/60 group-hover:text-sky-800">
             <span>more</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
