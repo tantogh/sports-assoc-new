@@ -38,14 +38,6 @@ export default function ArticleDetailPage({ category, subTitle, title, params }:
     <>
       <Title subTitle={subTitle} title={title} />
       <Article filename={filename} />
-      <div className="flex justify-center pb-4">
-        <Link
-          href="/"
-          className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition whitespace-nowrap"
-        >
-          トップに戻る
-        </Link>
-      </div>
     </>
   );
 }
