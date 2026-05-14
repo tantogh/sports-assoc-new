@@ -4,7 +4,7 @@ import ArticleHeader from "@/component/common/article/articleHeader";
 
 export default function Information() {
   return (
-    <section className="w-full py-2">
+    <section className="w-full">
       {/* 記事一覧 */}
       <ArticleHeader baseDir="articles/information" filePath="/2026/03/2026-03-02.md" />
       <ArticleHeader baseDir="articles/information" filePath="/2026/03/2026-03-01.md" />
