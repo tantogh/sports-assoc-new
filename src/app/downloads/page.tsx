@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function DownloadsPage() {
   return (
     <>
-      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+      <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
         <Title subTitle="DOWNLOADS" title="ダウンロード" />
         <section className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-xl shadow-lg">
           <p className="mb-6 leading-relaxed text-gray-700">

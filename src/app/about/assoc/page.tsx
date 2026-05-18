@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Assoc() {
   return (
     <>
-      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+      <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
         <Title subTitle="ABOUT" title="石川県パラスポーツ協会について" />
         <section className={`max-w-2xl mx-auto p-6 bg-white ${notoSerifJP.className}`}>
           <h2 className="mb-4 border-b pb-2 pl-2 text-xl font-semibold border-l-8 border-sky-600">

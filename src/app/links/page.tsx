@@ -85,7 +85,7 @@ export default async function LinksPage() {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-2 lg:px-4">
+      <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
         <Title subTitle="LINKS" title="リンク集" />
         <section className={`max-w-2xl mx-auto p-6 bg-white ${notoSerifJP.className}`}>
           {categories.length === 0 ? (

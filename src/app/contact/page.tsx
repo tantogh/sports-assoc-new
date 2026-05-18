@@ -131,7 +131,7 @@ export default function ContactForm() {
   return (
     <>
       <div className="min-h-screen">
-        <div className="max-w-7xl mx-auto px-2 lg:px-4">
+        <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
           <Title subTitle="CONTACTS" title="お問い合わせ" />
         </div>
         <div className={`max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 ${notoSerifJP.className}`}>
