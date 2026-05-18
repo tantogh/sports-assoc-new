@@ -30,17 +30,17 @@ export default function Home() {
           <Date />
         </section>
         
-        <section>
+        <section id="information">
           <Title subTitle="INFORMATION" title="新着情報" />
           <Information />
         </section>
 
-        <section>
+        <section id="special">
           <Title subTitle="SPECIAL" title="特別記事" />
           <Special />
         </section>
 
-        <section>
+        <section id="sponsorship">
           <Title subTitle="SPONSORSHIP" title="協賛企業" />
           <Sponsorship />
         </section>
