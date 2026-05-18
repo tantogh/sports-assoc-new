@@ -1,5 +1,4 @@
 // src/component/common/article/article.tsx
-
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -14,7 +13,6 @@ import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
 type ArticleProps = {
   filename: string;
-  //isNew?: boolean;
 };
 
 // rehype-sanitize の許可スキーマ（必要最小限 + 一部拡張）
