@@ -5,7 +5,6 @@ import matter from "gray-matter";
 import Link from "next/link";
 
 import { notoSerifJP } from "@/component/utils/fonts/fonts";
-import { processTitle } from "./markdownProcessors";
 
 type ArticleHeaderProps = {
   baseDir: string;     // e.g. "/articles/information"
@@ -14,15 +13,14 @@ type ArticleHeaderProps = {
 
 /**
  * Markdown ファイルからタイトルを取得
- * frontmatter の title がなければ、最初の # 見出しを使用
+ * frontmatter の title がなければ「タイトルなし」を返す
  */
-const getTitle = (data: Record<string, unknown>, content: string): string => {
+const getTitle = (data: Record<string, unknown>): string => {
   if (typeof data.title === "string" && data.title.length > 0) {
     return data.title;
   }
 
-  const match = content.match(/^# (.+)$/m);
-  return match ? match[1] : "タイトルなし";
+  return "タイトルなし";
 };
 
 /**
@@ -41,7 +39,7 @@ export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps)
   const raw = fs.readFileSync(fullPath, "utf8");
 
   const { data, content } = matter(raw);
-  const title = getTitle(data, content);
+  const title = getTitle(data);
   const date = new Date(data.date || "1970-01-01");
 
   return (
@@ -52,7 +50,7 @@ export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps)
             className={`text-xs xl:text-xl p-1 text-black transition-colors duration-200 group-hover:text-sky-700 ${notoSerifJP.className}`}
           >
             <div className="text-xxs lg:text-sm text-sky-500 mb-1">{formatDate(date)}</div>
-            {processTitle(title)}
+            {title}
           </div>
 
           <div className="inline-flex items-center gap-1 rounded-full border border-sky-200 bg-white/90 px-1 lg:px-3 py-[2px] lg:py-1 text-[8px] lg:text-[10px] font-semibold uppercase tracking-wide text-sky-700 transition-all duration-200 group-hover:border-sky-300 group-hover:bg-sky-200/60 group-hover:text-sky-800">
