@@ -19,7 +19,6 @@ const getTitle = (data: Record<string, unknown>): string => {
   if (typeof data.title === "string" && data.title.length > 0) {
     return data.title;
   }
-
   return "タイトルなし";
 };
 
