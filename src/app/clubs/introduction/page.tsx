@@ -23,7 +23,7 @@ export default function Introduction() {
           </thead>
           <tbody>
             {clubs.map((club, index) => (
-              <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white" + " hover:bg-gray-100"}>
+              <tr key={index} className={index % 2 === 0 ? "bg-gray-50 hover:bg-blue-100/50" : "bg-white hover:bg-blue-100/50"}>
                 <td className="border border-gray-300 px-4 py-2">
                   {club.link ? (
                     <a href={club.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
