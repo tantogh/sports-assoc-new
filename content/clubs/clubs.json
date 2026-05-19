@@ -78,7 +78,7 @@
       "type": "",
       "url": ""
     },
-    "link": "/instructor-assc/"
+    "link": "/instructor/activity/"
   },
   {
     "name": "石川県視覚障害者協会グランドソフトボールクラブ サーカスカラーズ",
@@ -94,7 +94,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/stt/20171217stttaikai.pdf"
+    "link": "/downloads/clubs/stt/20171217stttaikai.pdf"
   },
   {
     "name": "石川県聴覚障害者協会 卓球部",
@@ -134,7 +134,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/wheelchair-tennis/wheelchair-tennis20180115.pdf"
+    "link": "/downloads/clubs/wheelchair-tennis/wheelchair-tennis20180115.pdf"
   },
   {
     "name": "石川県障がい者卓球クラブ YELL（エール）",
@@ -142,7 +142,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/yell/yell20250824.pdf"
+    "link": "/downloads/clubs/yell/yell20250824.pdf"
   },
   {
     "name": "石川県ボッチャ協会",
@@ -150,7 +150,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/boccia/new_address.pdf"
+    "link": "/downloads/clubs/boccia/new_address.pdf"
   },
   {
     "name": "石川県障害者フライングディスク協会",
@@ -166,7 +166,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/syunpuu/20171017syunnpuu.pdf"
+    "link": "/downloads/clubs/syunpuu/20171017syunnpuu.pdf"
   },
   {
     "name": "石川県パラアーチェリークラブ",
@@ -174,7 +174,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/archery/archery20140422.pdf"
+    "link": "/downloads/clubs/archery/archery20140422.pdf"
   },
   {
     "name": "ソフトバレーボールクラブ 希望の会",
@@ -190,7 +190,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/aiai/ishikawaaiaivol15.pdf"
+    "link": "/downloads/clubs/aiai/ishikawaaiaivol15.pdf"
   },
   {
     "name": "ブラインドガイド・RUNサークル あいりす",
@@ -198,7 +198,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/airis/20170314airisu.pdf"
+    "link": "/downloads/clubs/airis/20170314airisu.pdf"
   },
   {
     "name": "ツエーゲン金沢BFC",
@@ -206,7 +206,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/zweigen/30/bsuccertaiken.pdf"
+    "link": "/downloads/clubs/zweigen/30/bsuccertaiken.pdf"
   },
   {
     "name": "日本障害者カヌー協会",
@@ -214,7 +214,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/canoe/201806kanu.pdf"
+    "link": "/downloads/clubs/canoe/201806kanu.pdf"
   },
   {
     "name": "いしかわ福祉水泳協会",
@@ -222,7 +222,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/suiei/fukushi-suiei2021.pdf"
+    "link": "/downloads/clubs/suiei/fukushi-suiei2021.pdf"
   },
   {
     "name": "水泳サークル マーメイド",
@@ -230,7 +230,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/mermaid/mermaid.pdf"
+    "link": "/downloads/clubs/mermaid/mermaid.pdf"
   },
   {
     "name": "ＦＣ．ＴＯＮ",
@@ -238,7 +238,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/fcton/i_sho_spo2020.pdf"
+    "link": "/downloads/clubs/fcton/i_sho_spo2020.pdf"
   },
   {
     "name": "石川県精神障がい者フットサルクラブ ～ ルミナス ～",
@@ -246,7 +246,7 @@
       "type": "HP",
       "url": "http://kanazawa-ssc.jp/archives/class_detail/1385"
     },
-    "link": "downloads/affiliated/luminous/luminous-gaiyou-2024.pdf"
+    "link": "/downloads/clubs/luminous/luminous-gaiyou-2024.pdf"
   },
   {
     "name": "石川県電動車椅子サッカー協会 金沢ベストブラザーズ",
@@ -262,7 +262,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/goalball/goalball-0823.pdf"
+    "link": "/downloads/clubs/goalball/goalball-0823.pdf"
   },
   {
     "name": "金沢市ボディビル・フィットネス連盟",
@@ -270,7 +270,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/bodybuilding/chair-bodybuild-open.pdf"
+    "link": "/downloads/clubs/bodybuilding/chair-bodybuild-open.pdf"
   },
   {
     "name": "車いすハンドボール／車いすハンドコミュニティOZ（オズ）",
@@ -278,7 +278,7 @@
       "type": "",
       "url": ""
     },
-    "link": "downloads/affiliated/chair-hand-oz/chair-handball-oz-0713.pdf"
+    "link": "/downloads/clubs/chair-hand-oz/chair-handball-oz-0713.pdf"
   },
   {
     "name": "フロア・バレーボールチーム",
