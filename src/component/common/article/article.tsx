@@ -143,7 +143,7 @@ export default function Article({ filename }: ArticleProps) {
     return (
       <div className="p-4 m-4 bg-white mx-auto w-full max-w-7xl">
         <article className={`prose prose-ul:list-disc prose-ol:list-decimal prose-li:my-0 prose-li:pl-0 max-w-none ${notoSerifJP.className}
-          rounded-xl border border-blue-100 bg-blue-50 p-4 md:p-6 text-slate-800 shadow-md`}>
+          rounded-xl border border-blue-100 bg-white p-4 md:p-6 text-slate-800 shadow-md`}>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
