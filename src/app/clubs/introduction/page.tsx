@@ -1,14 +1,20 @@
 // src/app/clubs/introduction/page.tsx
+import path from 'path';
+import fs from 'fs';
 import { Metadata } from "next";
+
 import Title from "@/component/common/title/title";
-import clubs from '../../../../content/clubs/clubs.json';
 
 export const metadata: Metadata = {
   title: "クラブ紹介 | クラブ情報 | 石川県パラスポーツ協会",
   description: "石川県パラスポーツ協会のクラブ紹介のページです。",
 };
 
-export default function Introduction() {
+export default async function Introduction() {
+  const clubsFilePath = path.join(process.cwd(), 'content/clubs/clubs.json');
+  const clubsData = await fs.promises.readFile(clubsFilePath, 'utf-8');
+  const clubs = JSON.parse(clubsData);
+
   return (
     <>
       <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
@@ -22,7 +28,7 @@ export default function Introduction() {
               </tr>
             </thead>
             <tbody>
-              {clubs.map((club, index) => (
+              {clubs.map((club: any, index: number) => (
                 <tr key={index} className={index % 2 === 0 ? "bg-gray-50 hover:bg-sky-50" : "bg-white hover:bg-sky-50"}>
                   <td className="border border-gray-300 px-4 py-2">
                     {club.link ? (
