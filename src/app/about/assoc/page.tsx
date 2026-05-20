@@ -30,7 +30,7 @@ export default function Assoc() {
               <h3 className="text-lg font-bold pb-4">石川県パラスポーツ協会</h3>
               <p className="pb-2">
                 〒920-0355<br />
-                石川県金沢市稚日野町北222番地<br />
+                石川県金沢市<ruby>稚日野町<rt>わかひのまち</rt></ruby>北222番地<br />
                 いしかわ総合スポーツセンター内<br />
               </p>
               <p className="pb-2">
