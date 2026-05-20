@@ -39,7 +39,7 @@ export default async function Introduction() {
                       club.name
                     )}
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="border border-gray-300 px-4 py-2 text-center">
                     {club.homepage && club.homepage.url ? (
                       <a href={club.homepage.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                         {club.homepage.type || "HP"}
