@@ -18,12 +18,12 @@ export default function Introduction() {
           <thead>
             <tr className="bg-blue-600 text-white">
               <th className="border border-gray-300 px-4 py-2">クラブ名</th>
-              <th className="border border-gray-300 px-4 py-2">ホームページ</th>
+              <th className="border border-gray-300 px-4 py-2 whitespace-nowrap">ホームページ</th>
             </tr>
           </thead>
           <tbody>
             {clubs.map((club, index) => (
-              <tr key={index} className={index % 2 === 0 ? "bg-gray-50 hover:bg-blue-100/50" : "bg-white hover:bg-blue-100/50"}>
+              <tr key={index} className={index % 2 === 0 ? "bg-gray-50 hover:bg-sky-50" : "bg-white hover:bg-sky-50"}>
                 <td className="border border-gray-300 px-4 py-2">
                   {club.link ? (
                     <a href={club.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
