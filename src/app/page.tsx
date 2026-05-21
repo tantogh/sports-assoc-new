@@ -29,17 +29,17 @@ export default function Home() {
           <Date />
         </section>
 
-        <section id="information">
+        {/* <section> */}
           <Title subTitle="INFORMATION" title="新着情報" />
           <Information />
-        </section>
+        {/* </section> */}
 
-        <section id="special">
+        <section>
           <Title subTitle="SPECIAL" title="特別記事" />
           <Special />
         </section>
 
-        <section id="sponsorship">
+        <section>
           <Title subTitle="SPONSORSHIP" title="協賛企業" />
           <Sponsorship />
         </section>
