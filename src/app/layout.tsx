@@ -17,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="jp"
-      className="h-full antialiased"
-    >
+      <html
+        lang="jp"
+        className="h-full antialiased scroll-smooth"
+      >
       <body className={`${notoSerifJP.className} min-h-full flex flex-col`}>
         <Header />
         <main className="flex-grow bg-white">

@@ -17,9 +17,8 @@ export const metadata: Metadata = {
 export default function Home() {
   const slideImages: CarouselImage[] = getCarouselImages();
   return (
-    // bg-blue-50 で全体を薄い青色に、min-h-screen で画面全体をカバー
     <div className="min-h-screen">
-      {/* ヒーローセクションやカルーセル */}
+      {/* カルーセル */}
       <div className="bg-white"> {/* カルーセル部分は白背景で際立たせる */}
         <Carousel images={slideImages} autoPlayInterval={5000} />
       </div>
@@ -29,7 +28,7 @@ export default function Home() {
         <section>
           <Date />
         </section>
-        
+
         <section id="information">
           <Title subTitle="INFORMATION" title="新着情報" />
           <Information />
