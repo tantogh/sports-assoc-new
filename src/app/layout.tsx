@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="jp" className={`h-full antialiased scroll-smooth ${geistSans.variable} ${geistMono.variable}`} data-theme="light">
-      <body className={`${notoSerifJP.className} min-h-full flex flex-col`}>
+    <html lang="jp" className={`h-full antialiased scroll-smooth ${geistSans.variable} ${geistMono.variable} ${notoSerifJP.variable}`} data-theme="light">
+      <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-grow bg-white">{children}</main>
         <Footer />
