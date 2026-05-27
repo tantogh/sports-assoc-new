@@ -5,7 +5,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 
-import { notoSerifJP, geistMono } from "@/component/utils/fonts/fonts";
+import { geistMono } from "@/component/utils/fonts/fonts";
 import Logo from "@/component/common/header/logo";
 import menuConfig from "@/component/common/header/menu.json";
 
@@ -49,7 +49,7 @@ export default function Header() {
   };
 
   return (
-    <header ref={headerRef} className={`sticky top-0 flex justify-between items-center p-3 bg-sky-700 text-white relative z-50 antialiased ${notoSerifJP.className}`}>
+    <header ref={headerRef} className="sticky top-0 flex justify-between items-center p-3 bg-sky-700 text-white relative z-50 antialiased">
       <Link
         href="/"
         className="flex items-center gap-2">

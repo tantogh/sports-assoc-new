@@ -3,14 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { notoSerifJP } from "@/component/utils/fonts/fonts";
 import Copyright from "@/component/common/footer/copyright";
 
 export default function Footer() {
   return (
     <>
       {/* 全体の上下に余白(py-8)を追加して見やすくしています */}
-      <div className={`bg-sky-100 text-xs xl:text-lg text-center py-8 ${notoSerifJP.className}`}>
+      <div className="bg-sky-100 text-xs xl:text-lg text-center py-8">
         {/* ロゴを横並びにするFlexコンテナを追加 */}
         <div className="flex justify-center items-center gap-4 mb-6">
           <Link

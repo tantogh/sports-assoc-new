@@ -8,6 +8,11 @@ export default {
     './**/*.html',
   ],
   theme: {
+    fontFamily: {
+      sans: ['var(--font-geist-sans)', 'sans-serif'],
+      serif: ['var(--font-noto-serif-jp)', 'serif'],
+      mono: ['var(--font-geist-mono)', 'monospace'],
+    },
     extend: {
       fontSize: {
         // extra-extra-small used across the site

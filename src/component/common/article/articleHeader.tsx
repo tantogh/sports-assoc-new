@@ -4,8 +4,6 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 
-import { notoSerifJP } from "@/component/utils/fonts/fonts";
-
 type ArticleHeaderProps = {
   baseDir: string;     // e.g. "/articles/information"
   filePath: string;    // e.g. "/2018/01/2018-01-01.md"
@@ -46,7 +44,7 @@ export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps)
       <Link href={href} className="group block w-full">
         <div className="flex items-center justify-between gap-4 rounded-md px-3 transition-colors duration-200">
           <div
-            className={`text-xs xl:text-xl p-1 text-black transition-colors duration-200 group-hover:text-sky-700 ${notoSerifJP.className}`}
+            className="text-xs xl:text-xl p-1 text-black transition-colors duration-200 group-hover:text-sky-700"
           >
             <div className="text-xxs lg:text-sm text-sky-500 mb-1">{formatDate(date)}</div>
             {title}

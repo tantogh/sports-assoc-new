@@ -2,7 +2,6 @@
 import { Metadata } from "next"
 
 import Title from "@/component/common/title/title";
-import { notoSerifJP } from "@/component/utils/fonts/fonts";
 
 export const metadata: Metadata = {
   title: "協会について | 協会概要 | 石川県パラスポーツ協会",
@@ -14,7 +13,7 @@ export default function Assoc() {
     <>
       <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
         <Title subTitle="ABOUT" title="石川県パラスポーツ協会について" />
-        <section className={`max-w-2xl mx-auto p-6 bg-white ${notoSerifJP.className}`}>
+        <section className="max-w-2xl mx-auto p-6 bg-white">
           <h2 className="mb-4 border-b pb-2 pl-2 text-xl font-semibold border-l-8 border-sky-600">
             協会について
           </h2>
