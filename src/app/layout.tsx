@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { notoSerifJP } from "@/component/utils/fonts/fonts";
+import { notoSerifJP, geistSans, geistMono } from "@/component/utils/fonts/fonts";
 import Header from "@/component/common/header/header";
 import Footer from "@/component/common/footer/footer";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="jp" className="h-full antialiased scroll-smooth" data-theme="light">
+    <html lang="jp" className={`h-full antialiased scroll-smooth ${geistSans.variable} ${geistMono.variable}`} data-theme="light">
       <body className={`${notoSerifJP.className} min-h-full flex flex-col`}>
         <Header />
         <main className="flex-grow bg-white">{children}</main>
