@@ -10,8 +10,9 @@ export default function Logo() {
         alt="石川県障害者スポーツ協会のロゴ"
         width={32}
         height={32}
+        loading="eager"
         className="w-full h-full"
-    />
+      />
     </div>
   );
 };
