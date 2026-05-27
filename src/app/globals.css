@@ -1,3 +1,4 @@
+@config "../../tailwind.config.mjs";
 @import "tailwindcss";
 
 :root {
@@ -7,7 +8,7 @@
   --color-foreground: #171717;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --text-xxs: 0.525rem;
+
 }
 
 html[data-theme="light"] {
@@ -19,11 +20,6 @@ html[data-theme="light"] {
   --font-mono: var(--font-geist-mono);
 }
 
-/* Fallback utility: ensure `text-xxs` applies even if Tailwind utility not generated */
-.text-xxs {
-  font-size: var(--text-xxs);
-  line-height: 1;
-}
 body {
   background: var(--background);
   color: var(--foreground);
