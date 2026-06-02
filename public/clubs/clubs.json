@@ -1,0 +1,291 @@
+[
+  {
+    "name": "石川県身体障害者団体連合会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県知的障害者福祉協会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県精神障害者家族会連合会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県肢体障害者福祉協会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県肢体不自由児協会",
+    "homepage": {
+      "type": "HP",
+      "url": "http://www.ishi-kenshiren.jp/"
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県脊髄損傷者協会",
+    "homepage": {
+      "type": "HP",
+      "_comment": " TODO: Fix broken link",
+      "url": "http://www.normanet.ne.jp/~ishikawa/"
+    },
+    "link": ""
+  },
+  {
+    "name": "（社福）石川県視覚障害者協会",
+    "homepage": {
+      "type": "HP",
+      "url": "http://www.ishishikyo.jp/index.html"
+    },
+    "link": ""
+  },
+  {
+    "name": "（社福）石川県聴覚障害者協会",
+    "homepage": {
+      "type": "HP",
+      "url": "http://www.deaf-ishikawa.or.jp/"
+    },
+    "link": ""
+  },
+  {
+    "name": "（公益社団）石川県手をつなぐ育成会",
+    "homepage": {
+      "type": "HP",
+      "url": "http://w2222.nsk.ne.jp/ikuseikai/"
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県障がい者スポーツ指導者協議会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/instructor/activity/"
+  },
+  {
+    "name": "石川県視覚障害者協会グランドソフトボールクラブ サーカスカラーズ",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県視覚障害者協会サウンドテーブルテニスクラブ（ＳＴＴ）",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/stt/20171217stttaikai.pdf"
+  },
+  {
+    "name": "石川県聴覚障害者協会 卓球部",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "http://www.deaf-ishikawa.or.jp/"
+  },
+  {
+    "name": "石川県車いすバスケットボールクラブ Jamaney石川",
+    "homepage": {
+      "type": "Facebook",
+      "url": "https://www.facebook.com/people/Jamaney%E7%9F%B3%E5%B7%9D%E7%9F%B3%E5%B7%9D%E7%9C%8C%E8%BB%8A%E6%A4%85%E5%AD%90%E3%83%90%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB%E3%82%AF%E3%83%A9%E3%83%96/100070729224037/"
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県車椅子ツインバスケットボールチーム Pockeys",
+    "homepage": {
+      "type": "Facebook",
+      "url": "https://www.facebook.com/wtb.pockeys.isk/"
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県ハンディスキー協会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県車いすテニス協会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/wheelchair-tennis/wheelchair-tennis20180115.pdf"
+  },
+  {
+    "name": "石川県障がい者卓球クラブ YELL（エール）",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/yell/yell20250824.pdf"
+  },
+  {
+    "name": "石川県ボッチャ協会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/boccia/new_address.pdf"
+  },
+  {
+    "name": "石川県障害者フライングディスク協会",
+    "homepage": {
+      "type": "HP",
+      "url": "http://i-shifd2004.sakura.ne.jp/"
+    },
+    "link": ""
+  },
+  {
+    "name": "陸上競技クラブ 春風クラブ",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/syunpuu/20171017syunnpuu.pdf"
+  },
+  {
+    "name": "石川県パラアーチェリークラブ",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/archery/archery20140422.pdf"
+  },
+  {
+    "name": "ソフトバレーボールクラブ 希望の会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": ""
+  },
+  {
+    "name": "シッティングバレーボールクラブ石川あいあい",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/aiai/ishikawaaiaivol15.pdf"
+  },
+  {
+    "name": "ブラインドガイド・RUNサークル あいりす",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/airis/20170314airisu.pdf"
+  },
+  {
+    "name": "ツエーゲン金沢BFC",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/zweigen/30/bsuccertaiken.pdf"
+  },
+  {
+    "name": "日本障害者カヌー協会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/canoe/201806kanu.pdf"
+  },
+  {
+    "name": "いしかわ福祉水泳協会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/suiei/fukushi-suiei2021.pdf"
+  },
+  {
+    "name": "水泳サークル マーメイド",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/mermaid/mermaid.pdf"
+  },
+  {
+    "name": "ＦＣ．ＴＯＮ",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/fcton/i_sho_spo2020.pdf"
+  },
+  {
+    "name": "石川県精神障がい者フットサルクラブ ～ ルミナス ～",
+    "homepage": {
+      "type": "HP",
+      "url": "http://kanazawa-ssc.jp/archives/class_detail/1385"
+    },
+    "link": "/downloads/clubs/luminous/luminous-gaiyou-2024.pdf"
+  },
+  {
+    "name": "石川県電動車椅子サッカー協会 金沢ベストブラザーズ",
+    "homepage": {
+      "type": "HP",
+      "url": "http://www.kbb.fortm.net/"
+    },
+    "link": ""
+  },
+  {
+    "name": "石川県ゴールボール協会",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/goalball/goalball-0823.pdf"
+  },
+  {
+    "name": "金沢市ボディビル・フィットネス連盟",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/bodybuilding/chair-bodybuild-open.pdf"
+  },
+  {
+    "name": "車いすハンドボール／車いすハンドコミュニティOZ（オズ）",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": "/downloads/clubs/chair-hand-oz/chair-handball-oz-0713.pdf"
+  },
+  {
+    "name": "フロア・バレーボールチーム",
+    "homepage": {
+      "type": "",
+      "url": ""
+    },
+    "link": ""
+  }
+]
