@@ -15,7 +15,11 @@ function walk(dir) {
     if (entry.isDirectory()) {
       walk(fullPath);
     } else if (path.extname(entry.name).toLowerCase() !== ".md") {
-      const rel = path.relative(CONTENT_DIR, fullPath);
+      let rel = path.relative(CONTENT_DIR, fullPath);
+      // archives/ → archives/articles/ にマッピングして URL 構造と一致させる
+      if (rel.startsWith("archives/") || rel.startsWith("archives\\")) {
+        rel = rel.replace(/^archives[/\\]/, "archives/articles/");
+      }
       const dest = path.join(PUBLIC_DIR, rel);
       fs.mkdirSync(path.dirname(dest), { recursive: true });
       fs.copyFileSync(fullPath, dest);
