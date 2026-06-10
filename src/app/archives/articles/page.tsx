@@ -84,7 +84,7 @@ export default async function Archives() {
           <div key={category}>
             {i > 0 && <hr className="my-8 border-slate-300" />}
 
-            <h2 className="text-center mb-1">
+            <h2 id={category} className="scroll-mt-16 text-center mb-1">
               <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-600">
                 {meta.subTitle}
               </span>
