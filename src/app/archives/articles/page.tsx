@@ -153,6 +153,18 @@ export default async function Archives() {
                 </div>
               </div>
             ))}
+
+            <div className="flex justify-center mt-6">
+              <a
+                href="#"
+                className="inline-flex items-center gap-1 rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-500 transition-colors duration-200 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5" aria-hidden="true">
+                  <path fillRule="evenodd" d="M9.47 6.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 1 1-1.06 1.06L10 8.06l-3.97 3.97a.75.75 0 0 1-1.06-1.06l4.5-4.5Z" clipRule="evenodd" />
+                </svg>
+                ページトップへ
+              </a>
+            </div>
           </div>
         );
       })}
