@@ -75,6 +75,21 @@ export default async function Archives() {
     <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
       <Title subTitle="ARCHIVES" title="過去記事" />
 
+      <nav className="flex flex-wrap justify-center gap-2 mb-8">
+        {categoryOrder.map((category) => {
+          const meta = categoryMetadata[category];
+          return (
+            <Link
+              key={category}
+              href={`#${category}`}
+              className="rounded-full border border-sky-200 bg-white px-3 py-1 text-xs font-semibold text-sky-700 transition-colors duration-200 hover:border-sky-400 hover:bg-sky-50 hover:text-sky-900"
+            >
+              {meta.title}
+            </Link>
+          );
+        })}
+      </nav>
+
       {categoryOrder.map((category, i) => {
         const meta = categoryMetadata[category];
         const yearGroups = grouped[category];
