@@ -37,13 +37,15 @@ export const generateStaticParams = async () => {
 export default async function Page({ params }: any) {
   const { category, year, month, date } = await params;
   const meta = categoryMetadata[category] || categoryMetadata.information;
+  const title = category === "information" ? "過去記事" : meta.title;
+  const subTitle = category === "information" ? "ARCHIVES" : meta.subTitle;
 
   return (
     <>
       <ArticleDetailPage
         category={category}
-        subTitle={meta.subTitle}
-        title={meta.title}
+        subTitle={subTitle}
+        title={title}
         params={{ year, month, date }}
         contentRoot="archives"
       />

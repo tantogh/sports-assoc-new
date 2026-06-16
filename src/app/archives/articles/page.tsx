@@ -78,13 +78,14 @@ export default async function Archives() {
       <nav className="flex flex-wrap justify-center gap-2 mb-8">
         {categoryOrder.map((category) => {
           const meta = categoryMetadata[category];
+          const navTitle = category === "information" ? "過去記事" : meta.title;
           return (
             <Link
               key={category}
               href={`#${category}`}
               className="rounded-full border border-sky-200 bg-white px-3 py-1 text-xs font-semibold text-sky-700 transition-colors duration-200 hover:border-sky-400 hover:bg-sky-50 hover:text-sky-900"
             >
-              {meta.title}
+              {navTitle}
             </Link>
           );
         })}
@@ -92,6 +93,8 @@ export default async function Archives() {
 
       {categoryOrder.map((category, i) => {
         const meta = categoryMetadata[category];
+        const categoryTitle = category === "information" ? "過去記事" : meta.title;
+        const categorySubTitle = category === "information" ? "ARCHIVES" : meta.subTitle;
         const yearGroups = grouped[category];
         const years = Object.keys(yearGroups).sort((a, b) => Number(b) - Number(a));
 
@@ -101,10 +104,10 @@ export default async function Archives() {
 
             <h2 id={category} className="scroll-mt-16 text-center mb-1">
               <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-600">
-                {meta.subTitle}
+                {categorySubTitle}
               </span>
               <span className="text-lg lg:text-xl font-bold text-slate-900">
-                {meta.title}
+                {categoryTitle}
               </span>
             </h2>
 
