@@ -15,7 +15,6 @@ export default function Information() {
       <ArticleHeader baseDir="articles/information" filePath="/2026/02/2026-02-03.md" />
       <ArticleHeader baseDir="articles/information" filePath="/2026/02/2026-02-02.md" />
       <ArticleHeader baseDir="articles/information" filePath="/2026/02/2026-02-01.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/01/2026-01-01.md" />
     </section>
   );
 };
