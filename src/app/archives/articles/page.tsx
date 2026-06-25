@@ -41,7 +41,7 @@ async function getAllArchiveArticles(): Promise<ArticleEntry[]> {
     const [category, year, month, filename] = parts;
     const date = filename.replace(".md", "");
 
-    const raw = fs.readFileSync(path.join(process.cwd(), file), "utf8");
+    const raw = fs.readFileSync(path.join(process.cwd(), "content", "archives", rel), "utf8");
     const { data } = matter(raw);
     const title =
       typeof data.title === "string" && data.title.length > 0
