@@ -59,6 +59,12 @@ export default function Footer() {
           TEL: 076-213-6288 &nbsp; FAX: 076-213-6287<br />
           E-MAIL: <a href="mailto:i-sho-spo@po4.nsk.ne.jp" className="text-blue-600 hover:text-blue-800 hover:underline">i-sho-spo@po4.nsk.ne.jp</a>
         </p>
+
+        <p className="mt-4">
+          <Link href="/privacy/" className="text-blue-600 hover:text-blue-800 hover:underline">
+            個人情報の取扱について
+          </Link>
+        </p>
       </div>
 
       <Copyright />
