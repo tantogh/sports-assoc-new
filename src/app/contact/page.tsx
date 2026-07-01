@@ -3,6 +3,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 import Title from "@/component/common/title/title";
 
@@ -29,6 +30,7 @@ export default function ContactForm() {
 
   const [isConfirming, setIsConfirming] = useState<boolean>(false);
   const [isSent, setIsSent] = useState<boolean>(false);
+  const [agreedToPrivacyPolicy, setAgreedToPrivacyPolicy] = useState<boolean>(false);
 
   // ==========================================
   // 3. イベントハンドラー
@@ -180,9 +182,22 @@ export default function ContactForm() {
                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
             </div>
+            <div className="flex items-start gap-2">
+              <input
+                type="checkbox"
+                id="agreedToPrivacyPolicy"
+                checked={agreedToPrivacyPolicy}
+                onChange={(e) => setAgreedToPrivacyPolicy(e.target.checked)}
+                required
+                className="mt-1" />
+              <label htmlFor="agreedToPrivacyPolicy" className="text-sm text-gray-700">
+                <Link href="/privacy/" target="_blank" className="text-blue-800 hover:text-blue-900 hover:underline">個人情報保護方針</Link>に同意する
+              </label>
+            </div>
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition shadow-sm"
+              disabled={!agreedToPrivacyPolicy}
+              className="w-full px-4 py-2 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition shadow-sm disabled:bg-gray-300 disabled:cursor-not-allowed disabled:hover:bg-gray-300"
             >
               確認画面へ
             </button>
