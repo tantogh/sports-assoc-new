@@ -38,19 +38,19 @@ function sanitize($str) {
 // 2. データの受け取りとチェック
 // ==========================================
 $name = sanitize(isset($_POST['name']) ? $_POST['name'] : '');
-$furigana = sanitize(isset($_POST['furigana']) ? $_POST['furigana'] : '');
+$phone = sanitize(isset($_POST['phone']) ? $_POST['phone'] : '');
 $email = sanitize(isset($_POST['email']) ? $_POST['email'] : '');
 $message = sanitize(isset($_POST['message']) ? $_POST['message'] : '');
 
 // 必須項目のチェック
-if ($name === '' || $furigana === '' || $email === '' || $message === '') {
+if ($name === '' || $phone === '' || $email === '' || $message === '') {
     http_response_code(400); // Bad Request (入力エラー)
     echo json_encode(['error' => '必須項目が入力されていません。']);
     exit;
 }
 
 // ヘッダインジェクション対策（改行コードのブロック）
-if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $furigana) || preg_match("/[\r\n]/", $email)) {
+if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $phone) || preg_match("/[\r\n]/", $email)) {
     http_response_code(400); // Bad Request
     echo json_encode(['error' => '不正な入力が検出されました。']);
     exit;
@@ -65,7 +65,7 @@ $to = "msredcomet06@gmail.com";
 $subject = "石川県パラスポーツ協会【お問い合わせ】より";
 
 $body = "お名前: " . $name . "\n";
-$body .= "ふりがな: " . $furigana . "\n";
+$body .= "電話番号: " . $phone . "\n";
 $body .= "メールアドレス: " . $email . "\n\n";
 $body .= "お問い合わせ内容:\n" . $message;
 
