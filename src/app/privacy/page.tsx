@@ -4,15 +4,15 @@ import { Metadata } from "next"
 import Title from "@/component/common/title/title";
 
 export const metadata: Metadata = {
-  title: "個人情報の取扱について | 石川県パラスポーツ協会",
-  description: "石川県パラスポーツ協会のプライバシーポリシー（個人情報の取扱について）のページです。",
+  title: "個人情報の取り扱いについて | 石川県パラスポーツ協会",
+  description: "石川県パラスポーツ協会のプライバシーポリシー（個人情報の取り扱いについて）のページです。",
 }
 
 export default function PrivacyPage() {
   return (
     <>
       <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
-        <Title subTitle="PRIVACY POLICY" title="個人情報の取扱について" />
+        <Title subTitle="PRIVACY POLICY" title="個人情報の取り扱いについて" />
         <section className="max-w-2xl mx-auto p-6 bg-white">
           <p className="pb-8">
             石川県パラスポーツ協会（以下、「当団体」といいます。）は、個人情報の重要性を認識し、以下のとおりプライバシーポリシーを定め、個人情報の適切な保護に努めます。

@@ -62,7 +62,7 @@ export default function Footer() {
 
         <p className="mt-4 text-xs">
           <Link href="/privacy/" className="text-blue-800 hover:text-blue-900 hover:underline">
-            個人情報の取扱について
+            個人情報の取り扱いについて
           </Link>
         </p>
       </div>
