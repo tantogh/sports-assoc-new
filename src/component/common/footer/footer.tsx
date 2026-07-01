@@ -60,8 +60,8 @@ export default function Footer() {
           E-MAIL: <a href="mailto:i-sho-spo@po4.nsk.ne.jp" className="text-blue-600 hover:text-blue-800 hover:underline">i-sho-spo@po4.nsk.ne.jp</a>
         </p>
 
-        <p className="mt-4">
-          <Link href="/privacy/" className="text-blue-600 hover:text-blue-800 hover:underline">
+        <p className="mt-4 text-xs">
+          <Link href="/privacy/" className="text-blue-800 hover:text-blue-900 hover:underline">
             個人情報の取扱について
           </Link>
         </p>
