@@ -22,7 +22,7 @@ export const generateStaticParams = async () => {
   const allParams = [];
 
   for (const category of categories) {
-    const categoryParams = await generateArticleStaticParams(category, "archives")();
+    const categoryParams = await generateArticleStaticParams(category)();
     allParams.push(
       ...categoryParams.map((param: any) => ({
         category,
@@ -35,22 +35,19 @@ export const generateStaticParams = async () => {
 };
 
 export default async function Page({ params }: any) {
-  const { category, year, month, date } = await params;
+  const { category, year, month, number } = await params;
   const meta = categoryMetadata[category] || categoryMetadata.information;
-  const title = category === "information" ? "過去記事" : meta.title;
-  const subTitle = category === "information" ? "ARCHIVES" : meta.subTitle;
 
   return (
     <>
       <ArticleDetailPage
         category={category}
-        subTitle={subTitle}
-        title={title}
-        params={{ year, month, date }}
-        contentRoot="archives"
+        subTitle={meta.subTitle}
+        title={meta.title}
+        params={{ year, month, number }}
       />
       <div className="flex justify-center mb-8">
-        <Link href={`/archives/articles#${category}`} passHref>
+        <Link href={`${meta.url}#${category}`} passHref>
           <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors cursor-pointer">
             一覧へ戻る
           </button>
