@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 // 表示する画像の型定義
 export type CarouselImage = {
@@ -16,22 +16,62 @@ interface CarouselProps {
 }
 
 export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // 先頭と末尾に複製スライドを追加し、末尾→先頭（またはその逆）でも
+  // 常に同じ方向へスクロールしているように見せかける（無限ループ風の実装）
+  const hasClones = images.length > 1;
+  const offset = hasClones ? 1 : 0;
+  const extendedImages = hasClones
+    ? [images[images.length - 1], ...images, images[0]]
+    : images;
+  const [currentIndex, setCurrentIndex] = useState(offset);
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
+  const isWrappingRef = useRef(false);
 
   // 次のスライドへ
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-  }, [images.length]);
+    setIsTransitionEnabled(true);
+    setCurrentIndex((prevIndex) => prevIndex + 1);
+  }, []);
 
   // 前のスライドへ
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    setIsTransitionEnabled(true);
+    setCurrentIndex((prevIndex) => prevIndex - 1);
   };
 
   // 特定のスライド（ドット用）へ
   const goToSlide = (index: number) => {
-    setCurrentIndex(index);
+    setIsTransitionEnabled(true);
+    setCurrentIndex(index + offset);
   };
+
+  // 複製スライドに到達したら、トランジション終了後に実スライドへ瞬時に戻す
+  useEffect(() => {
+    if (!hasClones) return;
+    if (currentIndex === 0 || currentIndex === extendedImages.length - 1) {
+      isWrappingRef.current = true;
+    }
+  }, [currentIndex, extendedImages.length, hasClones]);
+
+  const handleTransitionEnd = () => {
+    if (!isWrappingRef.current) return;
+    isWrappingRef.current = false;
+    if (currentIndex === extendedImages.length - 1) {
+      setIsTransitionEnabled(false);
+      setCurrentIndex(1);
+    } else if (currentIndex === 0) {
+      setIsTransitionEnabled(false);
+      setCurrentIndex(images.length);
+    }
+  };
+
+  // トランジションを無効化した直後、次のレンダーで再度有効化する
+  useEffect(() => {
+    if (!isTransitionEnabled) {
+      const frame = requestAnimationFrame(() => setIsTransitionEnabled(true));
+      return () => cancelAnimationFrame(frame);
+    }
+  }, [isTransitionEnabled]);
 
   // 自動再生の設定
   useEffect(() => {
@@ -46,10 +86,11 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
     <div className="relative w-full overflow-hidden group">
       {/* 画像スライダー本体 */}
       <div
-        className="flex transition-transform duration-500 ease-in-out"
+        className={`flex ${isTransitionEnabled ? "transition-transform duration-500 ease-in-out" : ""}`}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        onTransitionEnd={handleTransitionEnd}
       >
-        {images.map((image, index) => (
+        {extendedImages.map((image, index) => (
           // スマホ縦画面では画像が横長のため、画面の高さいっぱいに伸ばすと object-cover で左右が大きく切れてしまう。
           // そのためスマホは元のアスペクト比のまま表示し（下に余白ができるのは許容）、
           // md以上ではヘッダーの実際の高さ（72px/80px、breakpointごとに異なる）を
@@ -60,7 +101,7 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
               alt={image.alt}
               fill
               className="object-cover object-top"
-              priority={index === 0} // 最初の画像だけLCP最適化のために優先ロード
+              priority={index === offset} // 最初の画像だけLCP最適化のために優先ロード
             />
           </div>
         ))}
@@ -93,7 +134,7 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-2.5 h-2.5 rounded-full transition-colors ${
-              index === currentIndex ? "bg-white" : "bg-white/50 hover:bg-white/80"
+              index === currentIndex - offset ? "bg-white" : "bg-white/50 hover:bg-white/80"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
