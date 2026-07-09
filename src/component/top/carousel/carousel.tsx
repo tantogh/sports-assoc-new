@@ -74,10 +74,37 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
   }, [isTransitionEnabled]);
 
   // 自動再生の設定
+  // タブが非表示の間はCSSトランジションが進行しないため、setIntervalを止めずに
+  // 回し続けるとcurrentIndexが境界チェック（handleTransitionEnd）を飛び越えて
+  // extendedImagesの範囲外まで進んでしまい、復帰後にカルーセルが真っ白のまま
+  // 固まる不具合につながる。そのためタブ非表示中はタイマー自体を止める。
   useEffect(() => {
     if (autoPlayInterval <= 0) return;
-    const timer = setInterval(nextSlide, autoPlayInterval);
-    return () => clearInterval(timer); // クリーンアップ
+    let timer: ReturnType<typeof setInterval> | undefined;
+
+    const start = () => {
+      timer = setInterval(nextSlide, autoPlayInterval);
+    };
+    const stop = () => {
+      if (timer) clearInterval(timer);
+      timer = undefined;
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stop();
+      } else {
+        start();
+      }
+    };
+
+    if (!document.hidden) start();
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      stop();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, [autoPlayInterval, nextSlide]);
 
   if (!images || images.length === 0) return null;
