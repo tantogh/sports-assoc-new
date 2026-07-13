@@ -26,6 +26,11 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
   const [currentIndex, setCurrentIndex] = useState(offset);
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const isWrappingRef = useRef(false);
+  const currentIndexRef = useRef(currentIndex);
+
+  useEffect(() => {
+    currentIndexRef.current = currentIndex;
+  }, [currentIndex]);
 
   // 次のスライドへ
   const nextSlide = useCallback(() => {
@@ -53,16 +58,26 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
     }
   }, [currentIndex, extendedImages.length, hasClones]);
 
-  const handleTransitionEnd = () => {
+  // 複製スライドの境界にいる間、実スライド位置へ瞬時に戻す。
+  // 通常はtransitionendイベント（handleTransitionEnd）から呼ばれるが、
+  // タブが非表示の間に境界への遷移が完了した場合、一部のブラウザでは
+  // 復帰してもtransitionendが発火しない。そのためタブ復帰時にも
+  // このロジックを直接呼び出せるよう、currentIndexRefを介した
+  // 独立した関数として切り出している。
+  const syncBoundary = useCallback(() => {
     if (!isWrappingRef.current) return;
     isWrappingRef.current = false;
-    if (currentIndex === extendedImages.length - 1) {
+    if (currentIndexRef.current === extendedImages.length - 1) {
       setIsTransitionEnabled(false);
       setCurrentIndex(1);
-    } else if (currentIndex === 0) {
+    } else if (currentIndexRef.current === 0) {
       setIsTransitionEnabled(false);
       setCurrentIndex(images.length);
     }
+  }, [extendedImages.length, images.length]);
+
+  const handleTransitionEnd = () => {
+    syncBoundary();
   };
 
   // トランジションを無効化した直後、次のレンダーで再度有効化する
@@ -94,6 +109,11 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
       if (document.hidden) {
         stop();
       } else {
+        // 非表示中に複製スライドへのラップ遷移が起きていた場合、
+        // transitionendが発火せず補正されないまま固まっていることがある。
+        // タイマー再開前に強制補正し、境界を超えてextendedImagesの
+        // 範囲外まで進んでカルーセルが真っ白になるのを防ぐ。
+        syncBoundary();
         start();
       }
     };
@@ -105,7 +125,7 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
       stop();
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [autoPlayInterval, nextSlide]);
+  }, [autoPlayInterval, nextSlide, syncBoundary]);
 
   if (!images || images.length === 0) return null;
 
