@@ -64,7 +64,7 @@ export default function ContactForm() {
       } else {
         alert('送信に失敗しました。');
       }
-    } catch (error) {
+    } catch {
       alert('通信エラーが発生しました。');
     }
   };
