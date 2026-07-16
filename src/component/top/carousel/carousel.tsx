@@ -25,7 +25,6 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
     : images;
   const [currentIndex, setCurrentIndex] = useState(offset);
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
-  const isWrappingRef = useRef(false);
   const currentIndexRef = useRef(currentIndex);
 
   useEffect(() => {
@@ -50,31 +49,23 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
     setCurrentIndex(index + offset);
   };
 
-  // 複製スライドに到達したら、トランジション終了後に実スライドへ瞬時に戻す
-  useEffect(() => {
-    if (!hasClones) return;
-    if (currentIndex === 0 || currentIndex === extendedImages.length - 1) {
-      isWrappingRef.current = true;
-    }
-  }, [currentIndex, extendedImages.length, hasClones]);
-
-  // 複製スライドの境界にいる間、実スライド位置へ瞬時に戻す。
+  // 複製スライドの境界（またはそれを通り越した位置）にいる場合、実スライド位置へ瞬時に戻す。
   // 通常はtransitionendイベント（handleTransitionEnd）から呼ばれるが、
   // タブが非表示の間に境界への遷移が完了した場合、一部のブラウザでは
   // 復帰してもtransitionendが発火しない。そのためタブ復帰時にも
   // このロジックを直接呼び出せるよう、currentIndexRefを介した
   // 独立した関数として切り出している。
+  // また、非表示中に複数回nextSlideが積み重なると境界インデックスをちょうど
+  // 通過するとは限らず「一致するかどうか」の判定では取りこぼすため、
+  // 実スライド範囲の外にいるかどうかで判定し、mod演算で位置を正規化する。
   const syncBoundary = useCallback(() => {
-    if (!isWrappingRef.current) return;
-    isWrappingRef.current = false;
-    if (currentIndexRef.current === extendedImages.length - 1) {
-      setIsTransitionEnabled(false);
-      setCurrentIndex(1);
-    } else if (currentIndexRef.current === 0) {
-      setIsTransitionEnabled(false);
-      setCurrentIndex(images.length);
-    }
-  }, [extendedImages.length, images.length]);
+    if (!hasClones) return;
+    const index = currentIndexRef.current;
+    if (index > 0 && index < extendedImages.length - 1) return; // 実スライド範囲内なら何もしない
+    setIsTransitionEnabled(false);
+    const realIndex = ((index - offset) % images.length + images.length) % images.length;
+    setCurrentIndex(realIndex + offset);
+  }, [hasClones, extendedImages.length, images.length, offset]);
 
   const handleTransitionEnd = () => {
     syncBoundary();
