@@ -15,9 +15,7 @@
     "key": "club",
     "label": "クラブ情報",
     "items": [
-      { "label": "クラブ紹介", "href": "/clubs/introduction/" },
-      { "label": "クラブ報告", "href": "/clubs/reports/" },
-      { "label": "パラスポーツ紹介", "href": "/clubs/parasports/" }
+      { "label": "クラブ紹介", "href": "/clubs/introduction/" }
     ]
   },
   {
@@ -34,9 +32,7 @@
     "key": "events",
     "label": "イベント",
     "items": [
-      { "label": "大会結果", "href": "/events/results/" },
-      { "label": "募集情報", "href": "/events/staff/" },
-      { "label": "事業報告", "href": "/events/reports/" }
+      { "label": "募集情報", "href": "/events/staff/" }
     ]
   },
   {
@@ -45,13 +41,11 @@
     "label": "指導員",
     "items": [
       { "label": "講習会", "href": "/instructor/seminars/" },
-      { "label": "募集情報", "href": "/instructor/recruitment/" },
-      { "label": "活動報告", "href": "/instructor/activity/" }
+      { "label": "募集情報", "href": "/instructor/recruitment/" }
     ]
   },
-  { "type": "link", "label": "用具", "href": "/rental/" },
   { "type": "link", "label": "Q&A", "href": "/qa/" },
-  { "type": "link", "label": "ダウンロード", "href": "/downloads/" },
+  { "type": "link", "label": "申請書類", "href": "/downloads/" },
   { "type": "link", "label": "リンク集", "href": "/links/" },
   { "type": "link", "label": "お問い合わせ", "href": "/contact/" }
 ]
