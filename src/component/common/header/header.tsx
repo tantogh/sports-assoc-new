@@ -90,7 +90,7 @@ export default function Header() {
           ================================== */}
       <nav
         className={`fixed top-0 right-0 w-[250px] h-screen bg-sky-700 pt-20 transition-transform duration-300 ease-in-out z-40
-          xl:static xl:w-auto xl:h-auto xl:bg-transparent xl:pt-0 xl:translate-x-0 text-xs md:text-sm
+          xl:static xl:w-auto xl:h-auto xl:bg-transparent xl:pt-0 xl:translate-x-0 text-sm md:text-base
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <ul className="flex flex-col xl:flex-row xl:gap-6 px-6 xl:px-0">
@@ -128,7 +128,7 @@ export default function Header() {
                     <li key={sub.label}>
                       <Link
                         href={sub.href}
-                        className="block py-3 px-4 border-b border-gray-500 xl:border-none hover:text-gray-300 transition-colors text-xs"
+                        className="block py-3 px-4 border-b border-gray-500 xl:border-none hover:text-gray-300 transition-colors text-sm"
                         onClick={() => { setOpenSubMenu(null); setIsOpen(false); }}
                       >
                         {sub.label}
