@@ -12,14 +12,6 @@
   },
   {
     "type": "submenu",
-    "key": "club",
-    "label": "クラブ情報",
-    "items": [
-      { "label": "クラブ紹介", "href": "/clubs/introduction/" }
-    ]
-  },
-  {
-    "type": "submenu",
     "key": "sports",
     "label": "スポーツ大会",
     "items": [
@@ -44,6 +36,7 @@
       { "label": "募集情報", "href": "/instructor/recruitment/" }
     ]
   },
+  { "type": "link", "label": "クラブ紹介", "href": "/clubs/introduction/" },
   { "type": "link", "label": "Q&A", "href": "/qa/" },
   { "type": "link", "label": "申請書類", "href": "/downloads/" },
   { "type": "link", "label": "リンク集", "href": "/links/" },
