@@ -3,15 +3,15 @@ import { Metadata } from "next"
 import Title from "@/component/common/title/title";
 
 export const metadata: Metadata = {
-  title: "ダウンロード | 石川県パラスポーツ協会",
-  description: "石川県パラスポーツ協会の後援申請や推薦状などのダウンロードのページです。",
+  title: "申請書類 | 石川県パラスポーツ協会",
+  description: "石川県パラスポーツ協会の後援申請や推薦状などの申請書類のページです。",
 }
 
 export default function DownloadsPage() {
   return (
     <>
       <div className="max-w-7xl mx-auto px-2 lg:px-4">
-        <Title subTitle="DOWNLOADS" title="ダウンロード" />
+        <Title subTitle="APPLICATION FORMS" title="申請書類" />
         <section className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-xl shadow-lg">
           <p className="mb-6 leading-relaxed text-gray-700">
             後援申請書、表彰者推薦書などのダウンロードはこちらからお願いいたします。
