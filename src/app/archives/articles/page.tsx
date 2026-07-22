@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Title from "@/component/common/title/title";
 import { categoryMetadata } from "@/component/common/article/categoryMetadata";
+import YearAccordion from "@/component/common/article/YearAccordion";
 
 export const metadata: Metadata = {
   title: "過去記事 | 石川県パラスポーツ協会",
@@ -112,49 +113,42 @@ export default async function Archives() {
             </h2>
 
             {years.map((year) => (
-              <div key={year} className="mt-6">
-                <div className="flex items-center gap-3 mb-3 max-w-2xl mx-auto">
-                  <span className="text-sm font-semibold text-slate-500">{year}年</span>
-                  <div className="flex-1 border-t border-slate-200" />
-                </div>
-
-                <div className="space-y-2">
-                  {yearGroups[year].map((entry) => {
-                    const href = `/archives/articles/${entry.category}/${entry.year}/${entry.month}/${entry.date}`;
-                    return (
-                      <div
-                        key={href}
-                        className="max-w-2xl mx-auto p-2 bg-white rounded-xl shadow-lg"
-                      >
-                        <Link href={href} className="group flex items-center justify-between gap-4 rounded-md px-3 transition-colors duration-200">
-                          <div className="text-sm lg:text-xl p-1 text-black transition-colors duration-200 group-hover:text-sky-700">
-                            <div className="text-xxs lg:text-sm text-sky-500 mb-1">
-                              {formatDate(entry.dateStr)}
-                            </div>
-                            {entry.title}
+              <YearAccordion key={year} year={year}>
+                {yearGroups[year].map((entry) => {
+                  const href = `/archives/articles/${entry.category}/${entry.year}/${entry.month}/${entry.date}`;
+                  return (
+                    <div
+                      key={href}
+                      className="max-w-2xl mx-auto p-2 bg-white rounded-xl shadow-lg"
+                    >
+                      <Link href={href} className="group flex items-center justify-between gap-4 rounded-md px-3 transition-colors duration-200">
+                        <div className="text-sm lg:text-xl p-1 text-black transition-colors duration-200 group-hover:text-sky-700">
+                          <div className="text-xxs lg:text-sm text-sky-500 mb-1">
+                            {formatDate(entry.dateStr)}
                           </div>
-                          <div className="inline-flex items-center gap-1 rounded-full border border-sky-200 bg-white/90 px-1 lg:px-3 py-[2px] lg:py-1 text-[8px] lg:text-[10px] font-semibold uppercase tracking-wide text-sky-700 transition-all duration-200 group-hover:border-sky-300 group-hover:bg-sky-200/60 group-hover:text-sky-800 shrink-0">
-                            <span>more</span>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
-                              aria-hidden="true"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M3.25 10a.75.75 0 0 1 .75-.75h10.19l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H4a.75.75 0 0 1-.75-.75Z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </div>
-                        </Link>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
+                          {entry.title}
+                        </div>
+                        <div className="inline-flex items-center gap-1 rounded-full border border-sky-200 bg-white/90 px-1 lg:px-3 py-[2px] lg:py-1 text-[8px] lg:text-[10px] font-semibold uppercase tracking-wide text-sky-700 transition-all duration-200 group-hover:border-sky-300 group-hover:bg-sky-200/60 group-hover:text-sky-800 shrink-0">
+                          <span>more</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                            aria-hidden="true"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M3.25 10a.75.75 0 0 1 .75-.75h10.19l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H4a.75.75 0 0 1-.75-.75Z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                })}
+              </YearAccordion>
             ))}
 
             <div className="flex justify-center mt-6">
