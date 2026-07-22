@@ -21,14 +21,6 @@
   },
   {
     "type": "submenu",
-    "key": "events",
-    "label": "イベント",
-    "items": [
-      { "label": "募集情報", "href": "/events/staff/" }
-    ]
-  },
-  {
-    "type": "submenu",
     "key": "instructors",
     "label": "指導員",
     "items": [
@@ -36,6 +28,7 @@
       { "label": "募集情報", "href": "/instructor/recruitment/" }
     ]
   },
+  { "type": "link", "label": "募集情報", "href": "/events/staff/" },
   { "type": "link", "label": "クラブ紹介", "href": "/clubs/introduction/" },
   { "type": "link", "label": "Q&A", "href": "/qa/" },
   { "type": "link", "label": "申請書類", "href": "/downloads/" },
