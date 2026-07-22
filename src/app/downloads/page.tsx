@@ -48,7 +48,7 @@ export default function DownloadsPage() {
                 <td className="py-4 px-3 text-gray-800">石川県障害者スポーツ協会用具使用申請書</td>
                 <td className="py-4 px-3 text-right whitespace-nowrap">
                   <a
-                    href="/downloads/rental/yougu-shiyou-shinsei-2026.pdf"
+                    href="/downloads/downloads/yougu-shiyou-shinsei-2026.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition whitespace-nowrap"
@@ -61,7 +61,7 @@ export default function DownloadsPage() {
                 <td className="py-4 px-3 text-gray-800">石川県障害者スポーツ協会用具使用料金表</td>
                 <td className="py-4 px-3 text-right whitespace-nowrap">
                   <a
-                    href="/downloads/rental/yougu-shiyou-ryoukin-2026.pdf"
+                    href="/downloads/downloads/yougu-shiyou-ryoukin-2026.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition whitespace-nowrap"
@@ -74,7 +74,7 @@ export default function DownloadsPage() {
                 <td className="py-4 px-3 text-gray-800">指導員派遣依頼書</td>
                 <td className="py-4 px-3 text-right whitespace-nowrap">
                   <a
-                    href="/downloads/rental/shidouin-haken-irai-2026.pdf"
+                    href="/downloads/downloads/shidouin-haken-irai-2026.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition whitespace-nowrap"
