@@ -31,7 +31,7 @@ export const categoryMetadata: Record<string, CategoryMetadata> = {
     url: "/clubs/reports",
   },
   ishikawa: {
-    title: "石川県障害者スポーツ大会",
+    title: "石川県パラ(障害者)スポーツ大会",
     subTitle: "TOURNAMENTS",
     description: "石川県パラスポーツ協会の県内大会ページです。",
     url: "/tournaments/ishikawa",
