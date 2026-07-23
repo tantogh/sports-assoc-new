@@ -61,7 +61,7 @@ if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $phone) || preg_matc
 // 3. メールの送信処理
 // ==========================================
 // ★ご自身が受け取りたいメールアドレスに変更してください
-$to = "msredcomet06@gmail.com";
+$to = "i-sho-spo@po4.nsk.ne.jp";
 $subject = "石川県パラスポーツ協会【お問い合わせ】より";
 
 $body = "お名前: " . $name . "\n";
