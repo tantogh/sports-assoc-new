@@ -2,7 +2,7 @@
 // =========================================
 // CORS設定
 // =========================================
-$allowed_origin = "https://pseudisodomic-dacolleta-francis.ngrok-free.dev"; // <--要書き換え
+$allowed_origin = "https://i-sho-spo.sakura.ne.jp";
 header("Access-Control-Allow-Origin: {$allowed_origin}");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
