@@ -14,7 +14,7 @@ export default function SeminarsPage() {
     <>
       <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
         <Title subTitle="SEMINARS" title="パラスポーツ指導員養成講習会" />
-        <ArticleHeader baseDir="/articles/seminars" filePath="/2026/05/2026-05-01.md" />
+        {/* <ArticleHeader baseDir="/articles/seminars" filePath="/2026/05/2026-05-01.md" /> */}
       </div>
     </>
   );

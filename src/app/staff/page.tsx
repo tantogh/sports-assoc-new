@@ -14,7 +14,7 @@ export default function StaffPage() {
     <>
       <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
         <Title subTitle="STAFF" title="ボランティア・スタッフ募集について" />
-        <ArticleHeader baseDir="/articles/staff" filePath="/2026/08/2026-08-01.md" />
+        {/* <ArticleHeader baseDir="/articles/staff" filePath="/2026/08/2026-08-01.md" /> */}
       </div>
     </>
   );

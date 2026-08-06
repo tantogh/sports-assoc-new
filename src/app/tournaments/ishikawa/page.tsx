@@ -14,7 +14,7 @@ export default function IshikawaPage() {
     <>
       <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
         <Title subTitle="TOURNAMENTS" title="石川県パラ(障害者)スポーツ大会" />
-        <ArticleHeader baseDir="/articles/ishikawa/" filePath="/2026/05/2026-05-01.md" />
+        {/* <ArticleHeader baseDir="/articles/ishikawa/" filePath="/2026/05/2026-05-01.md" /> */}
       </div>
     </>
   );
