@@ -14,7 +14,8 @@ export default function Newsletters() {
     <>
       <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
         <Title subTitle="NEWSLETTERS" title="協会だより" />
-        <ArticleHeader baseDir="/articles/newsletters/" filePath="/2026/05/2026-05-01.md" />
+         <ArticleHeader baseDir="/articles/newsletters/" filePath="/2026/09/2026-09-01.md" />
+         <ArticleHeader baseDir="/articles/newsletters/" filePath="/2026/05/2026-05-01.md" />
       </div>
     </>
   );
