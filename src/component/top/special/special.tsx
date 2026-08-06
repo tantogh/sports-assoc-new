@@ -5,7 +5,7 @@ export default function Special() {
   return (
     <section className="w-full">
       {/* 記事一覧 */}
-      <ArticleHeader baseDir="articles/special" filePath="/2026/05/2026-05-01.md" />
+      <ArticleHeader baseDir="articles/special" filePath="/2026/09/2026-09-01.md" />
     </section>
   );
 };
