@@ -4,10 +4,12 @@ export default function Sponsorship() {
   return (
     <>
       <section className="w-full max-w-2xl mx-auto mb-4 p-2 bg-white rounded-xl shadow-lg">
-        <p className="text-xs xl:text-xl font-bold p-4 text-center">
-          サントリービバレッジサービス株式会社様<br />
-          株式会社　ゴールドウィン様
-        </p>
+        <div className="text-xs xl:text-xl p-4">
+          <ul className="list-disc list-inside mb-4">
+            <li>サントリービバレッジサービス株式会社様</li>
+            <li>株式会社　ゴールドウィン様</li>
+          </ul>
+        </div>
       </section>
     </>
   );
