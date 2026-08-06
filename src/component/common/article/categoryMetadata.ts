@@ -66,6 +66,12 @@ export const categoryMetadata: Record<string, CategoryMetadata> = {
     description: "石川県パラスポーツ協会の指導員養成講習会ページです。",
     url: "/instructor/seminars",
   },
+  recruitment: {
+    title: "パラスポーツ指導員募集",
+    subTitle: "RECRUITMENT",
+    description: "石川県パラスポーツ協会の指導員募集ページです。",
+    url: "/instructor/recruitment",
+  },
   activity: {
     title: "パラスポーツ指導員活動報告",
     subTitle: "ACTIVITY",
