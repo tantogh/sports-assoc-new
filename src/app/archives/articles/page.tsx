@@ -49,7 +49,11 @@ async function getAllArchiveArticles(): Promise<ArticleEntry[]> {
         ? data.title
         : "タイトルなし";
     const dateStr =
-      typeof data.date === "string" ? data.date : `${year}-${month}-${date.split("-").pop()}`;
+      typeof data.date === "string"
+        ? data.date
+        : data.date instanceof Date
+        ? data.date.toISOString().slice(0, 10)
+        : `${year}-${month}-${date.split("-").pop()}`;
 
     entries.push({ category, year, month, date, title, dateStr });
   }
