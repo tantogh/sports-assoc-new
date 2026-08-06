@@ -2,7 +2,6 @@
 import { Metadata } from "next"
 
 import Title from "@/component/common/title/title";
-import Article from "@/component/common/article/article";
 import ArticleHeader from "@/component/common/article/articleHeader";
 
 export const metadata: Metadata = {

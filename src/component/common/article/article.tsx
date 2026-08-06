@@ -133,66 +133,11 @@ export function MarkdownLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
 };
 
 export default function Article({ filename }: ArticleProps) {
+  let content: string;
   try {
     const filePath = path.join(process.cwd(), "content", filename);
     const rawText = fs.readFileSync(filePath, "utf8");
-    const { content } = matter(rawText);
-
-    return (
-      <div className="p-4 m-4 bg-white mx-auto w-full max-w-4xl">
-        <article className={`prose prose-ul:list-disc prose-ol:list-decimal prose-li:my-0 prose-li:pl-0 max-w-none
-          rounded-xl border border-blue-100 bg-white p-4 md:p-6 text-slate-800 shadow-md`}>
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
-            components={{
-              a: MarkdownLink,
-              h1: ({ children }) => (
-                <h1 className="text-lg sm:text-xl font-bold mt-4 mb-4 text-sky-700">{children}</h1>
-              ),
-              h2: ({ children }) => (
-                <h2 className="text-lg font-bold mt-4 mb-4">{children}</h2>
-              ),
-              p: ({ children }) => <p className="my-2">{children}</p>,
-              ul: ({ children }) => <ul className="list-disc pl-6 my-4">{children}</ul>,
-              ol: ({ children }) => <ol className="list-decimal pl-6 my-4">{children}</ol>,
-              li: ({ children }) => <li className="my-1">{children}</li>,
-              u: ({ children }) => <u className="underline">{children}</u>,
-              table: ({ children }) => (
-                <div className="overflow-x-auto my-4">
-                  <table className="w-full border-collapse border border-gray-400 text-sm">
-                    {children}
-                  </table>
-                </div>
-              ),
-              thead: ({ children }) => (
-                <thead className="bg-gray-100">
-                  {children}
-                </thead>
-              ),
-              tbody: ({ children }) => <tbody>{children}</tbody>,
-              tr: ({ children }) => (
-                <tr className="border-b last:border-b-0 bg-white">
-                  {children}
-                </tr>
-              ),
-              th: ({ children }) => (
-                <th className="border border-gray-400 px-2 py-1 text-left font-semibold">
-                  {children}
-                </th>
-              ),
-              td: ({ children }) => (
-                <td className="border border-gray-400 px-2 py-1 align-top">
-                  {children}
-                </td>
-              ),
-            }}
-          >
-            {content}
-          </ReactMarkdown>
-        </article>
-      </div>
-    );
+    ({ content } = matter(rawText));
   } catch (err) {
     return (
       <div className="p-4 m-4 border bg-red-100 text-red-600 rounded-md">
@@ -200,4 +145,60 @@ export default function Article({ filename }: ArticleProps) {
       </div>
     );
   }
-};
+
+  return (
+    <div className="p-4 m-4 bg-white mx-auto w-full max-w-4xl">
+      <article className={`prose prose-ul:list-disc prose-ol:list-decimal prose-li:my-0 prose-li:pl-0 max-w-none
+        rounded-xl border border-blue-100 bg-white p-4 md:p-6 text-slate-800 shadow-md`}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
+          components={{
+            a: MarkdownLink,
+            h1: ({ children }) => (
+              <h1 className="text-lg sm:text-xl font-bold mt-4 mb-4 text-sky-700">{children}</h1>
+            ),
+            h2: ({ children }) => (
+              <h2 className="text-lg font-bold mt-4 mb-4">{children}</h2>
+            ),
+            p: ({ children }) => <p className="my-2">{children}</p>,
+            ul: ({ children }) => <ul className="list-disc pl-6 my-4">{children}</ul>,
+            ol: ({ children }) => <ol className="list-decimal pl-6 my-4">{children}</ol>,
+            li: ({ children }) => <li className="my-1">{children}</li>,
+            u: ({ children }) => <u className="underline">{children}</u>,
+            table: ({ children }) => (
+              <div className="overflow-x-auto my-4">
+                <table className="w-full border-collapse border border-gray-400 text-sm">
+                  {children}
+                </table>
+              </div>
+            ),
+            thead: ({ children }) => (
+              <thead className="bg-gray-100">
+                {children}
+              </thead>
+            ),
+            tbody: ({ children }) => <tbody>{children}</tbody>,
+            tr: ({ children }) => (
+              <tr className="border-b last:border-b-0 bg-white">
+                {children}
+              </tr>
+            ),
+            th: ({ children }) => (
+              <th className="border border-gray-400 px-2 py-1 text-left font-semibold">
+                {children}
+              </th>
+            ),
+            td: ({ children }) => (
+              <td className="border border-gray-400 px-2 py-1 align-top">
+                {children}
+              </td>
+            ),
+          }}
+        >
+          {content}
+        </ReactMarkdown>
+      </article>
+    </div>
+  );
+}

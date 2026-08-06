@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ArticleDetailPage, { generateArticleStaticParams } from "@/component/common/article/ArticleDetailPage";
+import ArticleDetailPage, { generateArticleStaticParams, type ArticlePageParams } from "@/component/common/article/ArticleDetailPage";
 import { categoryMetadata } from "@/component/common/article/categoryMetadata";
 import Link from "next/link";
 
@@ -24,7 +24,7 @@ export const generateStaticParams = async () => {
   for (const category of categories) {
     const categoryParams = await generateArticleStaticParams(category)();
     allParams.push(
-      ...categoryParams.map((param: any) => ({
+      ...categoryParams.map((param: ArticlePageParams) => ({
         category,
         ...param,
       }))
@@ -34,7 +34,9 @@ export const generateStaticParams = async () => {
   return allParams;
 };
 
-export default async function Page({ params }: any) {
+type PageParams = { category: string } & ArticlePageParams;
+
+export default async function Page({ params }: { params: Promise<PageParams> }) {
   const { category, year, month, number } = await params;
   const meta = categoryMetadata[category] || categoryMetadata.information;
 

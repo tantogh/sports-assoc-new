@@ -5,6 +5,12 @@ import { Metadata } from "next";
 
 import Title from "@/component/common/title/title";
 
+type Club = {
+  name: string;
+  homepage: { type: string; url: string };
+  link: string;
+};
+
 export const metadata: Metadata = {
   title: "クラブ紹介 | クラブ情報 | 石川県パラスポーツ協会",
   description: "石川県パラスポーツ協会のクラブ紹介のページです。",
@@ -13,7 +19,7 @@ export const metadata: Metadata = {
 export default async function Introduction() {
   const clubsFilePath = path.join(process.cwd(), 'content/clubs/clubs.json');
   const clubsData = await fs.promises.readFile(clubsFilePath, 'utf-8');
-  const clubs = JSON.parse(clubsData);
+  const clubs: Club[] = JSON.parse(clubsData);
 
   return (
     <>
@@ -28,7 +34,7 @@ export default async function Introduction() {
               </tr>
             </thead>
             <tbody>
-              {clubs.map((club: any, index: number) => (
+              {clubs.map((club, index) => (
                 <tr key={index} className={index % 2 === 0 ? "bg-gray-50 hover:bg-sky-50" : "bg-white hover:bg-sky-50"}>
                   <td className="border border-gray-300 px-4 py-2">
                     {club.link ? (

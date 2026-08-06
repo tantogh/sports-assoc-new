@@ -5,7 +5,6 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link"; // Next.jsのLinkコンポーネントを使用
 
-import { geistMono } from "@/component/utils/fonts/fonts";
 import Logo from "@/component/common/header/logo";
 import menuConfig from "@/component/common/header/menu.json";
 

@@ -35,7 +35,7 @@ export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps)
   const href = path.join(baseDir, filePath.replace(/\.md$/, ""));
   const raw = fs.readFileSync(fullPath, "utf8");
 
-  const { data, content } = matter(raw);
+  const { data } = matter(raw);
   const title = getTitle(data);
   const date = new Date(data.date || "1970-01-01");
 
