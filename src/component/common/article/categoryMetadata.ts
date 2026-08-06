@@ -55,10 +55,10 @@ export const categoryMetadata: Record<string, CategoryMetadata> = {
     url: "/events/reports",
   },
   staff: {
-    title: "パラスポーツ指導員募集",
+    title: "ボランティア・スタッフ募集について",
     subTitle: "STAFF",
-    description: "石川県パラスポーツ協会の指導員募集ページです。",
-    url: "/events/staff",
+    description: "石川県パラスポーツ協会のボランティア・スタッフ募集ページです。",
+    url: "/staff",
   },
   seminars: {
     title: "パラスポーツ指導員養成講習会",
