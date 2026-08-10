@@ -6,6 +6,7 @@ export default function Information() {
   return (
     <section className="w-full">
       {/* 記事一覧 */}
+      <ArticleHeader baseDir="articles/information" filePath="/2026/08/2026-08-03.md" />
       <ArticleHeader baseDir="articles/information" filePath="/2026/08/2026-08-02.md" />
       <ArticleHeader baseDir="articles/information" filePath="/2026/08/2026-08-01.md" />
       <ArticleHeader baseDir="articles/information" filePath="/2026/06/2026-06-04.md" />
