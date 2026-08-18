@@ -129,16 +129,17 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
         onTransitionEnd={handleTransitionEnd}
       >
         {extendedImages.map((image, index) => (
-          // 画像は16:9で、md以上のPC画面のアスペクト比とほぼ一致するため、
-          // ヘッダーの実際の高さ（72px/80px、breakpointごとに異なる）を
-          // 画面の高さから差し引き、ヘッダー直下で画面いっぱいに表示する。
-          // これによりコンテナがビューポートをはみ出すことがなくなる
-          <div key={index} className="w-full flex-shrink-0 relative aspect-[16/9] md:aspect-auto md:h-[calc(100dvh-72px)] lg:h-[calc(100dvh-80px)]">
+          // ビューポートの高さいっぱいに広げると、ウィンドウの縦横比が
+          // 画像（16:9）とズレた分だけ切り取りや余白が発生してしまう。
+          // そのためコンテナを画像の実アスペクト比に固定し、
+          // 常に画像全体を欠けなく表示する（画面によっては下に続きが
+          // 見えるまでスクロールが必要になる場合がある）
+          <div key={index} className="w-full flex-shrink-0 relative aspect-[16/9]">
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover object-top"
+              className="object-cover"
               priority={index === offset} // 最初の画像だけLCP最適化のために優先ロード
             />
           </div>
