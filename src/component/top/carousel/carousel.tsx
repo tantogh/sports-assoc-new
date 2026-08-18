@@ -140,7 +140,7 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
               alt={image.alt}
               fill
               className="object-cover"
-              priority={index === offset} // 最初の画像だけLCP最適化のために優先ロード
+              loading={index === offset ? "eager" : "lazy"} // 最初の画像だけLCP最適化のために優先ロード（Next.js 16で`priority`は非推奨）
             />
           </div>
         ))}
