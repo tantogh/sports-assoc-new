@@ -129,10 +129,10 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
         onTransitionEnd={handleTransitionEnd}
       >
         {extendedImages.map((image, index) => (
-          // スマホ縦画面では画像が横長のため、画面の高さいっぱいに伸ばすと object-cover で左右が大きく切れてしまう。
-          // そのためスマホは元のアスペクト比のまま表示し（下に余白ができるのは許容）、
-          // md以上ではヘッダーの実際の高さ（72px/80px、breakpointごとに異なる）を
-          // 画面の高さから差し引き、ヘッダー直下で画面いっぱいに表示されるようにしている
+          // 画像は16:9で、md以上のPC画面のアスペクト比とほぼ一致するため、
+          // ヘッダーの実際の高さ（72px/80px、breakpointごとに異なる）を
+          // 画面の高さから差し引き、ヘッダー直下で画面いっぱいに表示する。
+          // これによりコンテナがビューポートをはみ出すことがなくなる
           <div key={index} className="w-full flex-shrink-0 relative aspect-[16/9] md:aspect-auto md:h-[calc(100dvh-72px)] lg:h-[calc(100dvh-80px)]">
             <Image
               src={image.src}

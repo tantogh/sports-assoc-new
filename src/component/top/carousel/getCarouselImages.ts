@@ -9,7 +9,7 @@ export const getCarouselImages = (): CarouselImage[] => {
   const dir = path.join(process.cwd(), "public", "images", "carousel");
   const files = fs
     .readdirSync(dir)
-    .filter((file) => /\.(png|jpe?g|svg)$/.test(file));
+    .filter((file) => /\.(png|jpe?g|svg|webp)$/.test(file));
   return files.map((file) => ({
     src: `/images/carousel/${file}`,
     alt: file,
