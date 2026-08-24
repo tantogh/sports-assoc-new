@@ -28,9 +28,11 @@ mb_internal_encoding("UTF-8");
 // ==========================================
 // 1. サニタイズ（無害化）関数
 // ==========================================
+// メール本文はプレーンテキストのため、HTMLエスケープ（htmlspecialchars）は行わない。
+// 前後の空白除去のみ行い、ヘッダインジェクション対策は後段の改行コードチェックで行う。
 function sanitize($str) {
     if ($str === null) return '';
-    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+    return trim($str);
 }
 
 
