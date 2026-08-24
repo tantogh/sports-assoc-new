@@ -51,6 +51,20 @@ if ($name === '' || $phone === '' || $email === '' || $message === '') {
     exit;
 }
 
+// 文字数の上限チェック
+if (mb_strlen($name) > 100 || mb_strlen($phone) > 20 || mb_strlen($email) > 254 || mb_strlen($message) > 2000) {
+    http_response_code(400); // Bad Request
+    echo json_encode(['error' => '入力内容が長すぎます。']);
+    exit;
+}
+
+// 電話番号の形式チェック（数字・ハイフンのみ許可）
+if (!preg_match("/^[0-9\-]+$/", $phone)) {
+    http_response_code(400); // Bad Request
+    echo json_encode(['error' => '電話番号の形式が正しくありません。']);
+    exit;
+}
+
 // ヘッダインジェクション対策（改行コードのブロック）
 if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $phone) || preg_match("/[\r\n]/", $email)) {
     http_response_code(400); // Bad Request
@@ -95,6 +109,6 @@ if (mb_send_mail($to, $subject, $body, $headers)) {
 } else {
     // 送信失敗時：ステータスコード500 (Internal Server Error) を返す
     http_response_code(500);
-    echo json_encode(['error' => 'メールの送信に失敗しました。サーバーのメール設定をご確認ください。']);
+    echo json_encode(['error' => 'メールの送信に失敗しました。時間をおいて再度お試しください。']);
 }
 ?>
