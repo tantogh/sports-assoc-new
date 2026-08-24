@@ -58,6 +58,13 @@ if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $phone) || preg_matc
     exit;
 }
 
+// メールアドレスの形式チェック
+if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+    http_response_code(400); // Bad Request
+    echo json_encode(['error' => 'メールアドレスの形式が正しくありません。']);
+    exit;
+}
+
 
 // ==========================================
 // 3. メールの送信処理
@@ -72,7 +79,10 @@ $body .= "メールアドレス: " . $email . "\n\n";
 $body .= "お問い合わせ内容:\n" . $message;
 
 // 送信元（From）の設定
-$headers = "From: " . $email;
+// From は自ドメインの固定アドレスにする（送信者のアドレスをそのまま使うとSPF/DKIM不一致で
+// 迷惑メール判定されやすいため）。問い合わせ者への返信用にReply-Toへ設定する。
+$headers = "From: " . $to . "\r\n";
+$headers .= "Reply-To: " . $email;
 
 
 // ==========================================
