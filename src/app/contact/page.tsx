@@ -15,6 +15,7 @@ interface FormDataState {
   phone: string;
   email: string;
   message: string;
+  website: string; // ハニーポット（ボット対策）。人には見えず、入力があれば送信をブロックする
 };
 
 export default function ContactForm() {
@@ -26,6 +27,7 @@ export default function ContactForm() {
     phone: '',
     email: '',
     message: '',
+    website: '',
   });
 
   const [isConfirming, setIsConfirming] = useState<boolean>(false);
@@ -51,6 +53,7 @@ export default function ContactForm() {
     sendData.append('phone', formData.phone);
     sendData.append('email', formData.email);
     sendData.append('message', formData.message);
+    sendData.append('website', formData.website);
 
     try {
       const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/php/mail.php`;
@@ -139,6 +142,18 @@ export default function ContactForm() {
           <h2 className="mb-4 border-b pb-2 pl-2 text-2xl font-semibold border-l-8 border-sky-600">お問い合わせフォーム</h2>
           <p className="mb-4 text-sm text-gray-600"><span className="text-red-600">*</span>は必須項目</p>
           <form onSubmit={handleConfirm} className="space-y-4">
+            {/* ハニーポット: ボット対策。人間には見えず、入力があれば送信をブロックする */}
+            <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }} aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off" />
+            </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">お名前<span className="text-red-600">*</span></label>
               <input

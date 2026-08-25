@@ -43,6 +43,16 @@ $name = sanitize(isset($_POST['name']) ? $_POST['name'] : '');
 $phone = sanitize(isset($_POST['phone']) ? $_POST['phone'] : '');
 $email = sanitize(isset($_POST['email']) ? $_POST['email'] : '');
 $message = sanitize(isset($_POST['message']) ? $_POST['message'] : '');
+$website = sanitize(isset($_POST['website']) ? $_POST['website'] : '');
+
+// ハニーポット（ボット対策）
+// 人間には見えない項目のため、値が入っていればボットとみなし、
+// それと気づかせないよう正常送信時と同じレスポンスを返して処理を終了する。
+if ($website !== '') {
+    http_response_code(200);
+    echo json_encode(['message' => '送信が完了しました。']);
+    exit;
+}
 
 // 必須項目のチェック
 if ($name === '' || $phone === '' || $email === '' || $message === '') {
