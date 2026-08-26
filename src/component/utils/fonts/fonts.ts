@@ -1,13 +1,13 @@
 // src/utils/fonts/fonts.ts
 
-import { Noto_Serif_JP, Geist, Geist_Mono } from 'next/font/google'
+import { Noto_Sans_JP, Geist, Geist_Mono } from 'next/font/google'
 //import localFont from 'next/font/local'
 
-const notoSerifJP = Noto_Serif_JP({
+const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   weight: 'variable',
   display: 'swap',
-  variable: '--font-noto-serif-jp',
+  variable: '--font-noto-sans-jp',
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: false
 });
@@ -34,4 +34,4 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-export { notoSerifJP, geistMono, geistSans };
+export { notoSansJP, geistMono, geistSans };
