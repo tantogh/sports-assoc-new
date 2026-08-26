@@ -24,12 +24,6 @@ export const categoryMetadata: Record<string, CategoryMetadata> = {
     description: "石川県パラスポーツ協会の会報ページです。",
     url: "/about/newsletters",     
   },
-  clubs: {
-    title: "クラブ報告",
-    subTitle: "REPORTS",
-    description: "石川県パラスポーツ協会のクラブ報告ページです。",
-    url: "/clubs/reports",
-  },
   ishikawa: {
     title: "石川県パラ(障害者)スポーツ大会",
     subTitle: "TOURNAMENTS",
