@@ -29,8 +29,8 @@ export default async function Introduction() {
           <table className="min-w-full border border-gray-300">
             <thead>
               <tr className="bg-blue-600 text-white">
-                <th className="border border-gray-300 px-4 py-2">クラブ名</th>
-                <th className="border border-gray-300 px-4 py-2 whitespace-nowrap">ホームページ</th>
+                <th className="border border-gray-300 px-4 py-2">団体名</th>
+                <th className="border border-gray-300 px-4 py-2 whitespace-nowrap">リンク先</th>
               </tr>
             </thead>
             <tbody>
