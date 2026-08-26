@@ -29,7 +29,7 @@
     ]
   },
   { "type": "link", "label": "募集情報", "href": "/staff/" },
-  { "type": "link", "label": "クラブ紹介", "href": "/clubs/introduction/" },
+  { "type": "link", "label": "加盟団体", "href": "/clubs/introduction/" },
   { "type": "link", "label": "Q&A", "href": "/qa/" },
   { "type": "link", "label": "申請書類", "href": "/downloads/" },
   { "type": "link", "label": "リンク集", "href": "/links/" },

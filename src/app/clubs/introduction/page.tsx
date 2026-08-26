@@ -12,8 +12,8 @@ type Club = {
 };
 
 export const metadata: Metadata = {
-  title: "クラブ紹介 | クラブ情報 | 石川県パラスポーツ協会",
-  description: "石川県パラスポーツ協会のクラブ紹介のページです。",
+  title: "加盟団体 | クラブ情報 | 石川県パラスポーツ協会",
+  description: "石川県パラスポーツ協会の加盟団体のページです。",
 };
 
 export default async function Introduction() {
@@ -24,7 +24,7 @@ export default async function Introduction() {
   return (
     <>
       <div className="max-w-7xl mx-auto px-2 mb-8 lg:px-4">
-        <Title subTitle="CLUBS" title="クラブ紹介" />
+        <Title subTitle="CLUBS" title="加盟団体" />
         <section className={`max-w-2xl mx-auto p-6 bg-white`}>
           <table className="min-w-full border border-gray-300">
             <thead>
