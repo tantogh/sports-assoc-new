@@ -129,17 +129,21 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
         onTransitionEnd={handleTransitionEnd}
       >
         {extendedImages.map((image, index) => (
-          // ビューポートの高さいっぱいに広げると、ウィンドウの縦横比が
-          // 画像（16:9）とズレた分だけ切り取りや余白が発生してしまう。
-          // そのためコンテナを画像の実アスペクト比に固定し、
-          // 常に画像全体を欠けなく表示する（画面によっては下に続きが
-          // 見えるまでスクロールが必要になる場合がある）
-          <div key={index} className="w-full flex-shrink-0 relative aspect-[16/9]">
+          // 基本は画像の実アスペクト比（16:9）でコンテナを組む。
+          // ただし画面幅が広いと16:9の高さがビューポートを超え、
+          // スクロールしないと画像全体が見えなくなる。そのため
+          // 高さを「ビューポート高 − ヘッダー高の概算」で頭打ちにし、
+          // はみ出す分は object-bottom で上側だけを見切れさせる
+          // （下側の続きは常に表示される）。
+          <div
+            key={index}
+            className="w-full flex-shrink-0 relative aspect-[16/9] max-h-[calc(100svh_-_64px)] xl:max-h-[calc(100svh_-_88px)]"
+          >
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover"
+              className="object-cover object-bottom"
               loading={index === offset ? "eager" : "lazy"} // 最初の画像だけLCP最適化のために優先ロード（Next.js 16で`priority`は非推奨）
             />
           </div>
