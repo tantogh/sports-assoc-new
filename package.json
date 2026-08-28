@@ -5,10 +5,12 @@
   "scripts": {
     "predev": "node scripts/copy-content-resources.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/copy-content-resources.mjs",
+    "prebuild": "node scripts/copy-content-resources.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-robots.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "robots": "node scripts/generate-robots.mjs"
   },
   "dependencies": {
     "fast-glob": "^3.3.3",
