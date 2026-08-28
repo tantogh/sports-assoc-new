@@ -128,7 +128,15 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         onTransitionEnd={handleTransitionEnd}
       >
-        {extendedImages.map((image, index) => (
+        {extendedImages.map((image, index) => {
+          // 初期表示スライド（index === offset）はLCP最適化のためeagerロードする。
+          // 末尾の複製スライドは images[0] と同一URLで、こちらがlazyのままだと
+          // next/imageの開発時LCP警告用マップ（src単位・後勝ち）をlazyで上書きし、
+          // 「slide01.webp was detected as the Largest Contentful Paint」警告が出る。
+          // 同一アセットなのでeagerにしても追加コストはない（ブラウザがリクエストを重複排除）。
+          const isEager =
+            index === offset || (hasClones && index === extendedImages.length - 1);
+          return (
           // 基本は画像の実アスペクト比（16:9）でコンテナを組む。
           // ただし画面幅が広いと16:9の高さがビューポートを超え、
           // スクロールしないと画像全体が見えなくなる。そのため
@@ -144,10 +152,11 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
               alt={image.alt}
               fill
               className="object-cover object-bottom"
-              loading={index === offset ? "eager" : "lazy"} // 最初の画像だけLCP最適化のために優先ロード（Next.js 16で`priority`は非推奨）
+              loading={isEager ? "eager" : "lazy"} // Next.js 16では`priority`が非推奨のためloadingで制御
             />
           </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* 左右のナビゲーションボタン */}
