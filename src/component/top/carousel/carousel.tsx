@@ -137,21 +137,19 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
           const isEager =
             index === offset || (hasClones && index === extendedImages.length - 1);
           return (
-          // 基本は画像の実アスペクト比（16:9）でコンテナを組む。
-          // ただし画面幅が広いと16:9の高さがビューポートを超え、
-          // スクロールしないと画像全体が見えなくなる。そのため
-          // 高さを「ビューポート高 − ヘッダー高の概算」で頭打ちにし、
-          // はみ出す分は object-bottom で上側だけを見切れさせる
-          // （下側の続きは常に表示される）。
+          // コンテナは画像の実アスペクト比（16:9）で組む。
+          // 画面幅が広いと16:9の高さがビューポートを超え、スクロール
+          // しないと画像全体が見えなくなるが、上下左右いずれも見切れ
+          // させず画像全体を必ず表示することを優先する。
           <div
             key={index}
-            className="w-full flex-shrink-0 relative aspect-[16/9] max-h-[calc(100svh_-_64px)] xl:max-h-[calc(100svh_-_88px)]"
+            className="w-full flex-shrink-0 relative aspect-[16/9]"
           >
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover object-bottom"
+              className="object-cover"
               loading={isEager ? "eager" : "lazy"} // Next.js 16では`priority`が非推奨のためloadingで制御
             />
           </div>
