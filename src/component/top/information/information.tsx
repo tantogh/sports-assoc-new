@@ -1,23 +1,22 @@
 // src/component/top/information/information.tsx
 
 import ArticleHeader from "@/component/common/article/articleHeader";
+import glob from "fast-glob";
 
-export default function Information() {
+export default async function Information() {
+  const baseDir = "articles/information";
+  const files = await glob(`content/${baseDir}/*/*/*.md`);
+  const filePaths = files
+    .map((file) => file.replace(`content/${baseDir}`, ""))
+    .sort()
+    .reverse();
+
   return (
     <section className="w-full">
-      {/* 記事一覧 */}
-      <ArticleHeader baseDir="articles/information" filePath="/2026/08/2026-08-03.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/08/2026-08-02.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/08/2026-08-01.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/06/2026-06-04.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/06/2026-06-03.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/06/2026-06-02.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/06/2026-06-01.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/03/2026-03-02.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/03/2026-03-01.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/02/2026-02-03.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/02/2026-02-02.md" />
-      <ArticleHeader baseDir="articles/information" filePath="/2026/02/2026-02-01.md" />
+      {/* 記事一覧（自動生成） */}
+      {filePaths.map((filePath) => (
+        <ArticleHeader key={filePath} baseDir={baseDir} filePath={filePath} />
+      ))}
     </section>
   );
 };
