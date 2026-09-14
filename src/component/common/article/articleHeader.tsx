@@ -32,7 +32,7 @@ const formatDate = (date: Date): string => {
 
 export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps) {
   const fullPath = path.join(process.cwd(), "content", baseDir, filePath);
-  const href = path.join(baseDir, filePath.replace(/\.md$/, ""));
+  const href = `/${path.join(baseDir, filePath.replace(/\.md$/, ""))}`;
   const raw = fs.readFileSync(fullPath, "utf8");
 
   const { data } = matter(raw);
