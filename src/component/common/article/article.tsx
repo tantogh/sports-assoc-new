@@ -66,12 +66,23 @@ const sanitizeSchema = {
   },
 } as const;
 
+// 記事Markdown内の相対リンク（例: "para-table-tennis.pdf", "./foo.pdf"）を、
+// 記事ファイルと同じディレクトリ（=公開先ディレクトリ）を基準にした絶対パスへ解決する。
+// ページのURL（.../2026/08/2026-08-03/）はファイルの実際の配置場所（.../2026/08/）より
+// 1階層深いため、ブラウザ標準の相対URL解決に任せると誤ったパスになってしまう。
+function resolveHref(href: string, baseDir: string): string {
+  if (href === "" || href.startsWith("#") || href.startsWith("/") || /^[a-z][a-z0-9+.-]*:/i.test(href)) {
+    return href;
+  }
+  return `/${path.posix.normalize(path.posix.join(baseDir, href))}`;
+}
+
 // カスタムリンク: 内部リンクはLinkでルーティング、PDFやダウンロードファイルはaタグ
-export function MarkdownLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
-  const href = props.href || "";
-  const { children, ...rest } = props;
-  const isInternal =
-    href.startsWith("/") || href.startsWith("./") || href.startsWith("../");
+export function MarkdownLink(props: AnchorHTMLAttributes<HTMLAnchorElement> & { baseDir?: string }) {
+  const { children, href: rawHref, baseDir, ...rest } = props;
+  const isExternal = !!rawHref && /^[a-z][a-z0-9+.-]*:/i.test(rawHref);
+  const href = isExternal || !baseDir ? rawHref || "" : resolveHref(rawHref || "", baseDir);
+  const isInternal = !isExternal;
   const isPDF = href.toLowerCase().endsWith(".pdf");
   const isJPEG = href.toLowerCase().endsWith(".jpg");
   const isPNG = href.toLowerCase().endsWith(".png");
@@ -133,6 +144,7 @@ export function MarkdownLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
 };
 
 export default function Article({ filename }: ArticleProps) {
+  const baseDir = path.posix.dirname(filename);
   let content: string;
   try {
     const filePath = path.join(process.cwd(), "content", filename);
@@ -154,7 +166,7 @@ export default function Article({ filename }: ArticleProps) {
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
           components={{
-            a: MarkdownLink,
+            a: (props) => <MarkdownLink {...props} baseDir={baseDir} />,
             h1: ({ children }) => (
               <h1 className="text-lg sm:text-xl font-bold mt-4 mb-4 text-sky-700">{children}</h1>
             ),
