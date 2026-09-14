@@ -144,7 +144,13 @@ export function MarkdownLink(props: AnchorHTMLAttributes<HTMLAnchorElement> & { 
 };
 
 export default function Article({ filename }: ArticleProps) {
-  const baseDir = path.posix.dirname(filename);
+  const articleDir = path.posix.dirname(filename);
+  // scripts/copy-content-resources.mjs is archives/ 配下の非Markdownファイルを
+  // archives/articles/ にリマップしてpublic/へコピーするため、添付ファイルの
+  // リンク解決もそれに合わせる必要がある。
+  const baseDir = articleDir.startsWith("archives/")
+    ? articleDir.replace(/^archives\//, "archives/articles/")
+    : articleDir;
   let content: string;
   try {
     const filePath = path.join(process.cwd(), "content", filename);
