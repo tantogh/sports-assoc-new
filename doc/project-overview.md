@@ -53,17 +53,19 @@ content/
 
 ---
 
+
+
 ## 2. 記事の追加方法
 
 1. `content/articles/<category>/<year>/<month>/<date>.md` を作成。フロントマターに `title` と `date` を記載。
 
-   ```markdown
-   ---
-   title: 記事タイトル
-   date: 2026-09-07
-   ---
-   本文（Markdown）
-   ```
+```
+---
+title: 記事タイトル
+date: 2026-09-07
+---
+本文（Markdown）
+```
 
 2. 付随ファイル（PDF・XLSX 等）は同じディレクトリに置く。ビルド時に `public/` へコピーされ、`/articles/<category>/<year>/<month>/<filename>` で配信される。本文からは相対 or `/articles/...` 絶対パスでリンク。
 3. 一覧に出したい場合は該当ページに `<ArticleHeader>` 行を手動追加：
