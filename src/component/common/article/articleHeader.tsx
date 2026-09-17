@@ -20,6 +20,13 @@ const getTitle = (data: Record<string, unknown>): string => {
   return "タイトルなし";
 };
 
+const getDate = (data: Record<string, unknown>): Date => {
+  if (typeof data.date === "string" || typeof data.date === "number") {
+    return new Date(data.date);
+  }
+  return new Date("1970-01-01");
+};
+
 /**
  * 日付をフォーマット（YYYY.MM.DD）
  */
@@ -33,11 +40,21 @@ const formatDate = (date: Date): string => {
 export default function ArticleHeader({ baseDir, filePath }: ArticleHeaderProps) {
   const fullPath = path.join(process.cwd(), "content", baseDir, filePath);
   const href = `/${path.join(baseDir, filePath.replace(/\.md$/, ""))}`;
-  const raw = fs.readFileSync(fullPath, "utf8");
 
-  const { data } = matter(raw);
+  let data: Record<string, unknown>;
+  try {
+    const raw = fs.readFileSync(fullPath, "utf8");
+    ({ data } = matter(raw));
+  } catch (err) {
+    return (
+      <div className="max-w-2xl mx-auto mb-2 p-2 bg-red-100 text-red-600 rounded-xl shadow-lg">
+        Error: {(err as Error)?.message || "File not found"}
+      </div>
+    );
+  }
+
   const title = getTitle(data);
-  const date = new Date(data.date || "1970-01-01");
+  const date = getDate(data);
 
   return (
     <div className="max-w-2xl mx-auto mb-2 p-2 bg-white rounded-xl shadow-lg">
