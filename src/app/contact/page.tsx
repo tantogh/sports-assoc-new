@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 
 import Title from "@/component/common/title/title";
@@ -34,6 +34,9 @@ export default function ContactForm() {
   const [isSent, setIsSent] = useState<boolean>(false);
   const [agreedToPrivacyPolicy, setAgreedToPrivacyPolicy] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  // 連打対策。state は再描画まで反映されないため、同期的に判定できる ref でロックする
+  const submittingRef = useRef<boolean>(false);
 
   // ==========================================
   // 3. イベントハンドラー
@@ -49,6 +52,10 @@ export default function ContactForm() {
   };
 
   const handleSubmit = async () => {
+    if (submittingRef.current) return;
+    submittingRef.current = true;
+    setIsSubmitting(true);
+
     const sendData = new FormData();
     sendData.append('name', formData.name);
     sendData.append('phone', formData.phone);
@@ -73,6 +80,9 @@ export default function ContactForm() {
       }
     } catch {
       setErrorMessage('通信エラーが発生しました。時間をおいて再度お試しください。');
+    } finally {
+      submittingRef.current = false;
+      setIsSubmitting(false);
     }
   };
 
@@ -127,15 +137,17 @@ export default function ContactForm() {
                 setErrorMessage('');
                 setIsConfirming(false);
               }}
-              className="w-1/2 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition"
+              disabled={isSubmitting}
+              className="w-1/2 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-200"
             >
               修正する
             </button>
             <button
               onClick={handleSubmit}
-              className="w-1/2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition font-bold"
+              disabled={isSubmitting}
+              className="w-1/2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition font-bold disabled:bg-gray-300 disabled:cursor-not-allowed disabled:hover:bg-gray-300"
             >
-              送信する
+              {isSubmitting ? '送信中…' : '送信する'}
             </button>
           </div>
         </div>
