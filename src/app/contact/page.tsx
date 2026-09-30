@@ -33,6 +33,7 @@ export default function ContactForm() {
   const [isConfirming, setIsConfirming] = useState<boolean>(false);
   const [isSent, setIsSent] = useState<boolean>(false);
   const [agreedToPrivacyPolicy, setAgreedToPrivacyPolicy] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   // ==========================================
   // 3. イベントハンドラー
@@ -55,6 +56,7 @@ export default function ContactForm() {
     sendData.append('message', formData.message);
     sendData.append('website', formData.website);
 
+    setErrorMessage('');
     try {
       const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/php/mail.php`;
       const response = await fetch(apiUrl, {
@@ -65,10 +67,12 @@ export default function ContactForm() {
       if (response.ok) {
         setIsSent(true);
       } else {
-        alert('送信に失敗しました。');
+        // mail.php は失敗時に { error: "..." } を返すので、その内容を画面に表示する
+        const data = await response.json().catch(() => null);
+        setErrorMessage(data?.error ?? '送信に失敗しました。');
       }
     } catch {
-      alert('通信エラーが発生しました。');
+      setErrorMessage('通信エラーが発生しました。時間をおいて再度お試しください。');
     }
   };
 
@@ -112,9 +116,17 @@ export default function ContactForm() {
               <p className="font-medium whitespace-pre-wrap">{formData.message}</p>
             </div>
           </div>
+          {errorMessage && (
+            <p role="alert" className="mb-4 p-3 rounded border border-red-300 bg-red-50 text-sm text-red-700">
+              {errorMessage}
+            </p>
+          )}
           <div className="flex gap-4">
             <button
-              onClick={() => setIsConfirming(false)}
+              onClick={() => {
+                setErrorMessage('');
+                setIsConfirming(false);
+              }}
               className="w-1/2 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition"
             >
               修正する
