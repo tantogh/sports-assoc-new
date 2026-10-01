@@ -22,7 +22,7 @@ export default function DownloadsPage() {
                 <td className="py-4 px-3 text-gray-800">後援申請・報告書</td>
                 <td className="py-4 px-3 text-right whitespace-nowrap">
                   <a
-                    href="/downloads/downloads/kouensinseihoukoku2020.doc"
+                    href="/downloads/downloads/kouensinseihoukoku-2026.docx"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition whitespace-nowrap"
@@ -35,7 +35,7 @@ export default function DownloadsPage() {
                 <td className="py-4 px-3 text-gray-800">推薦書</td>
                 <td className="py-4 px-3 text-right whitespace-nowrap">
                   <a
-                    href="/downloads/downloads/suisensyo.xls"
+                    href="/downloads/downloads/suisensyo-2026.xls"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs px-1 lg:text-base inline-block lg:px-4 py-2 rounded bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition whitespace-nowrap"
