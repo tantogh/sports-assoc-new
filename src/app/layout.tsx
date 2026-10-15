@@ -7,8 +7,8 @@ import Footer from "@/component/common/footer/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "石川県障害者スポーツ協会",
-  description: "石川県障害者スポーツ協会の情報を提供していきます。",
+  title: "石川県パラスポーツ協会",
+  description: "石川県パラスポーツ協会の情報を提供していきます。",
 };
 
 export default function RootLayout({

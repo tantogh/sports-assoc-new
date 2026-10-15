@@ -19,7 +19,7 @@ export default function RentalPage() {
           <table className="w-full border-collapse">
             <tbody>
               <tr className="border-b">
-                <td className="py-4 px-3 text-gray-800">石川県障害者スポーツ協会用具使用申請書</td>
+                <td className="py-4 px-3 text-gray-800">石川県パラスポーツ協会用具使用申請書</td>
                 <td className="py-4 px-3 text-right whitespace-nowrap">
                   <a
                     href="/downloads/rental/yougu-shiyou-shinsei-2026.pdf"
@@ -32,7 +32,7 @@ export default function RentalPage() {
                 </td>
               </tr>
               <tr className="border-b">
-                <td className="py-4 px-3 text-gray-800">石川県障害者スポーツ協会用具使用料金表</td>
+                <td className="py-4 px-3 text-gray-800">石川県パラスポーツ協会用具使用料金表</td>
                 <td className="py-4 px-3 text-right whitespace-nowrap">
                   <a
                     href="/downloads/rental/yougu-shiyou-ryoukin-2026.pdf"
