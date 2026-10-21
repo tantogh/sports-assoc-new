@@ -49,7 +49,7 @@ Defined in `src/component/common/article/categoryMetadata.ts`:
 
 1. Create `content/articles/[category]/[year]/[month]/[date].md` with frontmatter `title` and `date`.
 2. Place any supporting files (PDF, XLSX…) in the same directory — they are served from `/articles/[category]/[year]/[month]/[filename]`.
-3. If the article should appear on the homepage "新着情報" list, add an `<ArticleHeader>` entry to `src/component/top/information/information.tsx`.
+3. Articles in the `information` category appear on the homepage "新着情報" list automatically — `src/component/top/information/information.tsx` globs `content/articles/information/*/*/*.md` and sorts them newest first.
 
 For archive articles use `content/archives/[category]/[year]/[month]/[date].md`; no manual listing step is required (they are linked directly).
 
@@ -64,7 +64,7 @@ src/component/
     title/
   top/
     carousel/  # Homepage image slider
-    information/  # Homepage "新着情報" — article list is hardcoded here
+    information/  # Homepage "新着情報" — article list auto-generated from content/articles/information
     special/
     sponsorship/
   utils/fonts/ # Geist + NotoSerifJP font definitions
