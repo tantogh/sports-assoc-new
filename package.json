@@ -7,6 +7,7 @@
     "dev": "next dev",
     "prebuild": "node scripts/copy-content-resources.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-robots.mjs",
     "build": "next build",
+    "postbuild": "node scripts/preserve-out-mtimes.mjs",
     "start": "next start",
     "lint": "eslint",
     "sitemap": "node scripts/generate-sitemap.mjs",

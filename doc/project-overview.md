@@ -90,3 +90,12 @@ date: 2026-09-07
 4. 添付ファイルの配信先は `copy-content-resources.mjs` が `archives/` → `archives/articles/` にリマップするので、本文リンクは `/archives/articles/<category>/<year>/<month>/<filename>` を指すよう修正する。
 
 > 補足: 過去記事一覧では `information` カテゴリだけ見出しが「過去記事 / ARCHIVES」に置き換えて表示される（`archives/articles/page.tsx` と `[number]/page.tsx` の分岐）。
+
+## 4. サーバーへの同期（FTP）
+
+`out/` を FTP クライアントで同期する。クライアントは「ローカルのほうが新しいファイルのみ転送」に設定する。
+
+- `pnpm build` の最後に `scripts/preserve-out-mtimes.mjs` が動き、内容が前回と同じファイルの更新日時を前回の値に戻す。記録は `.out-manifest.json`（Git 管理外）に残る。
+- ビルド ID は `next.config.ts` の `generateBuildId` が `src/`、ロックファイル、`next.config.ts`、`.env`、`.env.production` から作る。記事の追加だけなら既存ページの HTML は変わらない。コードを変更すると全ページの HTML / txt が転送対象になる。
+- 削除されたファイルは更新日時では検出できない。ビルドログの「サーバーからも削除が必要なファイル」を見て、サーバー側で手動で削除する。
+- `.out-manifest.json` を失うと、次回の同期では全ファイルが転送される。別のマシンでビルドする場合も同様。

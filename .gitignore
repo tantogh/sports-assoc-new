@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+# 同期用に out/ の更新日時を記録するマニフェスト（scripts/preserve-out-mtimes.mjs）
+/.out-manifest.json
 
 # generated at build time (scripts/generate-sitemap.mjs, scripts/generate-robots.mjs)
 /public/sitemap.xml

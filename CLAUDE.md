@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 pnpm dev        # start dev server (runs copy-content-resources.mjs first)
-pnpm build      # static export to out/ (runs copy-content-resources.mjs first)
+pnpm build      # static export to out/ (runs copy-content-resources.mjs first, preserve-out-mtimes.mjs after)
 pnpm lint       # ESLint
 ```
 
@@ -17,6 +17,10 @@ No test suite exists.
 ## Architecture
 
 This is a **static-export** Next.js 16 / React 19 site for the Ishikawa Parasports Association. `next.config.ts` sets `output: "export"`, so there is no SSR — all pages are pre-rendered at build time.
+
+### Deploying with FTP
+
+`scripts/preserve-out-mtimes.mjs` runs after `next build` and restores the previous mtime of every `out/` file whose content is unchanged, using `.out-manifest.json` (git-ignored, per machine). Sync `out/` with an FTP client set to transfer only newer files. `generateBuildId` in `next.config.ts` hashes `src/`, the lockfile, `next.config.ts` and the env files, so a content-only build leaves existing pages unchanged. Files listed as removed in the script output must be deleted from the server by hand. Losing the manifest makes the next sync transfer everything.
 
 ### Path alias
 
