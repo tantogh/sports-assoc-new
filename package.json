@@ -14,7 +14,7 @@
     "robots": "node scripts/generate-robots.mjs"
   },
   "dependencies": {
-    "browserslist": "^4.29.5",
+    "browserslist": "^4.29.6",
     "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
     "next": "16.2.1",
@@ -27,13 +27,13 @@
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.4",
+    "@tailwindcss/postcss": "^4.3.5",
     "@types/node": "^20.19.43",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "16.2.1",
-    "tailwindcss": "^4.3.4",
+    "tailwindcss": "^4.3.5",
     "typescript": "^5.9.3"
   }
 }
